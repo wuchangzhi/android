@@ -1,9 +1,0 @@
-<resources>
-
-    <string name="app_name">MyDatetimeDialog</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
-   <string name="cancle">取消</string>
-    <string name="ok">确定</string>
-</resources>
