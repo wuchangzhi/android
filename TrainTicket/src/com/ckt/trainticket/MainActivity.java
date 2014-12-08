@@ -32,12 +32,12 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.search_train);
 		fragmentList = new ArrayList<Fragment>();
 		buttomViews = new ArrayList<TextView>();
-		initView();
-		vierPager.setCurrentItem(0);
-		serachTrain.setEnabled(false);
+//		initView();
+//		vierPager.setCurrentItem(0);
+//		serachTrain.setEnabled(false);
 	}
 
 	private void initView() {

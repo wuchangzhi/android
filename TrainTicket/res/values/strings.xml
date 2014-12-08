@@ -7,6 +7,9 @@
     <string name="quit">退出</string>
     <string name="serach_train">列车查询</string>
     <string name="my_order">订单查询</string>
-	<string name="my12306">我的12306</string>
-	<string name="has_more">更多</string>
+    <string name="my12306">我的12306</string>
+    <string name="has_more">更多</string>
+    <string name="from_station_text">出发地:</string>
+    <string name="to_station_text">目的地:</string>
+
 </resources>
