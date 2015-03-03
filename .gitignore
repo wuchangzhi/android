@@ -2,3 +2,5 @@
 .recommenders/
 TrainTicket/bin/*
 MyProject/bin/*
+MyFirstApp/bin/*
+*/bin/*
