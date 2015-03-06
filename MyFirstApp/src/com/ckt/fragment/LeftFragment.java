@@ -2,9 +2,12 @@ package com.ckt.fragment;
 
 import android.app.Activity;
 import android.app.ListFragment;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -22,6 +25,7 @@ public class LeftFragment extends ListFragment {
 	        "USB", "电话", "快进", "下一首", "暂停", "播放", "上一首", "快退" };
 	private ListAdapter adapter;
 	private Callback callback;
+	private int selectItem = -1;
 
 	public void setCallback(Callback callback) {
 		this.callback = callback;
@@ -82,6 +86,12 @@ public class LeftFragment extends ListFragment {
 			} else {
 				holder = (ViewHolder) convertView.getTag();
 			}
+
+			if (position == selectItem) {
+				convertView.setBackgroundColor(Color.argb(255, 170, 170, 170));
+			} else {
+				convertView.setBackgroundColor(Color.TRANSPARENT);
+			}
 			holder.image.setBackgroundResource(icons[position]);
 			holder.title.setText(titles[position]);
 			return convertView;
@@ -106,6 +116,8 @@ public class LeftFragment extends ListFragment {
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
+		selectItem = position;
+		adapter.notifyDataSetChanged();
 		callback.callback(titles[position]);
 	}
 }
