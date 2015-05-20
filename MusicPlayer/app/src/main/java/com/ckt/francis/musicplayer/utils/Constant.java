@@ -10,4 +10,7 @@ public class Constant {
     public static final String TOTAL ="total";
     public static final String NAME = "name";
     public static final String PATH = "path";
+    public static final String ALBUM ="album" ;
+    public static final String  ARTIST = "artist";
+    public static final String  DURATION = "duration";
 }

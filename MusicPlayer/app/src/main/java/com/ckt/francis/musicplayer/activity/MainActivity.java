@@ -87,7 +87,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 String columns[] = { MediaStore.Audio.Media._ID,
                         MediaStore.Audio.Media.DISPLAY_NAME,
                         MediaStore.Audio.Media.DATA,
-                        MediaStore.Audio.Media.SIZE};
+                        MediaStore.Audio.Media.ALBUM,
+                        MediaStore.Audio.Media.ARTIST,
+                        MediaStore.Audio.Media.DURATION};
 
                 Cursor cursor = MainActivity.this.getContentResolver().query(
                         MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, columns, null, null, null);
@@ -96,6 +98,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     Log.d("test", "ColumnCount = " + cursor.getColumnCount());
                     items.put(Constant.NAME, cursor.getString(1));
                     items.put(Constant.PATH, cursor.getString(2));
+                    items.put(Constant.ALBUM, cursor.getString(2));
+                    items.put(Constant.ARTIST, cursor.getString(2));
+                    items.put(Constant.DURATION, cursor.getString(2));
                     mAllMusics.add(items);
                 }
             }
