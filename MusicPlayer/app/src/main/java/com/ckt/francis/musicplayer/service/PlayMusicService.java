@@ -1,28 +1,31 @@
 package com.ckt.francis.musicplayer.service;
 
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Binder;
 import android.os.IBinder;
 
 import com.ckt.francis.musicplayer.controller.MusicController;
-import com.ckt.francis.musicplayer.controller.OnTimeChangeListener;
+import com.ckt.francis.musicplayer.controller.OnStateListener;
+import com.ckt.francis.musicplayer.utils.Constant;
 import com.ckt.francis.musicplayer.utils.MusicState;
 
-public class PlayMusicService extends Service implements OnTimeChangeListener {
+public class PlayMusicService extends Service implements OnStateListener {
     private MusicController mMusicController;
-    private OnStateListener mOnStateListener;
 
-
-    public interface OnStateListener{
-        void onStateChange(MusicState mMusicState);
-        void onTimeChanges(int time);
+    @Override
+    public void onStateChange() {
+        refreshView();
     }
 
-    public class MusicBinder extends Binder{
-        public PlayMusicService getService(){
+    @Override
+    public void onTimeChange(int current, int total) {
+        refreshView(current, total);
+    }
+
+    public class MusicBinder extends Binder {
+        public PlayMusicService getService() {
             return PlayMusicService.this;
         }
     }
@@ -31,7 +34,7 @@ public class PlayMusicService extends Service implements OnTimeChangeListener {
     public void onCreate() {
         super.onCreate();
         mMusicController = MusicController.getInstance();
-        mMusicController.setOnTimeChangeListener(this);
+        mMusicController.setOnStateListener(this);
     }
 
     @Override
@@ -40,35 +43,39 @@ public class PlayMusicService extends Service implements OnTimeChangeListener {
     }
 
     public void seekMusic(int time) {
-        mMusicController.seekMusic(time,true);
+        mMusicController.seekMusic(time, true);
     }
 
-    public void seekToMusic(int rate){
-        mMusicController.seekMusic(rate,false);
+    public void seekToMusic(int rate) {
+        mMusicController.seekMusic(rate, false);
     }
-    public void playOrPauseMusic(String path){
-        if(mMusicController.getMusicState() == MusicState.PLAYING) {
+
+    public void playOrPauseMusic(String path) {
+        if (mMusicController.getMusicState() == MusicState.PLAYING) {
             mMusicController.pauseMusic();
-        }else{
-            mMusicController.playMusic(this, Uri.parse(path));
-        }
-        if (mOnStateListener != null) {
-            mOnStateListener.onStateChange(mMusicController.getMusicState());
-        }
 
+        } else {
+            mMusicController.playAndPauseMusic(this, Uri.parse(path));
+        }
     }
 
-    public void setOnStateListener(OnStateListener mOnStateListener) {
-        this.mOnStateListener = mOnStateListener;
+    public void play(String path) {
+        mMusicController.playMusic(this, Uri.parse(path));
     }
 
-    @Override
-    public void onTimeChange(int rate) {
-        if(mOnStateListener != null){
-            mOnStateListener.onTimeChanges(rate);
-        }
-        if(rate >=100 && mOnStateListener != null){
-            mOnStateListener.onStateChange(mMusicController.getMusicState());
-        }
+    public void refreshView() {
+        Intent _intent = new Intent();
+        _intent.setAction(Constant.ACTION_CHANGE);
+        _intent.putExtra(Constant.STATUS, mMusicController.getMusicState());
+        sendBroadcast(_intent);
     }
+
+    public void refreshView(int time, int total) {
+        Intent _intent = new Intent();
+        _intent.setAction(Constant.ACTION_CHANGE);
+        _intent.putExtra(Constant.CURRENT, time);
+        _intent.putExtra(Constant.TOTAL, total);
+        sendBroadcast(_intent);
+    }
+
 }
