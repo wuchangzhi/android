@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.ckt.francis.musicplayer.R;
 import com.ckt.francis.musicplayer.utils.Constant;
+import com.ckt.francis.musicplayer.utils.TimeUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,18 +49,25 @@ public class MusicsAdapter  extends BaseAdapter{
             viewHolder = new ViewHolder();
             convertView = LayoutInflater.from(mContext).inflate(R.layout.music_items, null);
             viewHolder.title = (TextView) convertView.findViewById(R.id.music_title);
-            viewHolder.path = (TextView) convertView.findViewById(R.id.music_path);
+            viewHolder.duration = (TextView) convertView.findViewById(R.id.music_duration);
+            viewHolder.artist = (TextView) convertView.findViewById(R.id.music_artist);
+            viewHolder.album = (TextView) convertView.findViewById(R.id.music_album);
             convertView.setTag(viewHolder);
         }else{
             viewHolder = (ViewHolder) convertView.getTag();
         }
         viewHolder.title.setText(mAllMusics.get(position).get(Constant.NAME));
-        viewHolder.path.setText(mAllMusics.get(position).get(Constant.PATH));
+        viewHolder.duration.setText(mAllMusics.get(position).get(Constant.DURATION));
+        viewHolder.artist.setText(mAllMusics.get(position).get(Constant.ARTIST));
+        viewHolder.album.setText(mAllMusics.get(position).get(Constant.ALBUM));
         return convertView;
     }
 
     private class ViewHolder{
         public TextView title;
-        public TextView path;
+        public TextView duration;
+        public TextView artist;
+        public TextView album;
+
     }
 }

@@ -92,15 +92,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                         MediaStore.Audio.Media.DURATION};
 
                 Cursor cursor = MainActivity.this.getContentResolver().query(
-                        MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, columns, null, null, null);
+                        MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, columns, MediaStore.Audio.Media.DURATION +" > 3000", null, null);
+
                 while (cursor.moveToNext()) {
                     Map<String,String> items = new HashMap<String,String>();
-                    Log.d("test", "ColumnCount = " + cursor.getColumnCount());
                     items.put(Constant.NAME, cursor.getString(1));
                     items.put(Constant.PATH, cursor.getString(2));
-                    items.put(Constant.ALBUM, cursor.getString(2));
-                    items.put(Constant.ARTIST, cursor.getString(2));
-                    items.put(Constant.DURATION, cursor.getString(2));
+                    items.put(Constant.ALBUM, cursor.getString(3));
+                    items.put(Constant.ARTIST, cursor.getString(4));
+                    items.put(Constant.DURATION,TimeUtil.convertTime(cursor.getInt(5)/1000) + "");
                     mAllMusics.add(items);
                 }
             }
@@ -164,7 +164,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 mService.seekMusic(-3000);
                 break;
             case R.id.b_play:
-                mService.playOrPauseMusic(musicPath);
+                if(mAllMusics.size() != 0) {
+                    mService.playOrPauseMusic(mAllMusics.get(0).get(Constant.PATH));
+                }
                 break;
         }
     }
