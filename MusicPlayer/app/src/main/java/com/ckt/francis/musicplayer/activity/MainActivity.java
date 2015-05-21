@@ -23,6 +23,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -30,8 +31,10 @@ import android.widget.TextView;
 import com.ckt.francis.musicplayer.R;
 import com.ckt.francis.musicplayer.activity.base.BaseActivity;
 import com.ckt.francis.musicplayer.adapter.MusicsAdapter;
+import com.ckt.francis.musicplayer.model.Mp3Info;
 import com.ckt.francis.musicplayer.service.PlayMusicService;
 import com.ckt.francis.musicplayer.utils.Constant;
+import com.ckt.francis.musicplayer.utils.MediaUtil;
 import com.ckt.francis.musicplayer.utils.MusicState;
 import com.ckt.francis.musicplayer.utils.Utils;
 
@@ -44,6 +47,7 @@ import java.util.Map;
 public class MainActivity extends BaseActivity implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
     private SeekBar mSeekBar;
     private TextView mCurrent;
+
     private TextView mTotal;
     private Button mPlay;
     private Button mForward;
@@ -52,7 +56,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private String musicPath;
     private PlayMusicService mService;
     private ListView mMusicList;
-    private List<Map<String, String>> mAllMusics = new ArrayList<Map<String, String>>();
+    private List<Mp3Info> mAllMusics =new ArrayList<Mp3Info>();
     private MusicsAdapter mAdapter;
     private int currentPosition = 0;
     private int totalNums;
@@ -85,6 +89,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 mSeekBar.setProgress(current);
                 mCurrent.setText(Utils.convertTime(current));
                 mTotal.setText(Utils.convertTime(total));
+            }
+            if(intent.getBooleanExtra(Constant.PLAYNEXT,false) && mService !=null){
+                playNext();
             }
         }
     };
@@ -135,7 +142,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 currentPosition = position;
-                String path = mAllMusics.get(position).get(Constant.PATH);
+                String path = mAllMusics.get(position).getPath();
                 mService.play(path);
             }
         });
@@ -146,7 +153,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         AdapterView.AdapterContextMenuInfo menuInfos = (AdapterView.AdapterContextMenuInfo)menuInfo;
-        menu.setHeaderTitle(mAllMusics.get(menuInfos.position).get(Constant.NAME));
+        menu.setHeaderTitle(mAllMusics.get(menuInfos.position).getTitle());
         menu.add(0, Constant.PLAY, 0, getString(R.string.play));
         menu.add(0, Constant.DELETE, 0, getString(R.string.delete));
         menu.add(0, Constant.RENAME, 0, getString(R.string.rename));
@@ -159,7 +166,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         final AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()){
             case  Constant.PLAY:
-                mService.play(mAllMusics.get(menuInfo.position).get(Constant.PATH));
+                mService.play(mAllMusics.get(menuInfo.position).getPath());
                 break;
             case Constant.DELETE:
                 deleteFile(menuInfo.position);
@@ -170,7 +177,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             case Constant.SHARE:
                 Intent intent=new Intent(Intent.ACTION_SEND);
                 intent.setType("audio/*");
-                Uri u = Uri.parse(mAllMusics.get(menuInfo.position).get(Constant.PATH));
+                Uri u = Uri.parse(mAllMusics.get(menuInfo.position).getPath());
                 intent.putExtra(Intent.EXTRA_STREAM, u);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(Intent.createChooser(intent, getString(R.string.share)));
@@ -186,15 +193,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     private void deleteFile(final int position) {
         new AlertDialog.Builder(this)
-                .setTitle(mAllMusics.get(position).get(Constant.NAME))
+                .setTitle(mAllMusics.get(position).getTitle())
                 .setMessage(R.string.delete_item)
-
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         getContentResolver().delete(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
                                 MediaStore.Audio.Media._ID + " = ? ",
-                                new String[]{mAllMusics.get(position).get("_ID")});
+                                new String[]{mAllMusics.get(position).getId() + ""});
                         scanFiles();
                     }
                 })
@@ -205,7 +211,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private void renameFile(final int position) {
         View view = getLayoutInflater().inflate(R.layout.rename_item,null);
         final EditText renameItem = (EditText)view.findViewById(R.id.item_name);
-        renameItem.setText(mAllMusics.get(position).get(Constant.NAME));
+        renameItem.setText(mAllMusics.get(position).getTitle());
 
         new AlertDialog.Builder(this)
                 .setTitle(getString(R.string.rename))
@@ -214,10 +220,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         ContentValues contentValues = new ContentValues();
-                        contentValues.put(MediaStore.Audio.Media.DISPLAY_NAME, renameItem.getText().toString());
+                        contentValues.put(MediaStore.Audio.Media.TITLE, renameItem.getText().toString());
                         getContentResolver().update(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, contentValues,
                                 MediaStore.Audio.Media._ID + " = ? ",
-                                new String[]{mAllMusics.get(position).get("_ID")});
+                                new String[]{mAllMusics.get(position).getId() + ""});
                         scanFiles();
                     }
                 })
@@ -226,10 +232,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     private void showDetails(int position){
         StringBuffer sb = new StringBuffer();
-        sb.append("名称:" + mAllMusics.get(position).get(Constant.NAME) + "\n");
-        sb.append("时间:" + mAllMusics.get(position).get(Constant.DURATION) + "\n");
-        sb.append("大小:" + mAllMusics.get(position).get(Constant.SIZE) + "\n");
-        sb.append("路径:" + mAllMusics.get(position).get(Constant.PATH) + "\n");
+        sb.append("名称 : " + mAllMusics.get(position).getTitle() + "\n");
+        sb.append("时间 : " + Utils.convertTime(mAllMusics.get(position).getDuration()) + "\n");
+        sb.append("大小 : " + Utils.convertSize(mAllMusics.get(position).getSize()) + "\n");
+        sb.append("路径 : " + mAllMusics.get(position).getPath() + "\n");
 
 
         new AlertDialog.Builder(this)
@@ -249,32 +255,38 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         new Thread(new Runnable() {
             @Override
             public void run() {
-                mAllMusics.clear();
-                String columns[] = {MediaStore.Audio.Media._ID,
-                        MediaStore.Audio.Media.DISPLAY_NAME,
+                if (mAllMusics !=null) {
+                    mAllMusics.clear();
+                }
+                /*String columns[] = {MediaStore.Audio.Media._ID,
+                        MediaStore.Audio.Media.TITLE,
                         MediaStore.Audio.Media.DATA,
                         MediaStore.Audio.Media.ALBUM,
                         MediaStore.Audio.Media.ARTIST,
                         MediaStore.Audio.Media.DURATION,
-                        MediaStore.Audio.Media.SIZE};
-
+                        MediaStore.Audio.Media.SIZE,
+                        MediaStore.Audio.Media.ALBUM_ID
+                };
                 Cursor cursor = MainActivity.this.getContentResolver().query(
                         MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, columns, MediaStore.Audio.Media.DURATION + " > 3000", null, null);
                 totalNums = cursor.getCount();
                 while (cursor.moveToNext()) {
-                    Map<String, String> items = new HashMap<String, String>();
-                    items.put("_ID", cursor.getString(0));
-                    items.put(Constant.NAME, cursor.getString(1));
-                    items.put(Constant.PATH, cursor.getString(2));
-                    items.put(Constant.ALBUM, cursor.getString(3));
-                    items.put(Constant.ARTIST, cursor.getString(4));
-                    items.put(Constant.DURATION, Utils.convertTime(cursor.getLong(5)) + "");
-                    items.put(Constant.SIZE, Utils.convertSize(cursor.getLong(6)));
+                    Mp3Info items = new Mp3Info();
+                    items.setId(cursor.getLong(0));
+                    items.setTitle(cursor.getString(1));
+                    items.setPath(cursor.getString(2));
+                    items.setAlbum(cursor.getString(3));
+                    items.setArtist(cursor.getString(4));
+                    items.setDuration(cursor.getLong(5));
+                    items.setSize(cursor.getLong(6));
+                    items.setAlbumId(cursor.getLong(7));
                     mAllMusics.add(items);
                 }
                 if (cursor != null) {
                     cursor.close();
-                }
+                }*/
+
+                MediaUtil.getMp3Infos(mAllMusics,MainActivity.this);
                 mHandler.sendEmptyMessage(0);
             }
         }).start();
@@ -293,24 +305,28 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         switch (v.getId()) {
             case R.id.b_forward:
                 //mService.seekMusic(3000);
-                if (mAllMusics.size() != 0) {
-                    currentPosition = (currentPosition + 1) % totalNums;
-                    mService.play(mAllMusics.get(currentPosition).get(Constant.PATH));
-                }
+                playNext();
 
                 break;
             case R.id.b_rewind:
                 //mService.seekMusic(-3000);
                 if (mAllMusics.size() != 0) {
                     currentPosition = (currentPosition - 1 + totalNums) % totalNums;
-                    mService.play(mAllMusics.get(currentPosition).get(Constant.PATH));
+                    mService.play(mAllMusics.get(currentPosition).getPath());
                 }
                 break;
             case R.id.b_play:
                 if (mAllMusics.size() != 0) {
-                    mService.playOrPauseMusic(mAllMusics.get(0).get(Constant.PATH));
+                    mService.playOrPauseMusic(mAllMusics.get(0).getPath());
                 }
                 break;
+        }
+    }
+
+    private void playNext() {
+        if (mAllMusics.size() != 0) {
+            currentPosition = (currentPosition + 1) % totalNums;
+            mService.play(mAllMusics.get(currentPosition).getPath());
         }
     }
 

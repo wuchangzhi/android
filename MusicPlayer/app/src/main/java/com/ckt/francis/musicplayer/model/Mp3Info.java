@@ -5,7 +5,7 @@ package com.ckt.francis.musicplayer.model;
  */
 public class Mp3Info {
     private long id;
-    private String url;
+    private String path;
     private String title;
     private String artist;
     private String album;
@@ -41,9 +41,7 @@ public class Mp3Info {
         this.size = size;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
-    }
+
 
     public String getTitle() {
         return title;
@@ -61,8 +59,12 @@ public class Mp3Info {
         return id;
     }
 
-    public String getUrl() {
-        return url;
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public long getAlbumId() {

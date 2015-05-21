@@ -5,10 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ckt.francis.musicplayer.R;
+import com.ckt.francis.musicplayer.model.Mp3Info;
 import com.ckt.francis.musicplayer.utils.Constant;
+import com.ckt.francis.musicplayer.utils.MediaUtil;
+import com.ckt.francis.musicplayer.utils.Utils;
 
 import java.util.List;
 import java.util.Map;
@@ -18,9 +22,9 @@ import java.util.Map;
  */
 public class MusicsAdapter  extends BaseAdapter{
     private Context mContext;
-    private List<Map<String,String>> mAllMusics;
+    private List<Mp3Info> mAllMusics;
 
-    public MusicsAdapter(Context mContext,List<Map<String, String>> mAllMusics) {
+    public MusicsAdapter(Context mContext,List<Mp3Info> mAllMusics) {
         this.mContext= mContext;
         this.mAllMusics = mAllMusics;
     }
@@ -50,14 +54,20 @@ public class MusicsAdapter  extends BaseAdapter{
             viewHolder.duration = (TextView) convertView.findViewById(R.id.music_duration);
             viewHolder.artist = (TextView) convertView.findViewById(R.id.music_artist);
             viewHolder.album = (TextView) convertView.findViewById(R.id.music_album);
+            viewHolder.icon = (ImageView) convertView.findViewById(R.id.music_icon);
             convertView.setTag(viewHolder);
         }else{
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        viewHolder.title.setText(mAllMusics.get(position).get(Constant.NAME));
-        viewHolder.duration.setText(mAllMusics.get(position).get(Constant.DURATION));
-        viewHolder.artist.setText(mAllMusics.get(position).get(Constant.ARTIST));
-        viewHolder.album.setText(mAllMusics.get(position).get(Constant.ALBUM));
+        viewHolder.title.setText(mAllMusics.get(position).getTitle());
+        viewHolder.duration.setText(Utils.convertTime(mAllMusics.get(position).getDuration()));
+        viewHolder.artist.setText(mAllMusics.get(position).getArtist());
+        viewHolder.album.setText(mAllMusics.get(position).getAlbum());
+        viewHolder.icon.setImageBitmap(
+                MediaUtil.getArtwork(mContext,
+                        mAllMusics.get(position).getId(),
+                        mAllMusics.get(position).getAlbumId(),
+                        true,true));
         return convertView;
     }
 
@@ -66,6 +76,6 @@ public class MusicsAdapter  extends BaseAdapter{
         public TextView duration;
         public TextView artist;
         public TextView album;
-
+        public ImageView icon;
     }
 }

@@ -3,37 +3,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
+    <ImageView
+        android:id="@+id/music_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+         />
     <TextView
         android:id="@+id/music_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:textColor="@android:color/white"
-        android:layout_alignParentLeft="true"
+        android:text="Hello"
+        android:layout_toRightOf="@id/music_icon"
+        android:textColor="@android:color/black"
         />
     <TextView
         android:id="@+id/music_duration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:textColor="@android:color/white"
+        android:text="Hello"
+        android:textColor="@android:color/black"
         android:layout_alignParentRight="true"
         />
     <TextView
         android:id="@+id/music_artist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/music_title"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:padding="10dp"
-        android:layout_alignParentLeft="true"
+        android:text="Hello"
+        android:layout_below="@id/music_title"
+        android:layout_toRightOf="@id/music_icon"
         />
     <TextView
         android:id="@+id/music_album"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:textColor="@android:color/white"
+        android:text="Hello"
+        android:textColor="@android:color/black"
         android:layout_below="@id/music_duration"
         android:layout_alignParentRight="true"
         />

@@ -37,6 +37,9 @@ public class MusicController {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
                     stopMusic();
+                    if(mOnStateListener != null){
+                        mOnStateListener.playComplete();
+                    }
                 }
             });
             try {

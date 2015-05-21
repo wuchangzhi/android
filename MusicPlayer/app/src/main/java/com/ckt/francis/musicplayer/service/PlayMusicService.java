@@ -25,6 +25,14 @@ public class PlayMusicService extends Service implements OnStateListener {
         refreshView(current, total);
     }
 
+    @Override
+    public void playComplete() {
+        Intent _intent = new Intent();
+        _intent.setAction(Constant.ACTION_CHANGE);
+        _intent.putExtra(Constant.PLAYNEXT,true);
+        sendBroadcast(_intent);
+    }
+
     public class MusicBinder extends Binder {
         public PlayMusicService getService() {
             return PlayMusicService.this;
@@ -36,11 +44,11 @@ public class PlayMusicService extends Service implements OnStateListener {
         super.onCreate();
         mMusicController = MusicController.getInstance();
         mMusicController.setOnStateListener(this);
-
-        mNotification = new Notification();
-        mNotification.icon =  ;
-        mNotification.when = System.currentTimeMillis();
-        mNotification.tickerText = "";
+//
+//        mNotification = new Notification();
+//        mNotification.icon =  ;
+//        mNotification.when = System.currentTimeMillis();
+//        mNotification.tickerText = "";
     }
 
     @Override
