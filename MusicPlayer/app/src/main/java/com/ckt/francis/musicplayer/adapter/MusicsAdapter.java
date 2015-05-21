@@ -9,9 +9,7 @@ import android.widget.TextView;
 
 import com.ckt.francis.musicplayer.R;
 import com.ckt.francis.musicplayer.utils.Constant;
-import com.ckt.francis.musicplayer.utils.TimeUtil;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 

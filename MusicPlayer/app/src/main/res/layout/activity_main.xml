@@ -1,72 +1,83 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/background"
     >
 
-    <TextView
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:text="00:00"
-        android:layout_alignParentLeft="true"
-        android:id="@+id/current"
-        />
-    <TextView
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:text="00:00"
-        android:layout_alignParentRight="true"
-        android:id="@+id/total"
-        />
-
-    <SeekBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/seekBar"
-        android:max="100"
-        android:thumb="@drawable/thumb"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:progressDrawable="@drawable/seekbar_background"
-        android:layout_below="@+id/current"
-        />
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/button_container"
-        android:layout_below="@+id/seekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="4"
-        android:gravity="center_horizontal">
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/rewind"
-            android:id="@+id/b_rewind"
-            />
+        android:layout_alignParentBottom="true"
+        >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#77a8a8a8"/>
 
-        <Button
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/current"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/play"
-            android:id="@+id/b_play"
-            />
+            android:layout_alignParentLeft="true"
+            android:text="00:00" />
 
-        <Button
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/forward"
-            android:id="@+id/b_forward"
-           />
-    </LinearLayout>
+            android:layout_alignParentRight="true"
+            android:text="00:00" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/current"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:max="100"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:progressDrawable="@drawable/seekbar_background"
+            android:thumb="@drawable/thumb" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/seekBar"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/b_rewind"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/rewind" />
+
+            <Button
+                android:id="@+id/b_play"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/play" />
+
+            <Button
+                android:id="@+id/b_forward"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/forward" />
+        </LinearLayout>
+    </RelativeLayout>
+
     <ListView
         android:id="@+id/listView"
-        android:layout_below="@+id/button_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@id/button_container"
         android:listSelector="@drawable/list_item"/>
+
 </RelativeLayout>

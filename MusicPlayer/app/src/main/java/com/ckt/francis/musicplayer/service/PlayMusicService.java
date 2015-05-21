@@ -1,5 +1,6 @@
 package com.ckt.francis.musicplayer.service;
 
+import android.app.Notification;
 import android.app.Service;
 import android.content.Intent;
 import android.net.Uri;
@@ -13,7 +14,7 @@ import com.ckt.francis.musicplayer.utils.MusicState;
 
 public class PlayMusicService extends Service implements OnStateListener {
     private MusicController mMusicController;
-
+    private Notification mNotification;
     @Override
     public void onStateChange() {
         refreshView();
@@ -35,6 +36,11 @@ public class PlayMusicService extends Service implements OnStateListener {
         super.onCreate();
         mMusicController = MusicController.getInstance();
         mMusicController.setOnStateListener(this);
+
+        mNotification = new Notification();
+        mNotification.icon =  ;
+        mNotification.when = System.currentTimeMillis();
+        mNotification.tickerText = "";
     }
 
     @Override

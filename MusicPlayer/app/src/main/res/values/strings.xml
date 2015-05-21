@@ -7,4 +7,13 @@
     <string name="play">Play</string>
     <string name="pause">Pause</string>
     <string name="forward">Forward</string>
+
+    <string name="rename">Rename</string>
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+    <string name="details">Details</string>
+
+    <string name="delete_item">您确认删除该条目?</string>
+    <string name="name">名称:</string>
+
 </resources>

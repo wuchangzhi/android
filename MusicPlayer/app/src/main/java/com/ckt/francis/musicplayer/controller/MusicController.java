@@ -1,12 +1,11 @@
 package com.ckt.francis.musicplayer.controller;
 
+import android.app.Notification;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.util.Log;
 
-import com.ckt.francis.musicplayer.service.PlayMusicService;
 import com.ckt.francis.musicplayer.utils.MusicState;
 
 import java.io.IOException;
@@ -19,7 +18,6 @@ public class MusicController {
     private MusicState mMusicState = MusicState.STOP;
     private Timer mTimer;
     private OnStateListener mOnStateListener;
-
     private MusicController() {
     }
 
@@ -49,10 +47,9 @@ public class MusicController {
                         mTimer.schedule(new TimerTask() {
                             @Override
                             public void run() {
-                                mOnStateListener.onTimeChange(Math.round(mp.getCurrentPosition() / 1000f), Math.round(mp.getDuration() / 1000f));
+                                mOnStateListener.onTimeChange(mp.getCurrentPosition(), mp.getDuration());
                             }
                         }, 0, 1000);
-                        Log.d("test", Math.round(mp.getDuration() / 1000.0) + "");
                     }
                 });
                 mMediaPlayer.setDataSource(context, uri);
@@ -62,6 +59,7 @@ public class MusicController {
             }
         } else {
             mMediaPlayer.start();
+
         }
         mMusicState = MusicState.PLAYING;
         if (mOnStateListener != null) {
@@ -86,15 +84,14 @@ public class MusicController {
                 time = mMediaPlayer.getDuration() > time ? time : mMediaPlayer.getDuration();
                 mMediaPlayer.seekTo(time);
             } else {
-                Log.d("test", (time * 1000) + "");
-                mMediaPlayer.seekTo(time * 1000);
+                mMediaPlayer.seekTo(time);
             }
         }
     }
 
     public void stopMusic() {
         mTimer.cancel();
-        int duration = Math.round(mMediaPlayer.getDuration() / 1000f);
+        int duration = mMediaPlayer.getDuration();
         if (mMediaPlayer != null) {
             mMediaPlayer.stop();
             mMusicState = MusicState.STOP;
@@ -126,4 +123,6 @@ public class MusicController {
     public void setOnStateListener(OnStateListener mOnStateListener) {
         this.mOnStateListener = mOnStateListener;
     }
+
+
 }
