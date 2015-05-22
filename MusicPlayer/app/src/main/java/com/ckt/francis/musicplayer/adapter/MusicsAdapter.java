@@ -10,12 +10,9 @@ import android.widget.TextView;
 
 import com.ckt.francis.musicplayer.R;
 import com.ckt.francis.musicplayer.model.Mp3Info;
-import com.ckt.francis.musicplayer.utils.Constant;
-import com.ckt.francis.musicplayer.utils.MediaUtil;
 import com.ckt.francis.musicplayer.utils.Utils;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by wuchangzhi on 15年5月20日.
@@ -63,11 +60,11 @@ public class MusicsAdapter  extends BaseAdapter{
         viewHolder.duration.setText(Utils.convertTime(mAllMusics.get(position).getDuration()));
         viewHolder.artist.setText(mAllMusics.get(position).getArtist());
         viewHolder.album.setText(mAllMusics.get(position).getAlbum());
-        viewHolder.icon.setImageBitmap(
+        /*viewHolder.icon.setImageBitmap(
                 MediaUtil.getArtwork(mContext,
                         mAllMusics.get(position).getId(),
                         mAllMusics.get(position).getAlbumId(),
-                        true,true));
+                        true,true));*/
         return convertView;
     }
 

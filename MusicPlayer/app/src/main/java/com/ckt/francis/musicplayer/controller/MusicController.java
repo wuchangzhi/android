@@ -1,14 +1,16 @@
 package com.ckt.francis.musicplayer.controller;
 
-import android.app.Notification;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.util.Log;
 
 import com.ckt.francis.musicplayer.utils.MusicState;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -17,7 +19,8 @@ public class MusicController {
     private MediaPlayer mMediaPlayer;
     private MusicState mMusicState = MusicState.STOP;
     private Timer mTimer;
-    private OnStateListener mOnStateListener;
+    private List<OnStateListener> mOnStateListeners = new ArrayList<>();
+
     private MusicController() {
     }
 
@@ -29,6 +32,7 @@ public class MusicController {
     }
 
     public void playAndPauseMusic(Context context, Uri uri) {
+        Log.d("test",mOnStateListeners.size() + "***********");
         if (mMediaPlayer == null) {
             mMediaPlayer = new MediaPlayer();
             mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -36,10 +40,11 @@ public class MusicController {
             mMediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
+
+//                    if(mOnStateListener != null){
+//                        mOnStateListener.playComplete();
+//                    }
                     stopMusic();
-                    if(mOnStateListener != null){
-                        mOnStateListener.playComplete();
-                    }
                 }
             });
             try {
@@ -50,7 +55,9 @@ public class MusicController {
                         mTimer.schedule(new TimerTask() {
                             @Override
                             public void run() {
-                                mOnStateListener.onTimeChange(mp.getCurrentPosition(), mp.getDuration());
+                                for (OnStateListener mOnStateListener : mOnStateListeners) {
+                                    mOnStateListener.onTimeChange(Math.round(mp.getCurrentPosition() / 1000f));
+                                }
                             }
                         }, 0, 1000);
                     }
@@ -65,8 +72,9 @@ public class MusicController {
 
         }
         mMusicState = MusicState.PLAYING;
-        if (mOnStateListener != null) {
+        for (OnStateListener mOnStateListener : mOnStateListeners) {
             mOnStateListener.onStateChange();
+
         }
     }
 
@@ -75,32 +83,31 @@ public class MusicController {
             mMediaPlayer.pause();
         }
         mMusicState = MusicState.PAUSE;
-        if (mOnStateListener != null) {
+        for (OnStateListener mOnStateListener : mOnStateListeners) {
             mOnStateListener.onStateChange();
         }
     }
 
-    public void seekMusic(int time, boolean isTo) {
+    public void seekMusic(int time, boolean flag) {
         if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
-            if (isTo) {
+            if (flag) {
                 time = mMediaPlayer.getCurrentPosition() + time;
                 time = mMediaPlayer.getDuration() > time ? time : mMediaPlayer.getDuration();
                 mMediaPlayer.seekTo(time);
             } else {
-                mMediaPlayer.seekTo(time);
+                mMediaPlayer.seekTo(time * 1000);
             }
         }
     }
 
     public void stopMusic() {
         mTimer.cancel();
-        int duration = mMediaPlayer.getDuration();
         if (mMediaPlayer != null) {
             mMediaPlayer.stop();
             mMusicState = MusicState.STOP;
-            if (mOnStateListener != null) {
+            for (OnStateListener mOnStateListener : mOnStateListeners) {
                 mOnStateListener.onStateChange();
-                mOnStateListener.onTimeChange(0, duration);
+                mOnStateListener.onTimeChange(0);
             }
             release();
         }
@@ -124,8 +131,14 @@ public class MusicController {
     }
 
     public void setOnStateListener(OnStateListener mOnStateListener) {
-        this.mOnStateListener = mOnStateListener;
+        if (!mOnStateListeners.contains(mOnStateListener)) {
+            this.mOnStateListeners.add(mOnStateListener);
+        }
     }
 
-
+    public void  removeOnStateListener(OnStateListener mOnStateListener) {
+        if(mOnStateListener != null && mOnStateListeners.contains(mOnStateListener)){
+            mOnStateListeners.remove(mOnStateListener);
+        }
+    }
 }

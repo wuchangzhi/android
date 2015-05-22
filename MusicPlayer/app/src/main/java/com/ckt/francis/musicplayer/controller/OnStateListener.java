@@ -5,6 +5,6 @@ package com.ckt.francis.musicplayer.controller;
  */
 public interface OnStateListener {
     void onStateChange();
-    void onTimeChange(int current, int total);
+    void onTimeChange(int current);
     void playComplete();
 }

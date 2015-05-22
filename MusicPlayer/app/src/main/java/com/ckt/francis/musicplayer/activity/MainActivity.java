@@ -9,7 +9,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -23,7 +22,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -39,9 +37,7 @@ import com.ckt.francis.musicplayer.utils.MusicState;
 import com.ckt.francis.musicplayer.utils.Utils;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 public class MainActivity extends BaseActivity implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
@@ -53,15 +49,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private Button mForward;
     private Button mRewind;
     private Intent mIntent;
-    private String musicPath;
     private PlayMusicService mService;
     private ListView mMusicList;
-    private List<Mp3Info> mAllMusics =new ArrayList<Mp3Info>();
+    private List<Mp3Info> mAllMusics = new ArrayList<>();
     private MusicsAdapter mAdapter;
     private int currentPosition = 0;
     private int totalNums;
 
-    private Handler mHandler = new Handler(){
+    private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             mAdapter.notifyDataSetChanged();
@@ -72,8 +67,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         @Override
         public void onReceive(Context context, Intent intent) {
             MusicState status = (MusicState) intent.getSerializableExtra(Constant.STATUS);
-            int current = intent.getIntExtra(Constant.CURRENT, 0);
-            int total = intent.getIntExtra(Constant.TOTAL, -1);
+            int current = intent.getIntExtra(Constant.CURRENT, -1);
             if (status != null) {
                 switch (status) {
                     case PLAYING:
@@ -84,13 +78,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                         break;
                 }
             }
-            if (total != -1) {
-                mSeekBar.setMax(total);
+            if (current != -1) {
                 mSeekBar.setProgress(current);
                 mCurrent.setText(Utils.convertTime(current));
-                mTotal.setText(Utils.convertTime(total));
             }
-            if(intent.getBooleanExtra(Constant.PLAYNEXT,false) && mService !=null){
+            if (intent.getBooleanExtra(Constant.PLAYNEXT, false) && mService != null) {
                 playNext();
             }
         }
@@ -143,6 +135,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 currentPosition = position;
                 String path = mAllMusics.get(position).getPath();
+                mTotal.setText(Utils.convertTime(mAllMusics.get(position).getDuration()));
+                mSeekBar.setMax((int) mAllMusics.get(position).getDuration());
                 mService.play(path);
             }
         });
@@ -152,7 +146,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-        AdapterView.AdapterContextMenuInfo menuInfos = (AdapterView.AdapterContextMenuInfo)menuInfo;
+        AdapterView.AdapterContextMenuInfo menuInfos = (AdapterView.AdapterContextMenuInfo) menuInfo;
         menu.setHeaderTitle(mAllMusics.get(menuInfos.position).getTitle());
         menu.add(0, Constant.PLAY, 0, getString(R.string.play));
         menu.add(0, Constant.DELETE, 0, getString(R.string.delete));
@@ -164,8 +158,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         final AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        switch (item.getItemId()){
-            case  Constant.PLAY:
+        switch (item.getItemId()) {
+            case Constant.PLAY:
+                mTotal.setText(Utils.convertTime(mAllMusics.get(menuInfo.position).getDuration()));
+                mSeekBar.setMax((int) mAllMusics.get(menuInfo.position).getDuration());
                 mService.play(mAllMusics.get(menuInfo.position).getPath());
                 break;
             case Constant.DELETE:
@@ -175,7 +171,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 renameFile(menuInfo.position);
                 break;
             case Constant.SHARE:
-                Intent intent=new Intent(Intent.ACTION_SEND);
+                Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("audio/*");
                 Uri u = Uri.parse(mAllMusics.get(menuInfo.position).getPath());
                 intent.putExtra(Intent.EXTRA_STREAM, u);
@@ -204,13 +200,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                         scanFiles();
                     }
                 })
-                .setNegativeButton(android.R.string.cancel,null).show();
-        return;
+                .setNegativeButton(android.R.string.cancel, null).show();
     }
 
     private void renameFile(final int position) {
-        View view = getLayoutInflater().inflate(R.layout.rename_item,null);
-        final EditText renameItem = (EditText)view.findViewById(R.id.item_name);
+        View view = getLayoutInflater()
+                .inflate(R.layout.rename_item, null);
+        final EditText renameItem = (EditText) view.findViewById(R.id.item_name);
         renameItem.setText(mAllMusics.get(position).getTitle());
 
         new AlertDialog.Builder(this)
@@ -230,7 +226,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 .setNegativeButton(android.R.string.cancel, null).show();
     }
 
-    private void showDetails(int position){
+    private void showDetails(int position) {
         StringBuffer sb = new StringBuffer();
         sb.append("名称 : " + mAllMusics.get(position).getTitle() + "\n");
         sb.append("时间 : " + Utils.convertTime(mAllMusics.get(position).getDuration()) + "\n");
@@ -245,7 +241,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 .show();
     }
 
-    private void scanFiles(){
+    private void scanFiles() {
         Intent _intent = new Intent();
         _intent.setAction(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         Uri uri = Uri.parse("file://" + Environment.getExternalStorageDirectory().getPath() + "/");
@@ -255,38 +251,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         new Thread(new Runnable() {
             @Override
             public void run() {
-                if (mAllMusics !=null) {
+                if (mAllMusics != null) {
                     mAllMusics.clear();
                 }
-                /*String columns[] = {MediaStore.Audio.Media._ID,
-                        MediaStore.Audio.Media.TITLE,
-                        MediaStore.Audio.Media.DATA,
-                        MediaStore.Audio.Media.ALBUM,
-                        MediaStore.Audio.Media.ARTIST,
-                        MediaStore.Audio.Media.DURATION,
-                        MediaStore.Audio.Media.SIZE,
-                        MediaStore.Audio.Media.ALBUM_ID
-                };
-                Cursor cursor = MainActivity.this.getContentResolver().query(
-                        MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, columns, MediaStore.Audio.Media.DURATION + " > 3000", null, null);
-                totalNums = cursor.getCount();
-                while (cursor.moveToNext()) {
-                    Mp3Info items = new Mp3Info();
-                    items.setId(cursor.getLong(0));
-                    items.setTitle(cursor.getString(1));
-                    items.setPath(cursor.getString(2));
-                    items.setAlbum(cursor.getString(3));
-                    items.setArtist(cursor.getString(4));
-                    items.setDuration(cursor.getLong(5));
-                    items.setSize(cursor.getLong(6));
-                    items.setAlbumId(cursor.getLong(7));
-                    mAllMusics.add(items);
-                }
-                if (cursor != null) {
-                    cursor.close();
-                }*/
 
-                MediaUtil.getMp3Infos(mAllMusics,MainActivity.this);
+                MediaUtil.getMp3Infos(mAllMusics, MainActivity.this);
+                totalNums = mAllMusics.size();
                 mHandler.sendEmptyMessage(0);
             }
         }).start();
@@ -294,7 +264,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     private void initData() {
         mIntent = new Intent(this, PlayMusicService.class);
-        musicPath = Environment.getExternalStorageDirectory() + "/zou.mp3";
         mAdapter = new MusicsAdapter(this, mAllMusics);
         mMusicList.setAdapter(mAdapter);
 
@@ -317,6 +286,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 break;
             case R.id.b_play:
                 if (mAllMusics.size() != 0) {
+                    mTotal.setText(Utils.convertTime(mAllMusics.get(0).getDuration()));
+                    mSeekBar.setMax((int) mAllMusics.get(0).getDuration());
                     mService.playOrPauseMusic(mAllMusics.get(0).getPath());
                 }
                 break;
@@ -332,9 +303,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        if (fromUser) {
-            mService.seekToMusic(progress);
-        }
+//        if (fromUser) {
+//            mService.seekToMusic(progress);
+//        }
     }
 
     @Override
@@ -351,11 +322,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         public void onServiceConnected(ComponentName name, IBinder service) {
             mService = ((PlayMusicService.MusicBinder) service).getService();
             mService.refreshView();
-
-            if(getIntent().getAction().equals(Intent.ACTION_VIEW)){
-                Uri uri = getIntent().getData();
-                mService.play(uri.getPath());
-            }
         }
 
         @Override

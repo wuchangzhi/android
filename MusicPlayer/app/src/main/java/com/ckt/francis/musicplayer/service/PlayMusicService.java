@@ -21,8 +21,8 @@ public class PlayMusicService extends Service implements OnStateListener {
     }
 
     @Override
-    public void onTimeChange(int current, int total) {
-        refreshView(current, total);
+    public void onTimeChange(int current) {
+        refreshView(current);
     }
 
     @Override
@@ -84,11 +84,10 @@ public class PlayMusicService extends Service implements OnStateListener {
         sendBroadcast(_intent);
     }
 
-    public void refreshView(int time, int total) {
+    public void refreshView(int time) {
         Intent _intent = new Intent();
         _intent.setAction(Constant.ACTION_CHANGE);
         _intent.putExtra(Constant.CURRENT, time);
-        _intent.putExtra(Constant.TOTAL, total);
         sendBroadcast(_intent);
     }
 

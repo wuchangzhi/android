@@ -7,7 +7,6 @@ public class Constant {
     public static final String STATUS = "status";
     public static final String ACTION_CHANGE = "com.ckt.francis.musicplayer.MusicState";
     public static final String CURRENT = "current";
-    public static final String TOTAL = "total";
     public static final String PLAYNEXT = "next";
 
     public static final int PLAY = 1;

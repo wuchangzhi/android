@@ -5,7 +5,7 @@ package com.ckt.francis.musicplayer.utils;
  */
 public class Utils {
     public static String convertTime(long millis) {
-        int totalSeconds = (int) millis / 1000;
+        int totalSeconds = (int) millis;
         int seconds = totalSeconds % 60;
         int minutes = (totalSeconds / 60) % 60;
         int hours = totalSeconds / 3600;
