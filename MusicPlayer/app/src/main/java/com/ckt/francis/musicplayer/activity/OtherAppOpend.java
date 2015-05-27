@@ -1,7 +1,9 @@
 package com.ckt.francis.musicplayer.activity;
 
 import android.app.Activity;
+import android.content.ContentUris;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.SeekBar;
@@ -18,6 +20,8 @@ public class OtherAppOpend extends Activity implements OnStateListener {
     private TextView mTextView;
     private SeekBar mSeekBar;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +31,10 @@ public class OtherAppOpend extends Activity implements OnStateListener {
         mMusicController.setOnStateListener(this);
 
         initViews();
-
-        Cursor cursor = MediaUtil.getResult(this, MediaStore.Audio.Media.DATA + " = '" + getIntent().getData().getPath() + "'", null, null);
+        Uri uri = getIntent().getData();
+        long id = ContentUris.parseId(uri);
+        Cursor cursor = MediaUtil.getResult(this,
+                MediaStore.Audio.Media.DATA + "= '" + getIntent().getData().getPath() + "' or " +MediaStore.Audio.Media._ID + "=" + id, null, null);
         if (cursor.moveToFirst()) {
             mTextView.setText(cursor.getString(cursor
                     .getColumnIndex(MediaStore.Audio.Media.TITLE)));

@@ -65,6 +65,7 @@ public class MusicsAdapter  extends BaseAdapter{
                         mAllMusics.get(position).getId(),
                         mAllMusics.get(position).getAlbumId(),
                         true,true));*/
+
         return convertView;
     }
 
