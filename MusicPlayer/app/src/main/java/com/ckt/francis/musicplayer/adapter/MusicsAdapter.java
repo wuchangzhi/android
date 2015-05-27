@@ -51,7 +51,6 @@ public class MusicsAdapter  extends BaseAdapter{
             viewHolder.duration = (TextView) convertView.findViewById(R.id.music_duration);
             viewHolder.artist = (TextView) convertView.findViewById(R.id.music_artist);
             viewHolder.album = (TextView) convertView.findViewById(R.id.music_album);
-            viewHolder.icon = (ImageView) convertView.findViewById(R.id.music_icon);
             convertView.setTag(viewHolder);
         }else{
             viewHolder = (ViewHolder) convertView.getTag();
@@ -74,6 +73,5 @@ public class MusicsAdapter  extends BaseAdapter{
         public TextView duration;
         public TextView artist;
         public TextView album;
-        public ImageView icon;
     }
 }

@@ -3,19 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
-    <ImageView
-        android:id="@+id/music_icon"
-        android:layout_width="83dp"
-        android:layout_height="83dp"
-        android:scaleType="center"
-         />
     <TextView
         android:id="@+id/music_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="Hello"
-        android:layout_toRightOf="@id/music_icon"
         android:textColor="@android:color/black"
         />
     <TextView
@@ -35,7 +28,6 @@
         android:padding="10dp"
         android:text="Hello"
         android:layout_below="@id/music_title"
-        android:layout_toRightOf="@id/music_icon"
         />
     <TextView
         android:id="@+id/music_album"

@@ -12,16 +12,19 @@ import android.content.ServiceConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
 import android.os.IBinder;
-import android.os.Message;
 import android.provider.MediaStore;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.SimpleAdapter;
@@ -45,7 +48,7 @@ import java.util.List;
 public class MainActivity extends BaseActivity implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
     private SeekBar mSeekBar;
     private TextView mCurrent;
-
+    private DrawerLayout mDrawerLayout;
     private TextView mTotal;
     private Button mPlay;
     private Button mForward;
@@ -57,13 +60,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private MusicsAdapter mAdapter;
     private int currentPosition = 0;
     private int totalNums;
+    private ImageView mMusicIcom;
 
-    private Handler mHandler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            mAdapter.notifyDataSetChanged();
-        }
-    };
 
     private BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
@@ -99,7 +97,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         initViews();
         initEvents();
         initData();
-
         startService(mIntent);
     }
 
@@ -118,6 +115,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void initViews() {
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mMusicList = (ListView) findViewById(R.id.listView);
         mCurrent = (TextView) findViewById(R.id.current);
         mTotal = (TextView) findViewById(R.id.total);
@@ -125,6 +123,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         mPlay = (Button) findViewById(R.id.b_play);
         mForward = (Button) findViewById(R.id.b_forward);
         mRewind = (Button) findViewById(R.id.b_rewind);
+        mMusicIcom = (ImageView) findViewById(R.id.music_icon);
     }
 
     private void initEvents() {
@@ -139,10 +138,34 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 String path = mAllMusics.get(position).getPath();
                 mTotal.setText(Utils.convertTime(mAllMusics.get(position).getDuration()));
                 mSeekBar.setMax((int) mAllMusics.get(position).getDuration());
+                mMusicIcom.setImageBitmap(MediaUtil.getArtwork(MainActivity.this,
+                        mAllMusics.get(position).getId(),
+                        mAllMusics.get(position).getAlbumId(),
+                        true, false));
                 mService.play(path);
+                mDrawerLayout.closeDrawer(GravityCompat.START);
             }
         });
         registerForContextMenu(mMusicList);
+    }
+
+    private void initData() {
+        mIntent = new Intent(this, PlayMusicService.class);
+        mAdapter = new MusicsAdapter(this, mAllMusics);
+        mMusicList.setAdapter(mAdapter);
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,R.string.open,R.string.close){
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                mAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+            }
+        };
+        mDrawerLayout.setDrawerListener(actionBarDrawerToggle);
     }
 
     @Override
@@ -249,6 +272,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         Uri uri = Uri.parse("file://" + Environment.getExternalStorageDirectory().getPath() + "/");
         _intent.setData(uri);
         sendBroadcast(_intent);
+        Log.d("test",Environment.getExternalStorageDirectory().getPath() + "/");
 
         new Thread(new Runnable() {
             @Override
@@ -259,17 +283,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
                 MediaUtil.getMp3Infos(mAllMusics, MainActivity.this);
                 totalNums = mAllMusics.size();
-                mHandler.sendEmptyMessage(0);
             }
         }).start();
     }
 
-    private void initData() {
-        mIntent = new Intent(this, PlayMusicService.class);
-        mAdapter = new MusicsAdapter(this, mAllMusics);
-        mMusicList.setAdapter(mAdapter);
 
-    }
 
     @Override
     public void onClick(View v) {
@@ -290,6 +308,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 if (mAllMusics.size() != 0) {
                     mTotal.setText(Utils.convertTime(mAllMusics.get(0).getDuration()));
                     mSeekBar.setMax((int) mAllMusics.get(0).getDuration());
+                    mMusicIcom.setImageBitmap(MediaUtil.getArtwork(MainActivity.this,
+                            mAllMusics.get(0).getId(),
+                            mAllMusics.get(0).getAlbumId(),
+                            true, false));
                     mService.playOrPauseMusic(mAllMusics.get(0).getPath());
                 }
                 break;
