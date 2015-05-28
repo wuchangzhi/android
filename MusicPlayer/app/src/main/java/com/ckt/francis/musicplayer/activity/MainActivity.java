@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -17,7 +18,6 @@ import android.provider.MediaStore;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,8 +27,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SeekBar;
-import android.widget.SimpleAdapter;
-import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
 
 import com.ckt.francis.musicplayer.R;
@@ -41,6 +39,7 @@ import com.ckt.francis.musicplayer.utils.MediaUtil;
 import com.ckt.francis.musicplayer.utils.MusicState;
 import com.ckt.francis.musicplayer.utils.Utils;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,6 +52,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private Button mPlay;
     private Button mForward;
     private Button mRewind;
+    private Button mDownload;
     private Intent mIntent;
     private PlayMusicService mService;
     private ListView mMusicList;
@@ -60,8 +60,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private MusicsAdapter mAdapter;
     private int currentPosition = 0;
     private int totalNums;
-    private ImageView mMusicIcom;
-
+    private ImageView mMusicIcon;
+    private SharedPreferences mSharedPreferences;
 
     private BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
@@ -69,6 +69,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             MusicState status = (MusicState) intent.getSerializableExtra(Constant.STATUS);
             int current = intent.getIntExtra(Constant.CURRENT, -1);
             if (status != null) {
+                refreshViews(currentPosition);
                 switch (status) {
                     case PLAYING:
                         mPlay.setText(getString(R.string.pause));
@@ -112,6 +113,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     @Override
     protected void onResume() {
         super.onResume();
+        //mDrawerLayout.openDrawer(GravityCompat.START);
     }
 
     private void initViews() {
@@ -123,7 +125,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         mPlay = (Button) findViewById(R.id.b_play);
         mForward = (Button) findViewById(R.id.b_forward);
         mRewind = (Button) findViewById(R.id.b_rewind);
-        mMusicIcom = (ImageView) findViewById(R.id.music_icon);
+        mDownload = (Button) findViewById(R.id.download_music);
+        mMusicIcon = (ImageView) findViewById(R.id.music_icon);
     }
 
     private void initEvents() {
@@ -131,17 +134,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         mPlay.setOnClickListener(this);
         mForward.setOnClickListener(this);
         mRewind.setOnClickListener(this);
+        mDownload.setOnClickListener(this);
         mMusicList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 currentPosition = position;
                 String path = mAllMusics.get(position).getPath();
-                mTotal.setText(Utils.convertTime(mAllMusics.get(position).getDuration()));
-                mSeekBar.setMax((int) mAllMusics.get(position).getDuration());
-                mMusicIcom.setImageBitmap(MediaUtil.getArtwork(MainActivity.this,
-                        mAllMusics.get(position).getId(),
-                        mAllMusics.get(position).getAlbumId(),
-                        true, false));
                 mService.play(path);
                 mDrawerLayout.closeDrawer(GravityCompat.START);
             }
@@ -150,10 +148,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void initData() {
+        mSharedPreferences = getPreferences(MODE_PRIVATE);
+        int position = mSharedPreferences.getInt(Constant.CURRENT, -1);
+        if (position != -1) {
+            currentPosition = position;
+        }
         mIntent = new Intent(this, PlayMusicService.class);
         mAdapter = new MusicsAdapter(this, mAllMusics);
         mMusicList.setAdapter(mAdapter);
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,R.string.open,R.string.close){
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close) {
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
@@ -219,9 +222,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        getContentResolver().delete(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-                                MediaStore.Audio.Media._ID + " = ? ",
-                                new String[]{mAllMusics.get(position).getId() + ""});
+                        File file = new File(mAllMusics.get(position).getPath());
+                        file.delete();
+
+                        MediaUtil.delete(getContentResolver(), mAllMusics.get(position).getId());
                         scanFiles();
                     }
                 })
@@ -242,9 +246,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     public void onClick(DialogInterface dialog, int which) {
                         ContentValues contentValues = new ContentValues();
                         contentValues.put(MediaStore.Audio.Media.TITLE, renameItem.getText().toString());
-                        getContentResolver().update(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, contentValues,
-                                MediaStore.Audio.Media._ID + " = ? ",
-                                new String[]{mAllMusics.get(position).getId() + ""});
+                        MediaUtil.update(getContentResolver(), contentValues, mAllMusics.get(position).getId());
+
                         scanFiles();
                     }
                 })
@@ -267,60 +270,63 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void scanFiles() {
-        Intent _intent = new Intent();
-        _intent.setAction(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-        Uri uri = Uri.parse("file://" + Environment.getExternalStorageDirectory().getPath() + "/");
-        _intent.setData(uri);
-        sendBroadcast(_intent);
-        Log.d("test",Environment.getExternalStorageDirectory().getPath() + "/");
-
         new Thread(new Runnable() {
             @Override
             public void run() {
+
                 if (mAllMusics != null) {
                     mAllMusics.clear();
                 }
-
                 MediaUtil.getMp3Infos(mAllMusics, MainActivity.this);
                 totalNums = mAllMusics.size();
             }
         }).start();
+        if(mAdapter !=null) {
+            mAdapter.notifyDataSetChanged();
+        }
     }
-
-
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.b_forward:
+            case R.id.b_forward :
                 //mService.seekMusic(3000);
                 playNext();
 
                 break;
-            case R.id.b_rewind:
+            case R.id.b_rewind :
                 //mService.seekMusic(-3000);
-                if (mAllMusics.size() != 0) {
-                    currentPosition = (currentPosition - 1 + totalNums) % totalNums;
-                    mService.play(mAllMusics.get(currentPosition).getPath());
-                }
+                playRewind();
                 break;
-            case R.id.b_play:
+            case R.id.b_play :
                 if (mAllMusics.size() != 0) {
-                    mTotal.setText(Utils.convertTime(mAllMusics.get(0).getDuration()));
-                    mSeekBar.setMax((int) mAllMusics.get(0).getDuration());
-                    mMusicIcom.setImageBitmap(MediaUtil.getArtwork(MainActivity.this,
-                            mAllMusics.get(0).getId(),
-                            mAllMusics.get(0).getAlbumId(),
-                            true, false));
                     mService.playOrPauseMusic(mAllMusics.get(0).getPath());
                 }
                 break;
+            case R.id.download_music :
+                Intent _intent = new Intent(this,DownLoadActivity.class);
+                startActivityForResult(_intent, 0);
+        }
+    }
+
+    private void refreshViews(int position) {
+        if (mAllMusics.size() != 0) {
+            mTotal.setText(Utils.convertTime(mAllMusics.get(position).getDuration()));
+            mSeekBar.setMax((int) mAllMusics.get(position).getDuration());
+            MediaUtil.displayImage(mMusicIcon, mAllMusics.get(position).getAlbumId());
         }
     }
 
     private void playNext() {
         if (mAllMusics.size() != 0) {
             currentPosition = (currentPosition + 1) % totalNums;
+            mService.play(mAllMusics.get(currentPosition).getPath());
+        }
+    }
+
+    private void playRewind() {
+        if (mAllMusics.size() != 0) {
+            currentPosition = (currentPosition - 1 + totalNums) % totalNums;
             mService.play(mAllMusics.get(currentPosition).getPath());
         }
     }
@@ -359,5 +365,19 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         super.onStop();
         unbindService(mConnection);
         unregisterReceiver(mReceiver);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mSharedPreferences.edit().putInt(Constant.CURRENT, currentPosition).apply();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode == 0 && data.getBooleanExtra(Constant.FLAG,false)){
+            scanFiles();
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

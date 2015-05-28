@@ -18,6 +18,8 @@
             android:weightSum="4">
 
             <Button
+                android:id="@+id/download_music"
+                android:text="@string/download"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -37,7 +39,7 @@
             android:id="@+id/music_icon"
             android:layout_width="300dp"
             android:layout_height="300dp"
-            android:scaleType="center"/>
+            android:scaleType="fitCenter"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -105,7 +107,7 @@
         android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_gravity="left"
-        android:background="#66AAAAAA"
+        android:background="#FFAAAAAA"
         android:listSelector="@drawable/list_item" />
 
 </android.support.v4.widget.DrawerLayout>

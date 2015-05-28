@@ -32,7 +32,12 @@ public class OtherAppOpend extends Activity implements OnStateListener {
 
         initViews();
         Uri uri = getIntent().getData();
-        long id = ContentUris.parseId(uri);
+        long id = -1;
+        try {
+            id = ContentUris.parseId(uri);
+        }catch (NumberFormatException e){
+
+        }
         Cursor cursor = MediaUtil.getResult(this,
                 MediaStore.Audio.Media.DATA + "= '" + getIntent().getData().getPath() + "' or " +MediaStore.Audio.Media._ID + "=" + id, null, null);
         if (cursor.moveToFirst()) {

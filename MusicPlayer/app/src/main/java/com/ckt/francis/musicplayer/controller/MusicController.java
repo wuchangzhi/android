@@ -4,7 +4,6 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.util.Log;
 
 import com.ckt.francis.musicplayer.utils.MusicState;
 
@@ -32,7 +31,6 @@ public class MusicController {
     }
 
     public void playAndPauseMusic(Context context, Uri uri) {
-        Log.d("test",mOnStateListeners.size() + "***********");
         if (mMediaPlayer == null) {
             mMediaPlayer = new MediaPlayer();
             mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);

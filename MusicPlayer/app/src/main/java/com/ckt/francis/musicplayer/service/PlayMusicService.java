@@ -67,7 +67,6 @@ public class PlayMusicService extends Service implements OnStateListener {
     public void playOrPauseMusic(String path) {
         if (mMusicController.getMusicState() == MusicState.PLAYING) {
             mMusicController.pauseMusic();
-
         } else {
             mMusicController.playAndPauseMusic(this, Uri.parse(path));
         }
