@@ -7,10 +7,13 @@ import android.os.Environment;
 import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.Window;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import com.ckt.francis.musicplayer.R;
 import com.ckt.francis.musicplayer.utils.Constant;
@@ -41,6 +44,9 @@ public class DownLoadActivity extends Activity {
 
         mIntent = new Intent();
         mIntent.putExtra(Constant.FLAG, false);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         mWebView = (WebView) findViewById(R.id.music_webview);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.getSettings().setSupportZoom(true);
@@ -63,7 +69,8 @@ public class DownLoadActivity extends Activity {
                             FileOutputStream fo = null;
                             FileInputStream fi = null;
                             try {
-                                File files = new File(Environment.getExternalStorageDirectory() + "/" + URLDecoder.decode(name, "utf-8") + ".mp3");
+                                String music_name = URLDecoder.decode(name, "utf-8") + ".mp3";
+                                File files = new File(Environment.getExternalStorageDirectory() + "/" + music_name);
                                 fo = new FileOutputStream(files);
                                 fi = new FileInputStream(file);
                                 byte[] buffer = new byte[1024];
@@ -71,10 +78,10 @@ public class DownLoadActivity extends Activity {
                                 while ((len = fi.read(buffer)) != -1) {
                                     fo.write(buffer, 0, len);
                                 }
-                                MediaUtil.scanFiles(DownLoadActivity.this, files.getName());
-
+                                fo.flush();
+                                MediaUtil.scanFiles(DownLoadActivity.this,music_name);
                                 mIntent.putExtra(Constant.FLAG, true);
-
+                                Toast.makeText(DownLoadActivity.this, music_name + "下载完成",Toast.LENGTH_SHORT).show();
                             } catch (FileNotFoundException e) {
                                 e.printStackTrace();
                             } catch (IOException e) {
@@ -123,8 +130,17 @@ public class DownLoadActivity extends Activity {
     }
 
     @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        if(item.getItemId() == android.R.id.home){
+            setResult(0, mIntent);
+            finish();
+        }
+        return super.onMenuItemSelected(featureId, item);
+    }
+
+
+    @Override
     protected void onStop() {
         super.onStop();
-        setResult(0, mIntent);
     }
 }
