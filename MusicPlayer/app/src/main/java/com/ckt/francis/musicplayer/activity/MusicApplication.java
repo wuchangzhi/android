@@ -15,13 +15,8 @@ public class MusicApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        scanFiles();
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
                 .build();
         ImageLoader.getInstance().init(config);
-    }
-
-    public void scanFiles(){
-
     }
 }

@@ -24,6 +24,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SeekBar;
@@ -39,6 +40,8 @@ import com.ckt.francis.musicplayer.utils.MediaUtil;
 import com.ckt.francis.musicplayer.utils.MusicState;
 import com.ckt.francis.musicplayer.utils.Utils;
 
+import org.w3c.dom.Text;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,9 +52,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private TextView mCurrent;
     private DrawerLayout mDrawerLayout;
     private TextView mTotal;
-    private Button mPlay;
-    private Button mForward;
-    private Button mRewind;
+    private ImageButton mPlay;
+    private ImageButton mForward;
+    private ImageButton mRewind;
+    private TextView mMusicTitle;
     private Button mDownload;
     private Intent mIntent;
     private PlayMusicService mService;
@@ -72,10 +76,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 refreshViews(currentPosition);
                 switch (status) {
                     case PLAYING:
-                        mPlay.setText(getString(R.string.pause));
+                        //mPlay.(getString(R.string.pause));
+                        mPlay.setImageResource(android.R.drawable.ic_media_pause);
                         break;
                     default:
-                        mPlay.setText(getString(R.string.play));
+                        //mPlay.setText(getString(R.string.play));
+                        mPlay.setImageResource(android.R.drawable.ic_media_play);
                         break;
                 }
             }
@@ -122,11 +128,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         mCurrent = (TextView) findViewById(R.id.current);
         mTotal = (TextView) findViewById(R.id.total);
         mSeekBar = (SeekBar) findViewById(R.id.seekBar);
-        mPlay = (Button) findViewById(R.id.b_play);
-        mForward = (Button) findViewById(R.id.b_forward);
-        mRewind = (Button) findViewById(R.id.b_rewind);
+        mPlay = (ImageButton) findViewById(R.id.b_play);
+        mForward = (ImageButton) findViewById(R.id.b_forward);
+        mRewind = (ImageButton) findViewById(R.id.b_rewind);
         mDownload = (Button) findViewById(R.id.download_music);
         mMusicIcon = (ImageView) findViewById(R.id.music_icon);
+        mMusicTitle = (TextView) findViewById(R.id.play_music_title);
     }
 
     private void initEvents() {
@@ -188,9 +195,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         final AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         switch (item.getItemId()) {
             case Constant.PLAY:
-                mTotal.setText(Utils.convertTime(mAllMusics.get(menuInfo.position).getDuration()));
-                mSeekBar.setMax((int) mAllMusics.get(menuInfo.position).getDuration());
-                mService.play(mAllMusics.get(menuInfo.position).getPath());
+//                mTotal.setText(Utils.convertTime(mAllMusics.get(menuInfo.position).getDuration()));
+//                mSeekBar.setMax((int) mAllMusics.get(menuInfo.position).getDuration());
+                currentPosition = menuInfo.position;
+                mService.play(mAllMusics.get(currentPosition).getPath());
+
+                mDrawerLayout.closeDrawer(GravityCompat.START);
                 break;
             case Constant.DELETE:
                 deleteFile(menuInfo.position);
@@ -310,9 +320,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     private void refreshViews(int position) {
         if (mAllMusics.size() != 0) {
-            mTotal.setText(Utils.convertTime(mAllMusics.get(position).getDuration()));
-            mSeekBar.setMax((int) mAllMusics.get(position).getDuration());
-            MediaUtil.displayImage(mMusicIcon, mAllMusics.get(position).getAlbumId());
+            Mp3Info mp3Info = mAllMusics.get(position);
+            mTotal.setText(Utils.convertTime(mp3Info.getDuration()));
+            mSeekBar.setMax((int) mp3Info.getDuration());
+            MediaUtil.displayImage(mMusicIcon, mp3Info.getAlbumId());
+            StringBuffer sb = new StringBuffer();
+            sb.append("歌手:");
+            sb.append(mp3Info.getArtist() + "\n");
+            sb.append("专辑:");
+            sb.append(mp3Info.getAlbum() + "\n");
+            sb.append("歌曲:");
+            sb.append(mp3Info.getTitle());
+            mMusicTitle.setText(sb.toString());
         }
     }
 

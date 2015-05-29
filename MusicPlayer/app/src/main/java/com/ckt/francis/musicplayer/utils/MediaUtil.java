@@ -93,10 +93,6 @@ public class MediaUtil {
         ImageLoader.getInstance().displayImage(albumArtUri + albumId, view, options);
     }
 
-    public static void insert(ContentResolver resolver, ContentValues values) {
-        resolver.insert(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, values);
-    }
-
     public static void delete(ContentResolver resolver, long id) {
         resolver.delete(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
                 MediaStore.Audio.Media._ID + " = ? ",
