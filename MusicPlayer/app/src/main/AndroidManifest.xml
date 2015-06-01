@@ -14,7 +14,8 @@
         android:theme="@android:style/Theme.Holo.Light">
         <activity
             android:name=".activity.MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +29,8 @@
         <activity
             android:name=".activity.OtherAppOpend"
             android:theme="@style/mystyle"
-            android:launchMode="singleInstance">
+            android:launchMode="singleInstance"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />

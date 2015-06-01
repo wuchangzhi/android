@@ -2,10 +2,12 @@ package com.ckt.francis.musicplayer.activity;
 
 import android.app.Activity;
 import android.content.ContentUris;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -19,8 +21,6 @@ public class OtherAppOpend extends Activity implements OnStateListener {
     private MusicController mMusicController;
     private TextView mTextView;
     private SeekBar mSeekBar;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +99,10 @@ public class OtherAppOpend extends Activity implements OnStateListener {
 
     @Override
     public void playComplete() {
+    }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 }

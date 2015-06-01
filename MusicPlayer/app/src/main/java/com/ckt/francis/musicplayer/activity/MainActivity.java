@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -105,6 +106,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         initEvents();
         initData();
         startService(mIntent);
+
+        if (mDrawerLayout != null && !mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+            mDrawerLayout.openDrawer(GravityCompat.START);
+        }
     }
 
     @Override
@@ -119,7 +124,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     @Override
     protected void onResume() {
         super.onResume();
-        //mDrawerLayout.openDrawer(GravityCompat.START);
     }
 
     private void initViews() {
@@ -155,11 +159,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void initData() {
-        mSharedPreferences = getPreferences(MODE_PRIVATE);
-        int position = mSharedPreferences.getInt(Constant.CURRENT, -1);
-        if (position != -1) {
-            currentPosition = position;
-        }
         mIntent = new Intent(this, PlayMusicService.class);
         mAdapter = new MusicsAdapter(this, mAllMusics);
         mMusicList.setAdapter(mAdapter);
@@ -176,6 +175,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             }
         };
         mDrawerLayout.setDrawerListener(actionBarDrawerToggle);
+
+        mSharedPreferences = getPreferences(MODE_PRIVATE);
+        int position = mSharedPreferences.getInt(Constant.CURRENT, -1);
+        if (position != -1) {
+            currentPosition = position;
+            mMusicList.setSelection(currentPosition);
+            mMusicList.setItemChecked(currentPosition,true);
+        }
     }
 
     @Override
@@ -290,7 +297,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 totalNums = mAllMusics.size();
             }
         }).start();
-        if(mAdapter !=null) {
+        if (mAdapter != null) {
             mAdapter.notifyDataSetChanged();
         }
     }
@@ -298,22 +305,22 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.b_forward :
+            case R.id.b_forward:
                 //mService.seekMusic(3000);
                 playNext();
 
                 break;
-            case R.id.b_rewind :
+            case R.id.b_rewind:
                 //mService.seekMusic(-3000);
                 playRewind();
                 break;
-            case R.id.b_play :
+            case R.id.b_play:
                 if (mAllMusics.size() != 0) {
                     mService.playOrPauseMusic(mAllMusics.get(0).getPath());
                 }
                 break;
-            case R.id.download_music :
-                Intent _intent = new Intent(this,DownLoadActivity.class);
+            case R.id.download_music:
+                Intent _intent = new Intent(this, DownLoadActivity.class);
                 startActivityForResult(_intent, 0);
         }
     }
@@ -393,7 +400,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(resultCode == 0 && data != null && data.getBooleanExtra(Constant.FLAG,false)){
+        if (resultCode == 0 && data != null && data.getBooleanExtra(Constant.FLAG, false)) {
             scanFiles();
         }
         super.onActivityResult(requestCode, resultCode, data);

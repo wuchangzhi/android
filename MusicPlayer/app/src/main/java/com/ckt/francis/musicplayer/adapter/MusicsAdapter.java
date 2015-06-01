@@ -1,6 +1,7 @@
 package com.ckt.francis.musicplayer.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,6 +64,7 @@ public class MusicsAdapter  extends BaseAdapter{
                         mAllMusics.get(position).getId(),
                         mAllMusics.get(position).getAlbumId(),
                         true,true));*/
+
 
         return convertView;
     }
