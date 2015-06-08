@@ -10,16 +10,17 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.IBinder;
 import android.provider.MediaStore;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.ContextMenu;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,6 +31,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ckt.francis.musicplayer.R;
 import com.ckt.francis.musicplayer.activity.base.BaseActivity;
@@ -41,8 +43,6 @@ import com.ckt.francis.musicplayer.utils.MediaUtil;
 import com.ckt.francis.musicplayer.utils.MusicState;
 import com.ckt.francis.musicplayer.utils.Utils;
 
-import org.w3c.dom.Text;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +52,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private SeekBar mSeekBar;
     private TextView mCurrent;
     private DrawerLayout mDrawerLayout;
+    private Toolbar mToolBar;
+    private ActionBarDrawerToggle mActionBarDrawerToggle;
     private TextView mTotal;
     private ImageButton mPlay;
     private ImageButton mForward;
@@ -96,6 +98,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         }
     };
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,7 +112,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
         if (mDrawerLayout != null && !mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.openDrawer(GravityCompat.START);
+            mActionBarDrawerToggle.syncState();
         }
+
     }
 
     @Override
@@ -127,6 +132,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void initViews() {
+        mToolBar = (Toolbar) findViewById(R.id.toolbar);
+
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mMusicList = (ListView) findViewById(R.id.listView);
         mCurrent = (TextView) findViewById(R.id.current);
@@ -155,33 +162,43 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 mDrawerLayout.closeDrawer(GravityCompat.START);
             }
         });
+
         registerForContextMenu(mMusicList);
     }
 
     private void initData() {
-        mIntent = new Intent(this, PlayMusicService.class);
-        mAdapter = new MusicsAdapter(this, mAllMusics);
-        mMusicList.setAdapter(mAdapter);
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close) {
+        mToolBar.setTitle(R.string.app_name);
+        mToolBar.setTitleTextColor(getResources().getColor(android.R.color.white));
+        setSupportActionBar(mToolBar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
+        mActionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolBar, R.string.open, R.string.close) {
             @Override
             public void onDrawerClosed(View drawerView) {
                 super.onDrawerClosed(drawerView);
-                mAdapter.notifyDataSetChanged();
+                invalidateOptionsMenu();
             }
 
             @Override
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
+                invalidateOptionsMenu();
+                mAdapter.notifyDataSetChanged();
             }
         };
-        mDrawerLayout.setDrawerListener(actionBarDrawerToggle);
+        mActionBarDrawerToggle.syncState();
+        mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
 
+        mIntent = new Intent(this, PlayMusicService.class);
+        mAdapter = new MusicsAdapter(this, mAllMusics);
+        mMusicList.setAdapter(mAdapter);
         mSharedPreferences = getPreferences(MODE_PRIVATE);
         int position = mSharedPreferences.getInt(Constant.CURRENT, -1);
         if (position != -1) {
             currentPosition = position;
             mMusicList.setSelection(currentPosition);
-            mMusicList.setItemChecked(currentPosition,true);
+            mMusicList.setItemChecked(currentPosition, true);
         }
     }
 
@@ -404,5 +421,24 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             scanFiles();
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Log.d("test", item.getItemId() + "");
+//        if(item.getItemId() == Me)
+
+        if (item.getItemId() == R.id.action_settings) {
+            Intent _intent = new Intent(this, MusicSettings.class);
+            startActivity(_intent);
+            overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
+        }
+        return true;
     }
 }

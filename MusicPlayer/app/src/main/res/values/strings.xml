@@ -19,5 +19,5 @@
     <string name="close">Close</string>
     <string name="hello_world">Hello world!</string>
     <string name="download">下载</string>
-
+    <string name="store_diraction">存储目录</string>
 </resources>

@@ -1,131 +1,152 @@
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/drawerLayout"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:id="@+id/button_container"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#4974b343">
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"/>
 
-        <ImageView
-            android:id="@+id/music_icon"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_centerHorizontal="true"
-            android:scaleType="fitCenter" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/music_icon"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:weightSum="4">
-
-            <Button
-                android:id="@+id/download_music"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/download" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
-
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <RelativeLayout
-            android:id="@+id/buttom"
+            android:id="@+id/button_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
+            android:layout_height="match_parent"
+            android:background="#4974b343">
+
+            <ImageView
+                android:id="@+id/music_icon"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitCenter" />
 
             <LinearLayout
-                android:id="@+id/controller_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/music_icon"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal"
                 android:weightSum="4">
 
-                <ImageButton
-                    android:id="@+id/b_rewind"
-                    style="@android:style/MediaButton.Previous"
-                    android:layout_width="0dp"
+                <Button
+                    android:id="@+id/download_music"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/rewind" />
+                    android:text="@string/download" />
 
-                <ImageButton
-                    android:id="@+id/b_play"
-                    style="@android:style/MediaButton.Play"
-                    android:layout_width="0dp"
+                <Button
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/rewind" />
+                    android:layout_weight="1" />
 
-                <ImageButton
-                    android:id="@+id/b_forward"
-                    style="@android:style/MediaButton.Next"
-                    android:layout_width="0dp"
+                <Button
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/rewind" />
+                    android:layout_weight="1" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/current"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/controller_container"
-                android:layout_marginLeft="10dp"
-                android:text="00:00"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <TextView
-                android:id="@+id/total"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_below="@id/controller_container"
-                android:layout_marginRight="10dp"
-                android:text="00:00"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <SeekBar
-                android:id="@+id/seekBar"
-                style="@style/myProgressBar"
+            <RelativeLayout
+                android:id="@+id/buttom"
                 android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:layout_below="@id/total"
-                android:layout_margin="10dp"
-                android:max="100" />
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <LinearLayout
+                    android:id="@+id/controller_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <ImageButton
+                        android:id="@+id/b_rewind"
+                        style="@android:style/MediaButton.Previous"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/rewind" />
+
+                    <ImageButton
+                        android:id="@+id/b_play"
+                        style="@android:style/MediaButton.Play"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/rewind" />
+
+                    <ImageButton
+                        android:id="@+id/b_forward"
+                        style="@android:style/MediaButton.Next"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/rewind" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/current"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/controller_container"
+                    android:layout_marginLeft="10dp"
+                    android:text="00:00"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/controller_container"
+                    android:layout_marginRight="10dp"
+                    android:text="00:00"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    style="@style/myProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_below="@id/total"
+                    android:layout_margin="10dp"
+                    android:max="100" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/play_music_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/buttom"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </RelativeLayout>
 
-        <TextView
-            android:id="@+id/play_music_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/buttom"
-            android:padding="10dp"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-    </RelativeLayout>
-
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:choiceMode="singleChoice"
-        android:layout_gravity="left"
-        android:background="@mipmap/background"
-        />
-</android.support.v4.widget.DrawerLayout>
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@mipmap/background"
+            android:choiceMode="singleChoice" />
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

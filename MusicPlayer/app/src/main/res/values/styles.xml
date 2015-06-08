@@ -1,9 +1,6 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Light">
-        <!-- Customize your theme here. -->
-    </style>
     <style name="myProgressBar" parent="@android:style/Widget.ProgressBar.Horizontal">
         <item name="android:minHeight">1dip</item>
         <item name="android:maxHeight">2dip</item>

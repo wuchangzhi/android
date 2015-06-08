@@ -82,13 +82,13 @@ public class MediaUtil {
 
     public static void displayImage(ImageView view, long albumId) {
         DisplayImageOptions options = new DisplayImageOptions.Builder()
+                .showImageOnFail(R.mipmap.albumart_mp_unknown)
+                .showImageForEmptyUri(R.mipmap.albumart_mp_unknown)
                 .resetViewBeforeLoading(false)
                 .cacheInMemory(true)
                 .cacheOnDisk(true)
                 .imageScaleType(ImageScaleType.EXACTLY_STRETCHED)
                 .bitmapConfig(Bitmap.Config.ARGB_8888) // default
-                .showImageOnFail(R.mipmap.albumart_mp_unknown)
-                .showImageForEmptyUri(R.mipmap.albumart_mp_unknown)
                 .build();
         ImageLoader.getInstance().displayImage(albumArtUri + albumId, view, options);
     }

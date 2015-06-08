@@ -1,13 +1,11 @@
 package com.ckt.francis.musicplayer.activity;
 
-import android.app.Activity;
+import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.webkit.WebChromeClient;
@@ -16,6 +14,7 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.ckt.francis.musicplayer.R;
+import com.ckt.francis.musicplayer.activity.base.BaseActivity;
 import com.ckt.francis.musicplayer.utils.Constant;
 import com.ckt.francis.musicplayer.utils.MediaUtil;
 import com.loopj.android.http.AsyncHttpClient;
@@ -33,19 +32,19 @@ import java.net.URLDecoder;
 /**
  * Created by wuchangzhi on 15年5月28日.
  */
-public class DownLoadActivity extends Activity {
+public class DownLoadActivity extends BaseActivity {
     private WebView mWebView;
     private Intent mIntent;
+    private Notification mNotification;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_PROGRESS);
+        supportRequestWindowFeature(Window.FEATURE_PROGRESS);
         setContentView(R.layout.download_music);
 
         mIntent = new Intent();
         mIntent.putExtra(Constant.FLAG, false);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mWebView = (WebView) findViewById(R.id.music_webview);
         mWebView.getSettings().setJavaScriptEnabled(true);
@@ -62,6 +61,12 @@ public class DownLoadActivity extends Activity {
                         @Override
                         public void onFailure(int i, Header[] headers, Throwable throwable, File file) {
                             Log.d("test", "onFailure");
+                        }
+
+                        @Override
+                        public void onProgress(int bytesWritten, int totalSize) {
+                            super.onProgress(bytesWritten, totalSize);
+                            Log.d("test","" + bytesWritten + " " + totalSize);
                         }
 
                         @Override
@@ -130,14 +135,14 @@ public class DownLoadActivity extends Activity {
     }
 
     @Override
-    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == android.R.id.home){
+            mIntent.putExtra(Constant.FLAG,true);
             setResult(0, mIntent);
             finish();
         }
-        return super.onMenuItemSelected(featureId, item);
+        return true;
     }
-
 
     @Override
     protected void onStop() {

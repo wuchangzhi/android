@@ -7,4 +7,28 @@
         <item name="android:minWidth">250dp</item>
         <item name="android:minHeight">70dp</item>
     </style>
+
+    <style name="AppTheme" parent="MyAppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="MyAppTheme" parent="Theme.AppCompat">
+        <!-- Actionbar color -->
+        <item name="colorPrimary">#303F9F</item>
+        <!-- Status bar color -->
+        <item name="colorPrimaryDark">#AAAAAA</item>
+        <!-- Window color -->
+        <item name="android:windowBackground">@color/dim_foreground_material_dark</item>
+        <!-- 將新加入的風格 AppTheme.MyDrawerStyle 設定給 drawerArrowStyle 這個屬性 -->
+        <item name="drawerArrowStyle">@style/AppTheme.MyDrawerArrowStyle</item>
+    </style>
+
+    <!-- 加入一個新的 navigation drarwer 的風格 -->
+    <style name="AppTheme.MyDrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <!-- 將 spinBars 屬性設定為 false -->
+        <item name="spinBars">true</item>
+        <!-- 設定 drawer arrow 的顏色 -->
+        <item name="color">@android:color/holo_blue_dark</item>
+    </style>
 </resources>
