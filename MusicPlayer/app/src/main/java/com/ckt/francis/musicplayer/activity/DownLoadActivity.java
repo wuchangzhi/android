@@ -1,6 +1,9 @@
 package com.ckt.francis.musicplayer.activity;
 
 import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -11,6 +14,7 @@ import android.view.Window;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import com.ckt.francis.musicplayer.R;
@@ -36,11 +40,15 @@ public class DownLoadActivity extends BaseActivity {
     private WebView mWebView;
     private Intent mIntent;
     private Notification mNotification;
+    private NotificationManager mManager;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_PROGRESS);
         setContentView(R.layout.download_music);
+        mManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        initDatas();
+
 
         mIntent = new Intent();
         mIntent.putExtra(Constant.FLAG, false);
@@ -64,9 +72,17 @@ public class DownLoadActivity extends BaseActivity {
                         }
 
                         @Override
+                        public void onStart() {
+                            super.onStart();
+                            mManager.notify(0,mNotification);
+                        }
+
+                        @Override
                         public void onProgress(int bytesWritten, int totalSize) {
                             super.onProgress(bytesWritten, totalSize);
-                            Log.d("test","" + bytesWritten + " " + totalSize);
+                            mNotification.contentView.setProgressBar(R.id.notify_progress, 100, (int) (bytesWritten * 100.0f / totalSize), false);
+                            Log.d("test","" + bytesWritten + " " + totalSize +" " + (bytesWritten * 100.0f/totalSize));
+                            mManager.notify(0,mNotification);
                         }
 
                         @Override
@@ -79,7 +95,7 @@ public class DownLoadActivity extends BaseActivity {
                                 fo = new FileOutputStream(files);
                                 fi = new FileInputStream(file);
                                 byte[] buffer = new byte[1024];
-                                int len = 0;
+                                int len = 0 ;
                                 while ((len = fi.read(buffer)) != -1) {
                                     fo.write(buffer, 0, len);
                                 }
@@ -123,6 +139,19 @@ public class DownLoadActivity extends BaseActivity {
             }
         });
         mWebView.loadUrl("http://music.baidu.com");
+    }
+
+    private void initDatas() {
+        mNotification = new Notification();
+        mNotification.icon = R.mipmap.ic_launcher ;
+        mNotification.when = System.currentTimeMillis();
+        mNotification.tickerText = "下载";
+        RemoteViews remoteViews = new RemoteViews(getPackageName(),R.layout.notify_progress);
+        remoteViews.setProgressBar(R.id.notify_progress,100,0,false);
+        mNotification.contentView = remoteViews;
+
+        mNotification.contentIntent = PendingIntent.getActivity(this, 0, new Intent(this, DownLoadActivity.class),PendingIntent.FLAG_ONE_SHOT);
+
     }
 
     @Override
