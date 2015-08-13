@@ -1,0 +1,1838 @@
+int logctl_get(): open '/dev/hwlog_switch' fail -1, 13. Permission denied
+
+Note: log switch off, only log_main and log_events will have logs!
+--------- beginning of /dev/log/main
+I/wpa_supplicant( 9894): wlan0: HEART-BEAT-ACK: 254
+I/CAPALiteReceiver( 3449): USER STATE: STATIONARY SUB STATE: UNKNOWN
+E/android_hardware_fm.cpp(26508): register_android_hardware_fm_fmradio
+E/FM_HAL  (26508): [FM_HAL], fm_dynamic_lib is libbcmfm_if
+E/FM_HAL  (26508): [FM_HAL], libname is libbcmfm_if
+E/fm_if.c (26508): find the id:libbcmfm_if and begins to open the devices
+E/android_hardware_fm.cpp(26508): register_android_hardware_fm_fmradio, ret is 0
+E/ApduServiceInfo( 3475): Not adding <aid-group> with empty or invalid AIDs
+I/RegisteredServicesCache( 3475): Enable HCE
+E/android_hardware_fm.cpp(26529): register_android_hardware_fm_fmradio
+E/FM_HAL  (26529): [FM_HAL], fm_dynamic_lib is libbcmfm_if
+E/FM_HAL  (26529): [FM_HAL], libname is libbcmfm_if
+E/fm_if.c (26529): find the id:libbcmfm_if and begins to open the devices
+E/android_hardware_fm.cpp(26529): register_android_hardware_fm_fmradio, ret is 0
+I/K3V3CpuGovernorPolicy( 3449): set scene Hmp policy : 300 , 150
+I/HwLauncher( 3489): Launcher onPause()
+I/HwLauncher( 3489): Launcher.MotionManager stopShakeMotion shakeChangeWallpaper = false
+I/PhoneStatusBar( 3152): hw_status_bar_operators = true, setSystemUIVisibily(SHOW_OPERATOR = false)
+I/HwLauncher( 3489): Launcher onStop()
+E/HwLauncher( 3489): Launcher dialog dismiss failed : java.lang.IllegalArgumentException: no dialog with id 1 was ever shown via Activity#showDialog
+I/HwLauncher( 3489): Launcher dynamicIconsUnregister
+I/HwLauncher( 3489): DynamicUpdater unregisterReceiver
+I/HwLauncher( 3489): DynamicIcon onPause  isvisible = true   mAttachedToWindow:true    mWindowVisible:truecom.android.calendar
+I/HwLauncher( 3489): DynamicUpdater unregisterReceiver
+I/HwLauncher( 3489): DynamicIcon onPause  isvisible = true   mAttachedToWindow:true    mWindowVisible:truecom.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicUpdater unregisterReceiver
+I/HwLauncher( 3489): DynamicIcon onPause  isvisible = true   mAttachedToWindow:true    mWindowVisible:truecom.android.deskclock
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 4 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 4 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 4 - com.android.deskclock
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 8 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 8 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 8 - com.android.deskclock
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+E/cutils  ( 2446): Failed to mkdirat(/storage/sdcard1/Android): Read-only file system
+W/ContextImpl(26540): Failed to ensure directory: /storage/sdcard1/Android/data/com.ckt.francis.navigationmap/files
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+E/dalvikvm(26540): dlopen("/storage/emulated/0/BaiduNaviSDK_SO/libgnustl_shared.so") failed: dlopen failed: library "/storage/emulated/0/BaiduNaviSDK_SO/libgnustl_shared.so" not found
+E/Jni_JniEngine(26540): ######## Java_com_baidu_AppTest_AppTest JNI_OnLoad 
+E/Jni_JniEngine(26540): ######## Java_com_baidu_AppTest_AppTest JNI_OnLoad -1 
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+W/System.err(26540): java.io.FileNotFoundException: channel
+W/System.err(26540): 	at android.content.res.AssetManager.openAsset(Native Method)
+W/System.err(26540): 	at android.content.res.AssetManager.open(AssetManager.java:316)
+W/System.err(26540): 	at android.content.res.AssetManager.open(AssetManager.java:290)
+W/System.err(26540): 	at com.baidu.navisdk.util.common.PackageUtil.readAndCopyChannel(PackageUtil.java:388)
+W/System.err(26540): 	at com.baidu.navisdk.util.common.PackageUtil.init(PackageUtil.java:72)
+W/System.err(26540): 	at com.baidu.navisdk.BNaviModuleManager.initListenersForMap(BNaviModuleManager.java:90)
+W/System.err(26540): 	at com.baidu.navisdk.adapter.BaiduNaviManager.init(BaiduNaviManager.java:546)
+W/System.err(26540): 	at com.ckt.francis.navigationmap.activitys.MainActivity.initNavi(MainActivity.java:111)
+W/System.err(26540): 	at com.ckt.francis.navigationmap.activitys.MainActivity.onCreate(MainActivity.java:68)
+W/System.err(26540): 	at android.app.Activity.performCreate(Activity.java:5301)
+W/System.err(26540): 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1090)
+W/System.err(26540): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2259)
+W/System.err(26540): 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2345)
+W/System.err(26540): 	at android.app.ActivityThread.access$1100(ActivityThread.java:139)
+W/System.err(26540): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1256)
+W/System.err(26540): 	at android.os.Handler.dispatchMessage(Handler.java:102)
+W/System.err(26540): 	at android.os.Looper.loop(Looper.java:136)
+W/System.err(26540): 	at android.app.ActivityThread.main(ActivityThread.java:5314)
+W/System.err(26540): 	at java.lang.reflect.Method.invokeNative(Native Method)
+W/System.err(26540): 	at java.lang.reflect.Method.invoke(Method.java:515)
+W/System.err(26540): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:864)
+W/System.err(26540): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:680)
+W/System.err(26540): 	at dalvik.system.NativeStart.main(Native Method)
+W/JPush   (26540): [AndroidUtil] You should make main activity extends InstrumentedActivity (JPush), otherwise you will not see user click and user active time start on report in Portal. 
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+E/Jni_JniEngine(26540): ######## Java_com_baidu_AppTest_AppTest_Start 1 
+E/Jni_JniEngine(26540): ######## Java_com_baidu_AppTest_AppTest JNI_OnLoad -2 
+E/Jni_JniEngine(26540): ######## Java_com_baidu_AppTest_AppTest JNI_OnLoad -20 
+E/Jni_JniEngine(26540): ######## Java_com_baidu_AppTest_AppTest JNI_OnLoad 2 
+E/Jni_JniEngine(26540): ######## Java_com_baidu_AppTest_AppTest_Start
+E/Jni_JniEngine(26540): ######## Java_com_baidu_AppTest_AppTest_Start 0 
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+E/baidumapsdk(26540): Authentication Error errorcode: 230 uid: -1 appid -1 msg: APP Scode码校验失败
+I/ActivityManager( 2997): Displayed com.ckt.francis.navigationmap/.activitys.MainActivity: +830ms
+W/dalvikvm(26540): JNI WARNING: received null jstring (GetStringUTFChars)
+W/dalvikvm(26540):              in Lcom/baidu/navisdk/jni/nativeif/JNIStatisticsControl;.setLogHeaderParam:(Landroid/os/Bundle;)I (GetStringUTFChars)
+I/dalvikvm(26540): "main" prio=5 tid=1 NATIVE
+I/dalvikvm(26540):   | group="main" sCount=0 dsCount=0 obj=0x4161cd68 self=0x415536f0
+I/dalvikvm(26540):   | sysTid=26540 nice=0 sched=0/0 cgrp=apps handle=1074319700
+I/dalvikvm(26540):   | state=R schedstat=( 478245040 11017968 912 ) utm=31 stm=16 core=6
+I/dalvikvm(26540):   #00  pc 000012f6  /system/lib/libcorkscrew.so (unwind_backtrace_thread+29)
+I/dalvikvm(26540):   #01  pc 000617f6  /system/lib/libdvm.so (dvmDumpNativeStack(DebugOutputTarget const*, int)+33)
+I/dalvikvm(26540):   #02  pc 000557f8  /system/lib/libdvm.so (dvmDumpThreadEx(DebugOutputTarget const*, Thread*, bool)+395)
+I/dalvikvm(26540):   #03  pc 00055866  /system/lib/libdvm.so (dvmDumpThread(Thread*, bool)+25)
+I/dalvikvm(26540):   #04  pc 00039928  /system/lib/libdvm.so
+I/dalvikvm(26540):   #05  pc 00039c10  /system/lib/libdvm.so
+I/dalvikvm(26540):   #06  pc 0003ac30  /system/lib/libdvm.so
+I/dalvikvm(26540):   #07  pc 0003d046  /system/lib/libdvm.so
+I/dalvikvm(26540):   #08  pc 00195d8c  /data/app-lib/com.ckt.francis.navigationmap-2/libapp_BaiduNaviApplib.so (Java_com_baidu_navisdk_jni_nativeif_JNIStatisticsControl_setLogHeaderParam+115)
+I/dalvikvm(26540):   #09  pc 0001eb8c  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+I/dalvikvm(26540):   #10  pc 0004f272  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+397)
+I/dalvikvm(26540):   #11  pc 00050cb6  /system/lib/libdvm.so (dvmResolveNativeMethod(unsigned int const*, JValue*, Method const*, Thread*)+181)
+I/dalvikvm(26540):   #12  pc 00027fa0  /system/lib/libdvm.so
+I/dalvikvm(26540):   #13  pc 0002f130  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+I/dalvikvm(26540):   #14  pc 0002c794  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+I/dalvikvm(26540):   #15  pc 00061a08  /system/lib/libdvm.so (dvmInvokeMethod(Object*, Method const*, ArrayObject*, ArrayObject*, ClassObject*, bool)+391)
+I/dalvikvm(26540):   #16  pc 00069bee  /system/lib/libdvm.so
+I/dalvikvm(26540):   #17  pc 00027fa0  /system/lib/libdvm.so
+I/dalvikvm(26540):   #18  pc 0002f130  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+I/dalvikvm(26540):   #19  pc 0002c794  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+I/dalvikvm(26540):   #20  pc 00061724  /system/lib/libdvm.so (dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)+335)
+I/dalvikvm(26540):   #21  pc 0004ae3a  /system/lib/libdvm.so
+I/dalvikvm(26540):   #22  pc 00050594  /system/lib/libandroid_runtime.so
+I/dalvikvm(26540):   #23  pc 00051348  /system/lib/libandroid_runtime.so (android::AndroidRuntime::start(char const*, char const*)+367)
+I/dalvikvm(26540):   #24  pc 0000105a  /system/bin/app_process
+I/dalvikvm(26540):   #25  pc 0000e604  /system/lib/libc.so (__libc_init+47)
+I/dalvikvm(26540):   at com.baidu.navisdk.jni.nativeif.JNIStatisticsControl.setLogHeaderParam(Native Method)
+I/dalvikvm(26540):   at com.baidu.navisdk.jni.nativeif.JNIStatisticsControl.setLogHeaderParam(JNIStatisticsControl.java:46)
+I/dalvikvm(26540):   at com.baidu.navisdk.jni.nativeif.JNIStatisticsControl.init(JNIStatisticsControl.java:34)
+I/dalvikvm(26540):   at com.baidu.navisdk.comapi.statistics.BNStatisticsManager.<init>(BNStatisticsManager.java:52)
+I/dalvikvm(26540):   at com.baidu.navisdk.comapi.statistics.BNStatisticsManager.getInstance(BNStatisticsManager.java:42)
+I/dalvikvm(26540):   at com.baidu.navisdk.util.statistic.RespTimeStatItem.onEvent(RespTimeStatItem.java:56)
+I/dalvikvm(26540):   at com.baidu.navisdk.adapter.BaiduNaviManager$4.handleMessage(BaiduNaviManager.java:567)
+I/dalvikvm(26540):   at android.os.Handler.dispatchMessage(Handler.java:102)
+I/dalvikvm(26540):   at android.os.Looper.loop(Looper.java:136)
+I/dalvikvm(26540):   at android.app.ActivityThread.main(ActivityThread.java:5314)
+I/dalvikvm(26540):   at java.lang.reflect.Method.invokeNative(Native Method)
+I/dalvikvm(26540):   at java.lang.reflect.Method.invoke(Method.java:515)
+I/dalvikvm(26540):   at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:864)
+I/dalvikvm(26540):   at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:680)
+I/dalvikvm(26540):   at dalvik.system.NativeStart.main(Native Method)
+I/dalvikvm(26540): 
+E/dalvikvm(26540): VM aborting
+F/libc    (26540): Fatal signal 6 (SIGABRT) at 0x000067ac (code=-6), thread 26540 (s.navigationmap)
+I/K3V3CpuGovernorPolicy( 3449): close previously scene Hmp policy : 300 , 150
+I/DEBUG   ( 2450): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+I/DEBUG   ( 2450): Build fingerprint: 'Huawei/PE-TL10/hwPE:4.4.2/HuaweiPE-TL10/CHNC00B243:user/ota-rel-keys,release-keys'
+I/DEBUG   ( 2450): Revision: '0'
+I/DEBUG   ( 2450): pid: 26540, tid: 26540, name: s.navigationmap  >>> com.ckt.francis.navigationmap <<<
+I/DEBUG   ( 2450): signal 6 (SIGABRT), code -6 (SI_TKILL), fault addr --------
+I/DEBUG   ( 2450):     r0 00000000  r1 000067ac  r2 00000006  r3 00000000
+I/DEBUG   ( 2450):     r4 00000006  r5 0000000b  r6 000067ac  r7 0000010c
+I/DEBUG   ( 2450):     r8 415e5f54  r9 415e6d57  sl 416072c8  fp 415e6da0
+I/DEBUG   ( 2450):     ip 4160d0e0  sp be80fea0  lr 400b6289  pc 400c51c8  cpsr 000f0010
+I/DEBUG   ( 2450):     d0  74726f6261204d56  d1  617453657669746e
+I/DEBUG   ( 2450):     d2  4965746f67795a75  d3  6e69616d2e74696c
+I/DEBUG   ( 2450):     d4  732e656d69746e75  d5  6f72646e6128206f
+I/DEBUG   ( 2450):     d6  72646e413a3a6469  d7  69746e755264696f
+I/DEBUG   ( 2450):     d8  0000000000000000  d9  0000000000000000
+I/DEBUG   ( 2450):     d10 0000000000000000  d11 0000000000000000
+I/DEBUG   ( 2450):     d12 0000000000000000  d13 0000000000000000
+I/DEBUG   ( 2450):     d14 0000000000000000  d15 0000000000000000
+I/DEBUG   ( 2450):     d16 ffffffe500000030  d17 000000000000000e
+I/DEBUG   ( 2450):     d18 fffffffd0000002a  d19 fffffffc0000003b
+I/DEBUG   ( 2450):     d20 fffffffc00000057  d21 fffffffa00000074
+I/DEBUG   ( 2450):     d22 0000001600000075  d23 0000001800000075
+I/DEBUG   ( 2450):     d24 000000007bc4d441  d25 0000000000000fff
+I/DEBUG   ( 2450):     d26 0000000000000009  d27 0000000000000009
+I/DEBUG   ( 2450):     d28 0000007bc45e0000  d29 0000000000000001
+I/DEBUG   ( 2450):     d30 0000000000000001  d31 000000007bc4d4c0
+I/DEBUG   ( 2450):     scr 60000010
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): backtrace:
+I/DEBUG   ( 2450):     #00  pc 000221c8  /system/lib/libc.so (tgkill+12)
+I/DEBUG   ( 2450):     #01  pc 00013285  /system/lib/libc.so (pthread_kill+48)
+I/DEBUG   ( 2450):     #02  pc 00013499  /system/lib/libc.so (raise+10)
+I/DEBUG   ( 2450):     #03  pc 000121cf  /system/lib/libc.so
+I/DEBUG   ( 2450):     #04  pc 00021a7c  /system/lib/libc.so (abort+4)
+I/DEBUG   ( 2450):     #05  pc 00046df7  /system/lib/libdvm.so (dvmAbort+78)
+I/DEBUG   ( 2450):     #06  pc 00039c11  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #07  pc 0003ac31  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #08  pc 0003d047  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #09  pc 00195d8f  /data/app-lib/com.ckt.francis.navigationmap-2/libapp_BaiduNaviApplib.so (Java_com_baidu_navisdk_jni_nativeif_JNIStatisticsControl_setLogHeaderParam+118)
+I/DEBUG   ( 2450):     #10  pc 0001eb8c  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+I/DEBUG   ( 2450):     #11  pc 0004f273  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+398)
+I/DEBUG   ( 2450):     #12  pc 00050cb9  /system/lib/libdvm.so (dvmResolveNativeMethod(unsigned int const*, JValue*, Method const*, Thread*)+184)
+I/DEBUG   ( 2450):     #13  pc 00027fa0  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #14  pc 0002f130  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+I/DEBUG   ( 2450):     #15  pc 0002c794  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+I/DEBUG   ( 2450):     #16  pc 00061a09  /system/lib/libdvm.so (dvmInvokeMethod(Object*, Method const*, ArrayObject*, ArrayObject*, ClassObject*, bool)+392)
+I/DEBUG   ( 2450):     #17  pc 00069bef  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #18  pc 00027fa0  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #19  pc 0002f130  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+I/DEBUG   ( 2450):     #20  pc 0002c794  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+I/DEBUG   ( 2450):     #21  pc 00061725  /system/lib/libdvm.so (dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)+336)
+I/DEBUG   ( 2450):     #22  pc 0004ae3b  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #23  pc 00050597  /system/lib/libandroid_runtime.so
+I/DEBUG   ( 2450):     #24  pc 00051349  /system/lib/libandroid_runtime.so (android::AndroidRuntime::start(char const*, char const*)+368)
+I/DEBUG   ( 2450):     #25  pc 0000105b  /system/bin/app_process
+I/DEBUG   ( 2450):     #26  pc 0000e607  /system/lib/libc.so (__libc_init+50)
+I/DEBUG   ( 2450):     #27  pc 00000d7c  /system/bin/app_process
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): stack:
+I/DEBUG   ( 2450):          be80fe60  00000000  
+I/DEBUG   ( 2450):          be80fe64  415e6cf1  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fe68  4160d0e0  /dev/ashmem/dalvik-zygote (deleted)
+I/DEBUG   ( 2450):          be80fe6c  415e5f54  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fe70  415e6d57  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fe74  416072c8  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fe78  415e6da0  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fe7c  400c9899  /system/lib/libc.so (snprintf+80)
+I/DEBUG   ( 2450):          be80fe80  35343730  
+I/DEBUG   ( 2450):          be80fe84  32383134  
+I/DEBUG   ( 2450):          be80fe88  be80fefc  [stack]
+I/DEBUG   ( 2450):          be80fe8c  00000000  
+I/DEBUG   ( 2450):          be80fe90  00000000  
+I/DEBUG   ( 2450):          be80fe94  36333138  
+I/DEBUG   ( 2450):          be80fe98  00004000  
+I/DEBUG   ( 2450):          be80fe9c  d48a6738  
+I/DEBUG   ( 2450):     #00  be80fea0  00000006  
+I/DEBUG   ( 2450):          be80fea4  0000000b  
+I/DEBUG   ( 2450):          be80fea8  000067ac  
+I/DEBUG   ( 2450):          be80feac  4160d0e0  /dev/ashmem/dalvik-zygote (deleted)
+I/DEBUG   ( 2450):          be80feb0  4160d0e0  /dev/ashmem/dalvik-zygote (deleted)
+I/DEBUG   ( 2450):          be80feb4  400b6289  /system/lib/libc.so (pthread_kill+52)
+I/DEBUG   ( 2450):     #01  be80feb8  00000006  
+I/DEBUG   ( 2450):          be80febc  00000000  
+I/DEBUG   ( 2450):          be80fec0  415e6cf1  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fec4  400b649d  /system/lib/libc.so (raise+14)
+I/DEBUG   ( 2450):     #02  be80fec8  be80fed4  [stack]
+I/DEBUG   ( 2450):          be80fecc  400b51d3  /system/lib/libc.so
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near r1:
+I/DEBUG   ( 2450):     0000678c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000679c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000067ac ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000067bc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000067cc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000067dc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000067ec ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000067fc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000680c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000681c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000682c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000683c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000684c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000685c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000686c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000687c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near r6:
+I/DEBUG   ( 2450):     0000678c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000679c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000067ac ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000067bc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000067cc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000067dc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000067ec ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000067fc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000680c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000681c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000682c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000683c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000684c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000685c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000686c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     0000687c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near r8:
+I/DEBUG   ( 2450):     415e5f34 3e646c6c 61640000 6b69766c 2e6d762e  
+I/DEBUG   ( 2450):     415e5f44 6f6c6c61 61725463 72656b63 0078614d  
+I/DEBUG   ( 2450):     415e5f54 766c6164 6d766b69 6e674900 6e69726f  
+I/DEBUG   ( 2450):     415e5f64 73252067 73252720 2d2d2027 6e69202d  
+I/DEBUG   ( 2450):     415e5f74 696c6176 67490064 69726f6e 2520676e  
+I/DEBUG   ( 2450):     415e5f84 25272073 2d202773 6e202d2d 7020746f  
+I/DEBUG   ( 2450):     415e5f94 7265776f 20666f20 006f7774 62616e45  
+I/DEBUG   ( 2450):     415e5fa4 676e696c 6c6c6120 7420636f 6b636172  
+I/DEBUG   ( 2450):     415e5fb4 28207265 65206425 6972746e 202c7365  
+I/DEBUG   ( 2450):     415e5fc4 66206425 656d6172 2d2d2073 6425203e  
+I/DEBUG   ( 2450):     415e5fd4 74796220 00297365 6f6c6c61 72742063  
+I/DEBUG   ( 2450):     415e5fe4 656b6361 6e203a72 6874206f 64616572  
+I/DEBUG   ( 2450):     415e5ff4 69614600 2064656c 6f6c6c61 69746163  
+I/DEBUG   ( 2450):     415e6004 7020676e 746e696f 73207265 00737465  
+I/DEBUG   ( 2450):     415e6014 73616c63 64252073 2c64252f 74656d20  
+I/DEBUG   ( 2450):     415e6024 20646f68 252f6425 66202c64 20656c69  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near r9:
+I/DEBUG   ( 2450):     415e6d34 6e203a47 74616765 20657669 7a69736a  
+I/DEBUG   ( 2450):     415e6d44 25282065 42002973 5a534943 706d6662  
+I/DEBUG   ( 2450):     415e6d54 75007645 6f6e6b6e 63206e77 6b636568  
+I/DEBUG   ( 2450):     415e6d64 726f6620 2074616d 63657073 65696669  
+I/DEBUG   ( 2450):     415e6d74 63252072 28702500 41564e49 2944494c  
+I/DEBUG   ( 2450):     415e6d84 74707600 76004900 004c4500 0070004a  
+I/DEBUG   ( 2450):     415e6d94 004a7045 0045004c 00560062 00707345  
+I/DEBUG   ( 2450):     415e6da4 3a494e4a 69616620 2064656c 72617567  
+I/DEBUG   ( 2450):     415e6db4 20646564 79706f63 65686320 69206b63  
+I/DEBUG   ( 2450):     415e6dc4 6552206e 7361656c 72745365 43676e69  
+I/DEBUG   ( 2450):     415e6dd4 69746972 006c6163 72706145 70614500  
+I/DEBUG   ( 2450):     415e6de4 49734500 45007049 63450070 70634500  
+I/DEBUG   ( 2450):     415e6df4 61450049 00704949 61007a45 49614500  
+I/DEBUG   ( 2450):     415e6e04 6145004c 7a450049 45004c63 73450061  
+E/baidumapsdk(26595): Authentication Error errorcode: 230 uid: -1 appid -1 msg: APP Scode码校验失败
+I/DEBUG   ( 2450):     415e6e14 4e4a0075 66203a49 656c6961 75672064  
+I/DEBUG   ( 2450):     415e6e24 65647261 6f632064 63207970 6b636568  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near sl:
+I/DEBUG   ( 2450):     416072a8 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     416072b8 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     416072c8 415531a0 41553190 00800000 20000000  
+I/DEBUG   ( 2450):     416072d8 0c000000 00000000 00000000 3fe80000  
+I/DEBUG   ( 2450):     416072e8 00200000 00800000 00004000 00006000  
+I/DEBUG   ( 2450):     416072f8 00000001 00000101 00000002 00000001  
+I/DEBUG   ( 2450):     41607308 00000000 00000000 00000000 00000002  
+I/DEBUG   ( 2450):     41607318 00000000 401bc455 401bc68d 00000000  
+I/DEBUG   ( 2450):     41607328 401bc43d 00000000 00000000 41553578  
+I/DEBUG   ( 2450):     41607338 00000000 00000002 00000003 00000001  
+I/DEBUG   ( 2450):     41607348 00000001 00000100 00000100 00000000  
+I/DEBUG   ( 2450):     41607358 415534c0 00000003 00000000 415534b0  
+I/DEBUG   ( 2450):     41607368 4160bb40 00000000 00000000 41553e90  
+I/DEBUG   ( 2450):     41607378 50000fd2 6e4c6008 00000000 4160b9b8  
+I/DEBUG   ( 2450):     41607388 4160b9d8 4160c1e8 4160c2a8 4160c350  
+I/DEBUG   ( 2450):     41607398 4160c3f8 4160c4a0 4160c548 4160c5f0  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near fp:
+I/DEBUG   ( 2450):     415e6d80 2944494c 74707600 76004900 004c4500  
+I/DEBUG   ( 2450):     415e6d90 0070004a 004a7045 0045004c 00560062  
+I/DEBUG   ( 2450):     415e6da0 00707345 3a494e4a 69616620 2064656c  
+I/DEBUG   ( 2450):     415e6db0 72617567 20646564 79706f63 65686320  
+I/DEBUG   ( 2450):     415e6dc0 69206b63 6552206e 7361656c 72745365  
+I/DEBUG   ( 2450):     415e6dd0 43676e69 69746972 006c6163 72706145  
+I/DEBUG   ( 2450):     415e6de0 70614500 49734500 45007049 63450070  
+I/DEBUG   ( 2450):     415e6df0 70634500 61450049 00704949 61007a45  
+I/DEBUG   ( 2450):     415e6e00 49614500 6145004c 7a450049 45004c63  
+I/DEBUG   ( 2450):     415e6e10 73450061 4e4a0075 66203a49 656c6961  
+I/DEBUG   ( 2450):     415e6e20 75672064 65647261 6f632064 63207970  
+I/DEBUG   ( 2450):     415e6e30 6b636568 206e6920 656c6552 53657361  
+I/DEBUG   ( 2450):     415e6e40 6e697274 46545567 72616843 00750073  
+I/DEBUG   ( 2450):     415e6e50 45007345 00730075 3a494e4a 69616620  
+I/DEBUG   ( 2450):     415e6e60 2064656c 72617567 20646564 79706f63  
+I/DEBUG   ( 2450):     415e6e70 65686320 69206b63 6552206e 7361656c  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near ip:
+I/DEBUG   ( 2450):     4160d0c0 4160d008 6e6f71c5 6e6a4829 0000001a  
+I/DEBUG   ( 2450):     4160d0d0 2636dd85 6109c59a 00000000 0000010b  
+I/DEBUG   ( 2450):     4160d0e0 4160c1e8 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     4160d0f0 00000000 00000000 6e6a8888 00000000  
+I/DEBUG   ( 2450):     4160d100 00030011 50000016 6e7f4000 00000007  
+I/DEBUG   ( 2450):     4160d110 00000000 00000001 00000018 00000000  
+I/DEBUG   ( 2450):     4160d120 00000000 00000000 4160c890 00000000  
+I/DEBUG   ( 2450):     4160d130 00000000 00000000 00000003 6d4c9b30  
+I/DEBUG   ( 2450):     4160d140 0000002a 6d4c9b98 00000036 6d4ca4d0  
+I/DEBUG   ( 2450):     4160d150 0000003e 6d4cb1d0 00000003 6d4cb2d8  
+I/DEBUG   ( 2450):     4160d160 00000005 6d4cb2f8 00000004 00000001  
+I/DEBUG   ( 2450):     4160d170 6d4c9b40 80000000 6e6caf8e 00000004  
+I/DEBUG   ( 2450):     4160d180 4160d0e0 6e69813e 6e6d0063 0000001a  
+I/DEBUG   ( 2450):     4160d190 4161a378 0000001c 4160d0e0 6e69aa36  
+I/DEBUG   ( 2450):     4160d1a0 6e6b003b 00000019 4161a368 0000001c  
+I/DEBUG   ( 2450):     4160d1b0 4160d0e0 6e6c7b9f 6e69a6a4 0000001a  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near sp:
+I/DEBUG   ( 2450):     be80fe80 35343730 32383134 be80fefc 00000000  
+I/DEBUG   ( 2450):     be80fe90 00000000 36333138 00004000 d48a6738  
+I/DEBUG   ( 2450):     be80fea0 00000006 0000000b 000067ac 4160d0e0  
+I/DEBUG   ( 2450):     be80feb0 4160d0e0 400b6289 00000006 00000000  
+I/DEBUG   ( 2450):     be80fec0 415e6cf1 400b649d be80fed4 400b51d3  
+I/DEBUG   ( 2450):     be80fed0 00000000 ffffffdf 400ee2c0 400ee224  
+I/DEBUG   ( 2450):     be80fee0 00000000 400b7d83 416072c8 416072c8  
+I/DEBUG   ( 2450):     be80fef0 00000000 400c4a80 00000000 4159bdfb  
+I/DEBUG   ( 2450):     be80ff00 be80ff88 6c756e28 0000296c 00000000  
+I/DEBUG   ( 2450):     be80ff10 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff20 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff30 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff40 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff50 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff60 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff70 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): code around pc:
+I/DEBUG   ( 2450):     400c51a8 e8bd00f0 e3700a01 912fff1e e2600000  
+I/DEBUG   ( 2450):     400c51b8 ea006f55 e92d50f0 e3a07f43 ef000000  
+I/DEBUG   ( 2450):     400c51c8 e8bd50f0 e3700a01 912fff1e e2600000  
+I/DEBUG   ( 2450):     400c51d8 ea006f4d e92d50f0 e3a070ee ef000000  
+I/DEBUG   ( 2450):     400c51e8 e8bd50f0 e3700a01 912fff1e e2600000  
+I/DEBUG   ( 2450):     400c51f8 ea006f45 e3510000 0a006724 e710f110  
+I/DEBUG   ( 2450):     400c5208 e12fff1e e3510000 0a006720 e1a02000  
+I/DEBUG   ( 2450):     400c5218 e710f110 e0612190 e12fff1e e1520003  
+I/DEBUG   ( 2450):     400c5228 8a00008c f5d1f040 e92d4001 e3520010  
+I/DEBUG   ( 2450):     400c5238 3a000024 e2603000 e213300f 0a00000e  
+I/DEBUG   ( 2450):     400c5248 e0422003 e1b0cf83 44d1e001 44c0e001  
+I/DEBUG   ( 2450):     400c5258 24d1c001 24d1e001 24c0c001 24c0e001  
+I/DEBUG   ( 2450):     400c5268 e1b0ce83 aa000001 f4a1030d f480031d  
+I/DEBUG   ( 2450):     400c5278 3a000001 f421070d f400071d e2522040  
+I/DEBUG   ( 2450):     400c5288 3a000006 f421020d f421420d f5d1f100  
+I/DEBUG   ( 2450):     400c5298 e2522040 f400022d f400422d 2afffff8  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): code around lr:
+I/DEBUG   ( 2450):     400b6268 447b4b13 42b3e010 4812d10e 44786a1e  
+I/DEBUG   ( 2450):     400b6278 ec90f7fb e9d8f00d 46224631 ef9af00e  
+I/DEBUG   ( 2450):     400b6288 d00a3001 e00b2400 2b00681b 480ad1eb  
+I/DEBUG   ( 2450):     400b6298 44782403 ec7ef7fb f001e002 6804fa1b  
+I/DEBUG   ( 2450):     400b62a8 fa18f001 46206005 bf00bd70 0003c142  
+I/DEBUG   ( 2450):     400b62b8 0003c136 0003c12e 0003c10a bf7ef7ff  
+I/DEBUG   ( 2450):     400b62c8 4a3e4b3d 43f0e92d 4606b08b 447b460d  
+I/DEBUG   ( 2450):     400b62d8 6823589c 930946a1 f9fcf001 8000f8d0  
+I/DEBUG   ( 2450):     400b62e8 d0482d00 f00f4628 280fff09 d8444604  
+I/DEBUG   ( 2450):     400b62f8 ffe4f7ff d1064286 4629200f e8a2f00d  
+I/DEBUG   ( 2450):     400b6308 d03c2800 482ee02e f7fb4478 482debc2  
+I/DEBUG   ( 2450):     400b6318 e0154478 d11342b0 482b6a06 f7fb4478  
+I/DEBUG   ( 2450):     400b6328 4a2aec3a 46332120 447aa801 fa88f013  
+I/DEBUG   ( 2450):     400b6338 a8012101 fd16f01a 46061c42 e011d104  
+I/DEBUG   ( 2450):     400b6348 28006800 e02cd1e6 46294630 f0274622  
+I/DEBUG   ( 2450):     400b6358 1c43fa95 d11e4607 f9bcf001 29046801  
+E/JavaBinder( 2997): !!! FAILED BINDER TRANSACTION !!!
+W/InputDispatcher( 2997): channel '43fbfb68 com.ckt.francis.navigationmap/com.ckt.francis.navigationmap.activitys.MainActivity (server)' ~ Consumer closed input channel or an error occurred.  events=0x9
+E/InputDispatcher( 2997): channel '43fbfb68 com.ckt.francis.navigationmap/com.ckt.francis.navigationmap.activitys.MainActivity (server)' ~ Channel is unrecoverably broken and will be disposed!
+W/InputDispatcher( 2997): channel '44734fe8 Toast (server)' ~ Consumer closed input channel or an error occurred.  events=0x9
+E/InputDispatcher( 2997): channel '44734fe8 Toast (server)' ~ Channel is unrecoverably broken and will be disposed!
+W/InputDispatcher( 2997): Attempted to unregister already unregistered input channel '43fbfb68 com.ckt.francis.navigationmap/com.ckt.francis.navigationmap.activitys.MainActivity (server)'
+I/logserver( 2465): Object Path:/data/system/dropbox/, mask=0x00000080
+I/logserver( 2465): event->len=48, name=data_app_native_crash@1439391578992.txt.gz
+I/logserver( 2465): process_one_event, can not find this event(data_app_native_crash@1439391578992.txt.gz)
+I/logserver( 2465): clean_cur_cache:962, system(rm -r /data/log/logcache/22288160/* > /dev/null 2>&1)
+W/InputDispatcher( 2997): Attempted to unregister already unregistered input channel '44734fe8 Toast (server)'
+I/logserver( 2465): Object Path:/data/system/dropbox/, mask=0x00000080
+I/logserver( 2465): event->len=48, name=SYSTEM_TOMBSTONE@1439391579000.txt.gz
+I/logserver( 2465): find_first_match: find match, plogs(type=1, pfile=/data/system/dropbox/, match=TOMBSTONE)
+I/logserver( 2465): is_only_tombstone, tombstone type force close.
+I/HwLauncher( 3489): Launcher onStart()
+I/HwLauncher( 3489): Launcher dynamicIconsRegister
+I/HwLauncher( 3489): DynamicUpdater registerReceiver
+I/logserver( 2465): move_dir:src_path=/data/log/dbox/appdbg/logcache
+I/logserver( 2465): move_dir:dst_path=/data/log/logcache/22288160/
+I/logserver( 2465): is_all_ready, any file is ready in non-keyfile exception.
+I/logserver( 2465): find_correspond_tombstone, tombs=/data/tombstones/tombstone_02
+I/logserver( 2465): extract_appname, forward search, appname=com.ckt.francis.navigationmap
+I/logserver( 2465): is_only_tombstone, tombstone type force close.
+I/logserver( 2465): archive_and_send, only tombstone.
+I/logserver( 2465): get_fault_appname, appname=com.ckt.francis.navigationmap
+I/logserver( 2465): archive_and_send, pos=0, type=crash, output=20150812225939_tombstone
+I/logserver( 2465): ---copy_match_files enter!!--
+I/logserver( 2465): [copy_match_files,829]: copy [/data/system/dropbox/SYSTEM_TOMBSTONE@1439391579000.txt.gz] to [/data/log/logcache/22288160/SYSTEM_TOMBSTONE@1439391579000.txt.gz]
+I/logserver( 2465): internal_archive, argc=7
+I/logserver( 2465): get_fault_appname, appname=com.ckt.francis.navigationmap
+I/logserver( 2465): handle_archive_exception, argc=7
+I/logserver( 2465): get alarm time = 13686 (sec.)!
+I/logserver( 2465): log_apr_add_record open file:/data/log/apr/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150729204444_statistics
+I/logserver( 2465): move_input_files, create dir [/data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812225939_tombstone]
+I/logserver( 2465): copy_file_to_dir, /data/log/logcache/22288160/data_app_native_crash@1439391578992.txt.gz -> /data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812225939_tombstone
+I/logserver( 2465): copy_file_to_dir, /data/log/logcache/22288160/SYSTEM_TOMBSTONE@1439391579000.txt.gz -> /data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812225939_tombstone
+I/logserver( 2465): copy_file_to_dir, /data/log/logcache/22288160/finger.txt -> /data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812225939_tombstone
+I/logserver( 2465): init_notify_fifo, before change /data/log/logcontrol owner
+I/logserver( 2465): Process 2645 opening FIFO for O_WRONLY
+I/logserver( 2465): Process 2645 opened fifo(20)
+I/logserver( 2465): notify_logcontrol, 2645 sent /data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812225939_tombstone 
+I/logserver( 2465): thread_logcontrol, select ret = 1
+I/logserver( 2465): check_dir_size, dir[/data/log/coredump/] doesn't exist
+I/logserver( 2465): clean_cur_cache:962, system(rm -r /data/log/logcache/22288160/* > /dev/null 2>&1)
+I/logserver( 2465): handle_notify_event, read res = 324, client pid = 2645, data=/data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812225939_tombstone
+I/logserver( 2465): build_notify_string,ModuleName = com.ckt.francis.navigationmap
+I/logserver( 2465): build_notify_string,product name = PE-TL10
+I/logserver( 2465): handle_notify_event, send msg [submit:trigger=0,bugtype=12,modulename=com.ckt.francis.navigationmap,level=1,testtype=NORMAL,path=/data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812225939_tombstone;]
+I/logserver( 2465): send_to_client, send to (18) res = 183
+E/SubmitMessage( 3974): Submit string: submit:trigger=0,bugtype=12,modulename=com.ckt.francis.navigationmap,level=1,testtype=NORMAL,path=/data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812225939_tombstone
+I/logserver( 2465): Object Path:/data/log/apr/, mask=0x00000008
+I/logserver( 2465): event->len=80, name=PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150729204444_statistics
+I/logserver( 2465): process_one_event, can not find this event(PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150729204444_statistics)
+I/logserver( 2465): clean_cur_cache:962, system(rm -r /data/log/logcache/22288160/* > /dev/null 2>&1)
+I/HwLauncher( 3489): DynamicUpdater call updateFolder
+I/HwLauncher( 3489): DynamicIcon onResume  isvisible = false   mAttachedToWindow:true    mWindowVisible:falsecom.android.calendar
+I/HwLauncher( 3489): DynamicUpdater registerReceiver
+I/HwLauncher( 3489): DynamicUpdater call updateFolder
+I/HwLauncher( 3489): WeatherDynamicUpdaterpositiveUpdate at WeatherDynamicUpdater
+I/HwLauncher( 3489): DynamicIcon onResume  isvisible = false   mAttachedToWindow:true    mWindowVisible:falsecom.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicUpdater registerReceiver
+I/HwLauncher( 3489): DynamicUpdater call updateFolder
+I/HwLauncher( 3489): DynamicIcon onResume  isvisible = false   mAttachedToWindow:true    mWindowVisible:falsecom.android.deskclock
+I/HwLauncher( 3489): Launcher onResume()
+I/HwLauncher( 3489): Launcher doResumeWork()
+I/HwLauncher( 3489): Launcher changeNaviBarStatus
+W/HwLauncher( 3489): Launcher  updateMarginLayoutParamsForView:the target view is null.
+I/HwLauncher( 3489): Launcher  onResume mIsToUninstallApp = false
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 0 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 0 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 0 - com.android.deskclock
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 0 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 0 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 0 - com.android.deskclock
+I/HwLauncher( 3489): Launcher.MotionManager startShakeMotion shakeChangeWallpaper = false
+I/PhoneStatusBar( 3152): hw_status_bar_operators = true, setSystemUIVisibily(SHOW_OPERATOR = false)
+I/HwLauncher( 3489): WeatherDynamicUpdaterreceive action = com.huawei.android.action.launcher_weather_icon_change
+I/HwLauncher( 3489): WeatherDynamicUpdaterreceiver data is int[] = [0, 0, 52, 0, 96, 0, 140, 0]
+I/HwLauncher( 3489):  stringArray[] [mostlycloudy, num2, num9, tempc]
+W/Binder  ( 3326): Caught a RuntimeException from the binder stub implementation.
+W/Binder  ( 3326): java.lang.NullPointerException
+W/Binder  ( 3326): 	at android.inputmethodservice.IInputMethodWrapper.setSessionEnabled(IInputMethodWrapper.java:280)
+W/Binder  ( 3326): 	at com.android.internal.view.IInputMethod$Stub.onTransact(IInputMethod.java:129)
+W/Binder  ( 3326): 	at android.os.Binder.execTransact(Binder.java:404)
+W/Binder  ( 3326): 	at dalvik.system.NativeStart.run(Native Method)
+W/System.err( 3326): java.lang.NullPointerException
+W/System.err( 3326): 	at android.inputmethodservice.IInputMethodWrapper.setSessionEnabled(IInputMethodWrapper.java:280)
+W/System.err( 3326): 	at com.android.internal.view.IInputMethod$Stub.onTransact(IInputMethod.java:129)
+W/System.err( 3326): 	at android.os.Binder.execTransact(Binder.java:404)
+W/System.err( 3326): 	at dalvik.system.NativeStart.run(Native Method)
+E/cutils  ( 2446): Failed to mkdirat(/storage/sdcard1/Android): Read-only file system
+W/ContextImpl(26595): Failed to ensure directory: /storage/sdcard1/Android/data/com.ckt.francis.navigationmap/files
+I/LogServiceSetting( 3974): checkMemorydumpByPath: filePath is /storage/emulated/legacy/bugreports/ramdump
+I/LogServiceSetting( 3974): CheckMemorydumpByPath: /storage/emulated/legacy/bugreports/ramdumpis not exist.
+I/LogServiceSetting( 3974): checkMemorydumpByPath: filePath is /storage/sdcard1/bugreports/ramdump
+I/LogServiceSetting( 3974): CheckMemorydumpByPath: /storage/sdcard1/bugreports/ramdumpis not exist.
+I/PackageLogInfoManager( 3974): checkPackageLogState
+E/PackageLogInfoManager( 3974): checkPackageLogState, cr: android.app.ContextImpl$ApplicationContentResolver@43285440, packageNames: null
+W/IInputConnectionWrapper( 3489): showStatusIcon on inactive InputConnection
+I/PhoneStatusBar( 3152): hw_status_bar_operators = true, setSystemUIVisibily(SHOW_OPERATOR = false)
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+W/JPush   (26653): [AndroidUtil] You should make main activity extends InstrumentedActivity (JPush), otherwise you will not see user click and user active time start on report in Portal. 
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+E/baidumapsdk(26653): Authentication Error errorcode: 230 uid: -1 appid -1 msg: APP Scode码校验失败
+E/Thermal-daemon( 2463): [pa_0] temp_new :36  temp_old :37
+E/Thermal-daemon( 2463): Report temperature: [pa_0] temp :36  report_threshold:1
+I/wpa_supplicant( 9894): wlan0: HEART-BEAT-ACK: 255
+I/SmsProvider( 3437): insert match=15
+I/SmsProvider( 3437): insertInner match = 15
+I/SmsProvider( 3437): notifyChange
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/PackageManager( 2997):   Action: "android.intent.action.SENDTO"
+I/PackageManager( 2997):   Category: "android.intent.category.DEFAULT"
+I/PackageManager( 2997):   Scheme: "sms"
+I/PackageManager( 2997):   Action: "android.intent.action.SENDTO"
+I/PackageManager( 2997):   Category: "android.intent.category.DEFAULT"
+I/PackageManager( 2997):   Scheme: "smsto"
+I/PackageManager( 2997):   Action: "android.intent.action.SENDTO"
+I/PackageManager( 2997):   Category: "android.intent.category.DEFAULT"
+I/PackageManager( 2997):   Scheme: "mms"
+I/PackageManager( 2997):   Action: "android.intent.action.SENDTO"
+I/PackageManager( 2997):   Category: "android.intent.category.DEFAULT"
+I/PackageManager( 2997):   Scheme: "mmsto"
+I/HwSystemManager( 3593): DxEngine:handleSmsIntelligently: The sms is passed by whitelist
+I/HwSystemManager( 3593): DxEngine:handleSmsIntelligently: The sms is passed by whitelist
+W/MSG_APP_MmsSystemEventReceiver( 3562): intent: Intent { act=android.provider.Telephony.SMS_DELIVER flg=0x8000010 cmp=com.android.contacts/com.android.mms.transaction.PrivilegedSmsReceiver (has extras) }
+I/SmsProvider( 3437): Delete  match=15
+I/HwCust  ( 3562): Constructor found for class com.huawei.mms.util.HwCustHwMessageUtilsImpl, args = [Ljava.lang.Object;@4370bf78
+I/SmsProvider( 3437): notifyChange
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/SmsProvider( 3437): insert match=2
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/SmsProvider( 3437): insertInner match = 2
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/SmsProvider( 3437): notifyChange
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/dalvikvm-heap( 3562): Grow heap (frag case) to 31.204MB for 147472-byte allocation
+I/dalvikvm-heap( 3562): Grow heap (frag case) to 31.299MB for 122516-byte allocation
+I/MediaFocusControl( 2997):  AudioFocus  requestAudioFocus() from android.media.AudioManager@459b01d8
+I/AudioManager( 3152): requestAudioFocus() status : 1
+I/AudioManager( 3152): requestAudioFocus() apk    : com.android.systemui
+I/AudioFlinger( 2457): [setLowPowerApk]mLowPowerApk[0]
+I/str_params( 2457): key: 'auto_test' value: 'mode'
+I/AudioFlinger( 2457): [getLowPowerApk]mLowPowerApk[0]
+I/AwesomePlayer( 2457): [isLowPowerMode] isLowPowerApk[0]
+I/AwesomePlayer( 2457): is not Low Power Apk.
+I/SoftVorbis( 2457): ====== pcmchannel = 2 ====
+E/AudioFlinger( 2457): setLppDtsGeq():invalid keyValue of dts geq.
+E/AudioFlinger( 2457): setLppDtsGeq():invalid keyValue of dts geq.
+E/AudioFlinger( 2457): setLppDtsGeq():invalid keyValue of dts geq.
+E/AudioFlinger( 2457): setLppDtsGeq():invalid keyValue of dts geq.
+E/MediaPlayer( 3152): Should have subtitle controller already set
+I/audio_hw_primary( 2457): start_output_stream : mode=0, devices=2
+E/AudioSink( 2457): received unknown event type: 1 inside CallbackWrapper !
+W/HwLauncher( 3489): UnreadContentObserver newUnreadCount:1,oldUnreadCount:0
+I/HwLauncher( 3489): AllIdleAppsList  updatePackage : package[com.android.mms] matched activity's size is 0 and data List size is 72
+I/HwLauncher( 3489): AllIdleAppsList  updatePackage : package[com.android.contacts] matched activity's size is 3 and data List size is 72
+I/HwLauncher( 3489): Launcher.IconCache, cacheLocked begin Utilities.createIconBitmap entry.title = 联系人
+I/HwLauncher( 3489): Launcher.IconCache, getDrawableForDensity begin, iconId = 2130903040
+I/HwLauncher( 3489): Launcher.IconCache, getDrawableForDensity end,iconId = 2130903040
+I/HwLauncher( 3489): Launcher.Utilities createIconBitmap sourceWidth = 175sourceHeight = 175
+I/HwLauncher( 3489): Launcher.IconCache, cacheLocked end Utilities.createIconBitmap entry.title = 联系人
+I/HwLauncher( 3489): Launcher.IconCache, cacheLocked begin Utilities.createIconBitmap entry.title = 拨号
+I/HwLauncher( 3489): Launcher.IconCache, getDrawableForDensity begin, iconId = 2130903042
+I/HwLauncher( 3489): Launcher.IconCache, getDrawableForDensity end,iconId = 2130903042
+I/HwLauncher( 3489): Launcher.Utilities createIconBitmap sourceWidth = 175sourceHeight = 175
+I/HwLauncher( 3489): Launcher.IconCache, cacheLocked end Utilities.createIconBitmap entry.title = 拨号
+I/HwLauncher( 3489): Launcher.IconCache, cacheLocked begin Utilities.createIconBitmap entry.title = 信息
+I/HwLauncher( 3489): Launcher.IconCache, getDrawableForDensity begin, iconId = 2130903041
+I/HwLauncher( 3489): Launcher.IconCache, getDrawableForDensity end,iconId = 2130903041
+I/HwLauncher( 3489): Launcher.Utilities createIconBitmap sourceWidth = 175sourceHeight = 175
+I/HwLauncher( 3489): Launcher.IconCache, cacheLocked end Utilities.createIconBitmap entry.title = 信息
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 主题
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 音乐
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 视频
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 设置
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 应用市场
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 图库
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 相机
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 日历
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 天气
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 华为云服务
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 华为穿戴
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 备忘录
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 时钟
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 文件管理
+I/HwLauncher( 3489): Launcher.Folder childCount: 3
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = QQ
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 微信
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 酷米客公交
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 百度地图
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 美团
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = QQ安全中心
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 深圳地铁
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 京东
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 深圳移动营业厅
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 铁路12306
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 滴滴打车
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 苏宁易购
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 邦购商城
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 百度糯米
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 嗒嗒巴士
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 闪电购
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 有道云笔记
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 招商银行
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 民生银行
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 支付宝
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 掌上生活
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 我查查
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = PPTV聚力
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 百度云
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 掌上同济
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 同花顺
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = CSDN
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 挖财宝
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 大地影院
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 广发证券易淘金
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 极客学院
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 携程旅行
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 2048
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = NavigationMap
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 拨号
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 联系人
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 信息
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 浏览器
+W/dalvikvm(26755): Refusing to reopen boot DEX '/system/framework/hwframework.jar'
+W/dalvikvm(26755): Refusing to reopen boot DEX '/system/framework/hwEmui.jar'
+W/HwLauncher( 3489): UnreadContentObserver newUnreadCount:1,oldUnreadCount:0
+I/HwLauncher( 3489): AllIdleAppsList  updatePackage : package[com.huawei.message] matched activity's size is 0 and data List size is 72
+W/dalvikvm(26755): method Lcom/huawei/android/hwcontrol/HwEditor;.isInSelectionActionMode incorrectly overrides package-private method with same name in Landroid/widget/Editor;
+E/textview(26755): initAddtionalStyle default
+I/AppsCleanUp( 3449): add top view, pid:26755 count:1
+I/FloatController(26755): handelOrderChange com.huawei.FloatWindow/FloatMms
+I/FloatController(26755): handelOrderChange self send action 
+I/CAPALiteReceiver( 3449): USER STATE: STATIONARY SUB STATE: UNKNOWN
+I/MediaFocusControl( 2997):  AudioFocus  abandonAudioFocus() from android.media.AudioManager@459b01d8
+I/K3V3CpuGovernorPolicy( 3449): set scene Hmp policy : 300 , 150
+I/SmsProvider( 3437): Update match=1
+I/HwLauncher( 3489): Launcher onPause()
+I/HwLauncher( 3489): Launcher.MotionManager stopShakeMotion shakeChangeWallpaper = false
+I/SmsProvider( 3437): notifyChange
+E/HwBackgroundLoader( 3562):  Data already loaded 4
+E/HwBackgroundLoader( 3562):  Data already loaded 8
+E/HwBackgroundLoader( 3562):  Data already loaded 16
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/HwLauncher( 3489): UnreadContentObserver onChange()
+I/PhoneStatusBar( 3152): hw_status_bar_operators = true, setSystemUIVisibily(SHOW_OPERATOR = false)
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 8 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 8 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 8 - com.android.deskclock
+E/textview( 3562): initAddtionalStyle default
+E/textview( 3562): initAddtionalStyle default
+W/dalvikvm( 3562): method Lhuawei/com/android/internal/app/HwActionBarImpl;.animateToMode incorrectly overrides package-private method with same name in Lcom/android/internal/app/ActionBarImpl;
+E/Mms:UI  ( 3562): EmuiMenu create with empty OptionMenu
+E/MSG_APP_Mms/compose( 3562): getBody(Uri uri) get error uri
+I/HwCust  ( 3562): Constructor found for class com.huawei.mms.ui.HwCustPeopleActionBarImpl, args = [Ljava.lang.Object;@43294140
+I/HwSystemManager( 3593): HarassmentInterceptionService:checkPhoneNumberFromBlockItem: starts
+I/HwSystemManager( 3593): HarassmentInterceptionService:checkPhoneNumberFromBlockItem: nResult = -1
+I/AppsCleanUp( 3449): remove top view, pid:26755 count:0
+I/FloatController(26755): handelOrderChange com.huawei.FloatWindow/FloatMms
+E/FloatController(26755): handelOrderChange Quit As mFloatView=null OR title is Empty
+W/View    ( 3562): requestLayout() improperly called by android.widget.ScrollView{4329c358 VFED.V.. ......ID 36,0-822,117 #7f0a0119 app:id/attachment_editor_scroll_view} during layout: running second layout pass
+I/ActivityManager( 2997): Displayed com.android.contacts/com.android.mms.ui.ComposeMessageActivity: +579ms
+W/dalvikvm( 3562): method Lhuawei/com/android/internal/view/menu/HwActionMenuViewEx;.drawDividersHorizontal incorrectly overrides package-private method with same name in Landroid/widget/LinearLayout;
+I/HwSystemManager( 3593): HarassmentInterceptionService:checkPhoneNumberFromBlockItem: starts
+I/HwSystemManager( 3593): HarassmentInterceptionService:checkPhoneNumberFromBlockItem: nResult = -1
+W/HwLauncher( 3489): UnreadContentObserver newUnreadCount:0,oldUnreadCount:1
+I/HwLauncher( 3489): AllIdleAppsList  updatePackage : package[com.android.mms] matched activity's size is 0 and data List size is 72
+I/MediaFocusControl( 2997):  AudioFocus  abandonAudioFocus() from android.media.AudioManager@459b01d8
+I/HwLauncher( 3489): AllIdleAppsList  updatePackage : package[com.android.contacts] matched activity's size is 3 and data List size is 72
+I/HwLauncher( 3489): Launcher.IconCache, cacheLocked begin Utilities.createIconBitmap entry.title = 联系人
+I/HwLauncher( 3489): Launcher.IconCache, getDrawableForDensity begin, iconId = 2130903040
+I/HwLauncher( 3489): Launcher.IconCache, getDrawableForDensity end,iconId = 2130903040
+I/HwLauncher( 3489): Launcher.Utilities createIconBitmap sourceWidth = 175sourceHeight = 175
+I/HwLauncher( 3489): Launcher.IconCache, cacheLocked end Utilities.createIconBitmap entry.title = 联系人
+I/HwLauncher( 3489): Launcher.IconCache, cacheLocked begin Utilities.createIconBitmap entry.title = 拨号
+I/HwLauncher( 3489): Launcher.IconCache, getDrawableForDensity begin, iconId = 2130903042
+I/HwLauncher( 3489): Launcher.IconCache, getDrawableForDensity end,iconId = 2130903042
+I/HwLauncher( 3489): Launcher.Utilities createIconBitmap sourceWidth = 175sourceHeight = 175
+I/HwLauncher( 3489): Launcher.IconCache, cacheLocked end Utilities.createIconBitmap entry.title = 拨号
+I/HwLauncher( 3489): Launcher.IconCache, cacheLocked begin Utilities.createIconBitmap entry.title = 信息
+I/HwLauncher( 3489): Launcher.IconCache, getDrawableForDensity begin, iconId = 2130903041
+I/HwLauncher( 3489): Launcher.IconCache, getDrawableForDensity end,iconId = 2130903041
+I/HwLauncher( 3489): Launcher.Utilities createIconBitmap sourceWidth = 175sourceHeight = 175
+I/HwLauncher( 3489): Launcher.IconCache, cacheLocked end Utilities.createIconBitmap entry.title = 信息
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 主题
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 音乐
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 视频
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 设置
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 应用市场
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 图库
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 相机
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 日历
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 天气
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 华为云服务
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 华为穿戴
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 备忘录
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 时钟
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 文件管理
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = QQ
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 微信
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 酷米客公交
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 百度地图
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 美团
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = QQ安全中心
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 深圳地铁
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 京东
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 深圳移动营业厅
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 铁路12306
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 滴滴打车
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 苏宁易购
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 邦购商城
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 百度糯米
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 嗒嗒巴士
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 闪电购
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 有道云笔记
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 招商银行
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 民生银行
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 支付宝
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 掌上生活
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 我查查
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = PPTV聚力
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 百度云
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 掌上同济
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 同花顺
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = CSDN
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 挖财宝
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 大地影院
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 广发证券易淘金
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 极客学院
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 携程旅行
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 2048
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = NavigationMap
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 拨号
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 联系人
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 信息
+I/HwLauncher( 3489): Workspace updateCustomizeShortcuts info.title = 浏览器
+I/HwLauncher( 3489): Launcher.Folder childCount: 3
+W/HwLauncher( 3489): UnreadContentObserver newUnreadCount:0,oldUnreadCount:1
+I/HwLauncher( 3489): AllIdleAppsList  updatePackage : package[com.huawei.message] matched activity's size is 0 and data List size is 72
+E/textview( 3562): initAddtionalStyle default
+I/HwCust  ( 3562): Constructor found for class com.huawei.mms.util.HwCustCommonGatherLinksImpl, args = [Ljava.lang.Object;@434563d0
+I/chromium( 3562): [INFO:library_loader_hooks.cc(112)] Chromium logging enabled: level = 0, default verbosity = 0
+I/BrowserProcessMain( 3562): Initializing chromium process, renderers=0
+I/chromium( 3562): [INFO:url_util.cc(429)] AddStandardScheme is not supported
+I/chromium( 3562): [INFO:url_util.cc(429)] AddStandardScheme is not supported
+I/chromium( 3562): [INFO:url_util.cc(429)] AddStandardScheme is not supported
+I/chromium( 3562): [INFO:url_util.cc(429)] AddStandardScheme is not supported
+W/chromium( 3562): [WARNING:proxy_service.cc(888)] PAC support disabled because there is no system implementation
+I/HwCust  ( 3562): Constructor found for class com.huawei.mms.ui.HwCustBrowserClickableImpl, args = [Ljava.lang.Object;@433ad3b8
+I/HwCust  ( 3562): Constructor found for class com.huawei.mms.ui.HwCustHwClickableSpanImpl, args = [Ljava.lang.Object;@43473678
+E/textview( 3562): initAddtionalStyle default
+I/K3V3CpuGovernorPolicy( 3449): close previously scene Hmp policy : 300 , 150
+E/textview( 3562): initAddtionalStyle default
+I/HwLauncher( 3489): Launcher onStop()
+E/HwLauncher( 3489): Launcher dialog dismiss failed : java.lang.IllegalArgumentException: no dialog with id 1 was ever shown via Activity#showDialog
+I/HwLauncher( 3489): Launcher dynamicIconsUnregister
+I/HwLauncher( 3489): DynamicUpdater unregisterReceiver
+I/HwLauncher( 3489): DynamicIcon onPause  isvisible = true   mAttachedToWindow:true    mWindowVisible:falsecom.android.calendar
+I/HwLauncher( 3489): DynamicUpdater unregisterReceiver
+I/HwLauncher( 3489): DynamicIcon onPause  isvisible = true   mAttachedToWindow:true    mWindowVisible:falsecom.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicUpdater unregisterReceiver
+I/HwLauncher( 3489): DynamicIcon onPause  isvisible = true   mAttachedToWindow:true    mWindowVisible:falsecom.android.deskclock
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 4 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 4 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 4 - com.android.deskclock
+E/CommandListener( 2449): readDefRoute call readDefRoute
+E/SecondaryTablController( 2449): isWifiDefaultRouteExisted /system/bin/ip route
+W/CursorWrapperInner( 3152): Cursor finalized without prior close()
+I/K3V3CpuGovernorPolicy( 3449): set scene Hmp policy : 300 , 150
+W/dalvikvm( 3152): Refusing to reopen boot DEX '/system/framework/hwframework.jar'
+W/dalvikvm( 3152): Refusing to reopen boot DEX '/system/framework/hwEmui.jar'
+E/HwLauncher( 3489): Launcher dialog dismiss failed : java.lang.IllegalArgumentException: no dialog with id 1 was ever shown via Activity#showDialog
+E/HwLauncher( 3489): Launcher dialog dismiss failed : java.lang.IllegalArgumentException: no dialog with id 1 was ever shown via Activity#showDialog
+W/IInputConnectionWrapper( 3562): showStatusIcon on inactive InputConnection
+I/ActivityManager( 2997): Displayed com.android.systemui/.recent.RecentsActivity: +169ms
+E/CommandListener( 2449): readDefRoute Rsp ok
+I/K3V3CpuGovernorPolicy( 3449): close previously scene Hmp policy : 300 , 150
+I/HwPowerMonitor.PowerExceptionObservable( 3420): unhandled onEvent actionID: 3002
+I/TimeManager( 3152): receiver action = android.intent.action.TIME_TICK
+I/TimeManager( 3152): send message delay millis = 60942 ms
+I/TimeManager( 3152): hand message 1
+I/TimeManager( 3152): notify time change. size = 3
+I/HwLauncher( 3489): Model  onReceive intent=Intent { act=android.intent.action.TIME_TICK flg=0x50000014 (has extras) }
+I/dalvikvm-heap( 3489): Grow heap (frag case) to 43.249MB for 1008016-byte allocation
+E/Thermal-daemon( 2463): [ap] temp_new :39  temp_old :38
+E/Thermal-daemon( 2463): Report temperature: [ap] temp :39  report_threshold:1
+I/audio_hw_primary( 2457): [do_output_standby],do_output_standby-----out->standby_lpp : 1
+I/wpa_supplicant( 9894): wlan0: HEART-BEAT-ACK: 256
+I/HwSystemManager( 3928): OptimizeReceiver:OptimizeReceiver received action:huawei.intent.action.hsm_remove_pkg
+I/HwSystemManager( 3593): OptimizeIntentService:handlerRemovePkg, packge name is com.android.contacts
+I/HwSystemManager( 3593): ProcessFilterPolicy:unprotectList app:[com.huawei.android.ds, com.android.gallery3d, com.huawei.KoBackup, com.huawei.appmarket, com.huawei.hidisk, com.huawei.android.thememanager, com.huawei.phoneservice, com.android.musicvis, com.android.browser, com.android.magicsmoke, com.android.providers.downloads, com.vmall.client, cmb.pb, cn.com.cmbc.mbank, com.coomix.app.bus, com.baidu.BaiduMap, com.eg.android.AlipayGphone, com.cmbchina.ccd.pluto.cmbActivity, com.sankuai.meituan, com.tencent.token, com.iss.shenzhenmetro, com.jingdong.app.mall, com.wochacha, com.sun.ui.MobileOffice, com.pplive.androidphone, com.MobileTicket, com.baidu.netdisk, cn.wps.moffice_eng, com.sdu.didi.psnger, com.suning.mobile.ebuy, com.istone.activity, com.greenline.palm.wuhantongji, com.hexin.plat.android, net.csdn.csdnplus, com.hangzhoucaimi.financial, com.ddcinemaapp, com.gf.client, com.jikexueyuan.geekacademy, com.nuomi, com.newdadabus, com.redcat.shandiangou, ctrip.android.view, com.youdao.note, com.digiplex.game, com.ckt.francis.navigationmap]
+I/HwSystemManager( 3593): OptimizeIntentService:handlerRemovePkg, no pkg after filter
+I/HwSystemManager( 3928): OptimizeReceiver:OptimizeReceiver received action:huawei.intent.action.hsm_remove_pkg
+E/HwLauncher( 3489): Launcher dialog dismiss failed : java.lang.IllegalArgumentException: no dialog with id 1 was ever shown via Activity#showDialog
+I/HwSystemManager( 3593): OptimizeIntentService:handlerRemovePkg, packge name is com.ckt.francis.navigationmap
+I/HwSystemManager( 3593): ProcessFilterPolicy:unprotectList app:[com.huawei.android.ds, com.android.gallery3d, com.huawei.KoBackup, com.huawei.appmarket, com.huawei.hidisk, com.huawei.android.thememanager, com.huawei.phoneservice, com.android.musicvis, com.android.browser, com.android.magicsmoke, com.android.providers.downloads, com.vmall.client, cmb.pb, cn.com.cmbc.mbank, com.coomix.app.bus, com.baidu.BaiduMap, com.eg.android.AlipayGphone, com.cmbchina.ccd.pluto.cmbActivity, com.sankuai.meituan, com.tencent.token, com.iss.shenzhenmetro, com.jingdong.app.mall, com.wochacha, com.sun.ui.MobileOffice, com.pplive.androidphone, com.MobileTicket, com.baidu.netdisk, cn.wps.moffice_eng, com.sdu.didi.psnger, com.suning.mobile.ebuy, com.istone.activity, com.greenline.palm.wuhantongji, com.hexin.plat.android, net.csdn.csdnplus, com.hangzhoucaimi.financial, com.ddcinemaapp, com.gf.client, com.jikexueyuan.geekacademy, com.nuomi, com.newdadabus, com.redcat.shandiangou, ctrip.android.view, com.youdao.note, com.digiplex.game, com.ckt.francis.navigationmap]
+I/HwSystemManager( 3593): OptimizeIntentService:Send pkg to smcs[com.ckt.francis.navigationmap]
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 4 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 4 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 4 - com.android.deskclock
+I/HwSystemManager( 3593): SmartMemoryCleanService:hasPredicatePkgs :: pkg = com.ckt.francis.navigationmap
+I/HwSystemManager( 3593): SmartMemoryCleanService:informAMSDirectTrimPkgs called, trim pkg:[com.ckt.francis.navigationmap]
+I/HwLauncher( 3489): Launcher onStart()
+I/HwLauncher( 3489): Launcher dynamicIconsRegister
+I/HwLauncher( 3489): DynamicUpdater registerReceiver
+I/HwLauncher( 3489): DynamicUpdater call updateFolder
+I/HwLauncher( 3489): DynamicIcon onResume  isvisible = false   mAttachedToWindow:true    mWindowVisible:falsecom.android.calendar
+I/HwLauncher( 3489): DynamicUpdater registerReceiver
+E/ApduServiceInfo( 3475): Not adding <aid-group> with empty or invalid AIDs
+I/HwLauncher( 3489): DynamicUpdater call updateFolder
+I/HwLauncher( 3489): WeatherDynamicUpdaterpositiveUpdate at WeatherDynamicUpdater
+I/HwLauncher( 3489): DynamicIcon onResume  isvisible = false   mAttachedToWindow:true    mWindowVisible:falsecom.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicUpdater registerReceiver
+I/HwLauncher( 3489): DynamicIconData , getDrawableForDynamic begin, pkg = com.android.deskclock, picName = deskclock_bg
+I/RegisteredServicesCache( 3475): Enable HCE
+I/HwLauncher( 3489): DynamicIconData , getDrawableForDynamic end, pkg = com.android.deskclock, picName = deskclock_bg
+I/HwLauncher( 3489): DynamicIconData , getDrawableForDynamic begin, pkg = com.android.deskclock, picName = deskclock_bg
+I/HwLauncher( 3489): DynamicIconData , getDrawableForDynamic end, pkg = com.android.deskclock, picName = deskclock_bg
+I/HwLauncher( 3489): Launcher.Utilities createIconBitmap sourceWidth = 175sourceHeight = 175
+I/HwLauncher( 3489): ClockDynamicUpdater calender update folder at CalenderDynamicUpdater
+I/HwLauncher( 3489): DynamicUpdater call updateFolder
+I/HwLauncher( 3489): DynamicUpdater call updateFolder
+I/HwLauncher( 3489): DynamicIcon onResume  isvisible = false   mAttachedToWindow:true    mWindowVisible:falsecom.android.deskclock
+I/HwLauncher( 3489): Launcher onResume()
+I/HwLauncher( 3489): Launcher doResumeWork()
+I/HwLauncher( 3489): Launcher.MotionManager startShakeMotion shakeChangeWallpaper = false
+I/HwLauncher( 3489): Launcher changeNaviBarStatus
+W/HwLauncher( 3489): Launcher  updateMarginLayoutParamsForView:the target view is null.
+I/HwLauncher( 3489): Launcher  onResume mIsToUninstallApp = false
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 0 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 0 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 0 - com.android.deskclock
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 0 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 0 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 0 - com.android.deskclock
+E/HwLauncher( 3489): Launcher dialog dismiss failed : java.lang.IllegalArgumentException: no dialog with id 1 was ever shown via Activity#showDialog
+I/HwLauncher( 3489): WeatherDynamicUpdaterreceive action = com.huawei.android.action.launcher_weather_icon_change
+I/HwLauncher( 3489): WeatherDynamicUpdaterreceiver data is int[] = [0, 0, 52, 0, 96, 0, 140, 0]
+I/HwLauncher( 3489):  stringArray[] [mostlycloudy, num2, num9, tempc]
+I/PhoneStatusBar( 3152): hw_status_bar_operators = true, setSystemUIVisibily(SHOW_OPERATOR = false)
+I/PhoneStatusBar( 3152): hw_status_bar_operators = true, setSystemUIVisibily(SHOW_OPERATOR = false)
+I/CAPALiteReceiver( 3449): USER STATE: STATIONARY SUB STATE: UNKNOWN
+E/android_hardware_fm.cpp(26988): register_android_hardware_fm_fmradio
+E/FM_HAL  (26988): [FM_HAL], fm_dynamic_lib is libbcmfm_if
+E/FM_HAL  (26988): [FM_HAL], libname is libbcmfm_if
+E/fm_if.c (26988): find the id:libbcmfm_if and begins to open the devices
+E/android_hardware_fm.cpp(26988): register_android_hardware_fm_fmradio, ret is 0
+E/ApduServiceInfo( 3475): Not adding <aid-group> with empty or invalid AIDs
+E/jdwp    (26988): Failed sending reply to debugger: Bad file number
+I/RegisteredServicesCache( 3475): Enable HCE
+E/android_hardware_fm.cpp(27005): register_android_hardware_fm_fmradio
+E/FM_HAL  (27005): [FM_HAL], fm_dynamic_lib is libbcmfm_if
+E/FM_HAL  (27005): [FM_HAL], libname is libbcmfm_if
+E/fm_if.c (27005): find the id:libbcmfm_if and begins to open the devices
+E/android_hardware_fm.cpp(27005): register_android_hardware_fm_fmradio, ret is 0
+I/K3V3CpuGovernorPolicy( 3449): set scene Hmp policy : 300 , 150
+I/HwLauncher( 3489): Launcher onPause()
+I/HwLauncher( 3489): Launcher.MotionManager stopShakeMotion shakeChangeWallpaper = false
+I/HwLauncher( 3489): Launcher onStop()
+E/HwLauncher( 3489): Launcher dialog dismiss failed : java.lang.IllegalArgumentException: no dialog with id 1 was ever shown via Activity#showDialog
+I/HwLauncher( 3489): Launcher dynamicIconsUnregister
+I/HwLauncher( 3489): DynamicUpdater unregisterReceiver
+I/HwLauncher( 3489): DynamicIcon onPause  isvisible = true   mAttachedToWindow:true    mWindowVisible:truecom.android.calendar
+I/HwLauncher( 3489): DynamicUpdater unregisterReceiver
+I/PhoneStatusBar( 3152): hw_status_bar_operators = true, setSystemUIVisibily(SHOW_OPERATOR = false)
+I/HwLauncher( 3489): DynamicIcon onPause  isvisible = true   mAttachedToWindow:true    mWindowVisible:truecom.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicUpdater unregisterReceiver
+I/HwLauncher( 3489): DynamicIcon onPause  isvisible = true   mAttachedToWindow:true    mWindowVisible:truecom.android.deskclock
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 4 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 4 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 4 - com.android.deskclock
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 8 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 8 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 8 - com.android.deskclock
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+E/cutils  ( 2446): Failed to mkdirat(/storage/sdcard1/Android): Read-only file system
+W/ContextImpl(27019): Failed to ensure directory: /storage/sdcard1/Android/data/com.ckt.francis.navigationmap/files
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+E/dalvikvm(27019): dlopen("/storage/emulated/0/BaiduNaviSDK_SO/libgnustl_shared.so") failed: dlopen failed: library "/storage/emulated/0/BaiduNaviSDK_SO/libgnustl_shared.so" not found
+E/Jni_JniEngine(27019): ######## Java_com_baidu_AppTest_AppTest JNI_OnLoad 
+E/Jni_JniEngine(27019): ######## Java_com_baidu_AppTest_AppTest JNI_OnLoad -1 
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+W/System.err(27019): java.io.FileNotFoundException: channel
+W/System.err(27019): 	at android.content.res.AssetManager.openAsset(Native Method)
+W/System.err(27019): 	at android.content.res.AssetManager.open(AssetManager.java:316)
+W/System.err(27019): 	at android.content.res.AssetManager.open(AssetManager.java:290)
+W/System.err(27019): 	at com.baidu.navisdk.util.common.PackageUtil.readAndCopyChannel(PackageUtil.java:388)
+W/System.err(27019): 	at com.baidu.navisdk.util.common.PackageUtil.init(PackageUtil.java:72)
+W/System.err(27019): 	at com.baidu.navisdk.BNaviModuleManager.initListenersForMap(BNaviModuleManager.java:90)
+W/System.err(27019): 	at com.baidu.navisdk.adapter.BaiduNaviManager.init(BaiduNaviManager.java:546)
+W/System.err(27019): 	at com.ckt.francis.navigationmap.activitys.MainActivity.initNavi(MainActivity.java:111)
+W/System.err(27019): 	at com.ckt.francis.navigationmap.activitys.MainActivity.onCreate(MainActivity.java:68)
+W/System.err(27019): 	at android.app.Activity.performCreate(Activity.java:5301)
+W/System.err(27019): 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1090)
+W/System.err(27019): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2259)
+W/System.err(27019): 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2345)
+W/System.err(27019): 	at android.app.ActivityThread.access$1100(ActivityThread.java:139)
+W/System.err(27019): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1256)
+W/System.err(27019): 	at android.os.Handler.dispatchMessage(Handler.java:102)
+W/System.err(27019): 	at android.os.Looper.loop(Looper.java:136)
+W/System.err(27019): 	at android.app.ActivityThread.main(ActivityThread.java:5314)
+W/System.err(27019): 	at java.lang.reflect.Method.invokeNative(Native Method)
+W/System.err(27019): 	at java.lang.reflect.Method.invoke(Method.java:515)
+W/System.err(27019): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:864)
+W/System.err(27019): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:680)
+W/System.err(27019): 	at dalvik.system.NativeStart.main(Native Method)
+W/JPush   (27019): [AndroidUtil] You should make main activity extends InstrumentedActivity (JPush), otherwise you will not see user click and user active time start on report in Portal. 
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+E/Jni_JniEngine(27019): ######## Java_com_baidu_AppTest_AppTest_Start 1 
+E/Jni_JniEngine(27019): ######## Java_com_baidu_AppTest_AppTest JNI_OnLoad -2 
+E/Jni_JniEngine(27019): ######## Java_com_baidu_AppTest_AppTest JNI_OnLoad -20 
+E/Jni_JniEngine(27019): ######## Java_com_baidu_AppTest_AppTest JNI_OnLoad 2 
+E/Jni_JniEngine(27019): ######## Java_com_baidu_AppTest_AppTest_Start
+E/Jni_JniEngine(27019): ######## Java_com_baidu_AppTest_AppTest_Start 0 
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/K3V3CpuGovernorPolicy( 3449): close previously scene Hmp policy : 300 , 150
+I/ActivityManager( 2997): Displayed com.ckt.francis.navigationmap/.activitys.MainActivity: +868ms
+E/baidumapsdk(27019): Authentication Error errorcode: 230 uid: -1 appid -1 msg: APP Scode码校验失败
+E/baidumapsdk(27019): Authentication Error errorcode: 230 uid: -1 appid -1 msg: APP Scode码校验失败
+W/dalvikvm(27019): JNI WARNING: received null jstring (GetStringUTFChars)
+W/dalvikvm(27019):              in Lcom/baidu/navisdk/jni/nativeif/JNIStatisticsControl;.setLogHeaderParam:(Landroid/os/Bundle;)I (GetStringUTFChars)
+I/dalvikvm(27019): "main" prio=5 tid=1 NATIVE
+I/dalvikvm(27019):   | group="main" sCount=0 dsCount=0 obj=0x4161cd68 self=0x415536f0
+I/dalvikvm(27019):   | sysTid=27019 nice=0 sched=0/0 cgrp=apps handle=1074319700
+I/dalvikvm(27019):   | state=R schedstat=( 505255920 22590672 932 ) utm=37 stm=13 core=0
+I/dalvikvm(27019):   #00  pc 000012f6  /system/lib/libcorkscrew.so (unwind_backtrace_thread+29)
+I/dalvikvm(27019):   #01  pc 000617f6  /system/lib/libdvm.so (dvmDumpNativeStack(DebugOutputTarget const*, int)+33)
+I/dalvikvm(27019):   #02  pc 000557f8  /system/lib/libdvm.so (dvmDumpThreadEx(DebugOutputTarget const*, Thread*, bool)+395)
+I/dalvikvm(27019):   #03  pc 00055866  /system/lib/libdvm.so (dvmDumpThread(Thread*, bool)+25)
+I/dalvikvm(27019):   #04  pc 00039928  /system/lib/libdvm.so
+I/dalvikvm(27019):   #05  pc 00039c10  /system/lib/libdvm.so
+I/dalvikvm(27019):   #06  pc 0003ac30  /system/lib/libdvm.so
+I/dalvikvm(27019):   #07  pc 0003d046  /system/lib/libdvm.so
+I/dalvikvm(27019):   #08  pc 00195d8c  /data/app-lib/com.ckt.francis.navigationmap-2/libapp_BaiduNaviApplib.so (Java_com_baidu_navisdk_jni_nativeif_JNIStatisticsControl_setLogHeaderParam+115)
+I/dalvikvm(27019):   #09  pc 0001eb8c  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+I/dalvikvm(27019):   #10  pc 0004f272  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+397)
+I/dalvikvm(27019):   #11  pc 00050cb6  /system/lib/libdvm.so (dvmResolveNativeMethod(unsigned int const*, JValue*, Method const*, Thread*)+181)
+I/dalvikvm(27019):   #12  pc 00027fa0  /system/lib/libdvm.so
+I/dalvikvm(27019):   #13  pc 0002f130  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+I/dalvikvm(27019):   #14  pc 0002c794  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+I/dalvikvm(27019):   #15  pc 00061a08  /system/lib/libdvm.so (dvmInvokeMethod(Object*, Method const*, ArrayObject*, ArrayObject*, ClassObject*, bool)+391)
+I/dalvikvm(27019):   #16  pc 00069bee  /system/lib/libdvm.so
+I/dalvikvm(27019):   #17  pc 00027fa0  /system/lib/libdvm.so
+I/dalvikvm(27019):   #18  pc 0002f130  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+I/dalvikvm(27019):   #19  pc 0002c794  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+I/dalvikvm(27019):   #20  pc 00061724  /system/lib/libdvm.so (dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)+335)
+I/dalvikvm(27019):   #21  pc 0004ae3a  /system/lib/libdvm.so
+I/dalvikvm(27019):   #22  pc 00050594  /system/lib/libandroid_runtime.so
+I/dalvikvm(27019):   #23  pc 00051348  /system/lib/libandroid_runtime.so (android::AndroidRuntime::start(char const*, char const*)+367)
+I/dalvikvm(27019):   #24  pc 0000105a  /system/bin/app_process
+I/dalvikvm(27019):   #25  pc 0000e604  /system/lib/libc.so (__libc_init+47)
+I/dalvikvm(27019):   at com.baidu.navisdk.jni.nativeif.JNIStatisticsControl.setLogHeaderParam(Native Method)
+I/dalvikvm(27019):   at com.baidu.navisdk.jni.nativeif.JNIStatisticsControl.setLogHeaderParam(JNIStatisticsControl.java:46)
+I/dalvikvm(27019):   at com.baidu.navisdk.jni.nativeif.JNIStatisticsControl.init(JNIStatisticsControl.java:34)
+I/dalvikvm(27019):   at com.baidu.navisdk.comapi.statistics.BNStatisticsManager.<init>(BNStatisticsManager.java:52)
+I/dalvikvm(27019):   at com.baidu.navisdk.comapi.statistics.BNStatisticsManager.getInstance(BNStatisticsManager.java:42)
+I/dalvikvm(27019):   at com.baidu.navisdk.util.statistic.RespTimeStatItem.onEvent(RespTimeStatItem.java:56)
+I/dalvikvm(27019):   at com.baidu.navisdk.adapter.BaiduNaviManager$4.handleMessage(BaiduNaviManager.java:567)
+I/dalvikvm(27019):   at android.os.Handler.dispatchMessage(Handler.java:102)
+I/dalvikvm(27019):   at android.os.Looper.loop(Looper.java:136)
+I/dalvikvm(27019):   at android.app.ActivityThread.main(ActivityThread.java:5314)
+I/dalvikvm(27019):   at java.lang.reflect.Method.invokeNative(Native Method)
+I/dalvikvm(27019):   at java.lang.reflect.Method.invoke(Method.java:515)
+I/dalvikvm(27019):   at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:864)
+I/dalvikvm(27019):   at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:680)
+I/dalvikvm(27019):   at dalvik.system.NativeStart.main(Native Method)
+I/dalvikvm(27019): 
+E/dalvikvm(27019): VM aborting
+F/libc    (27019): Fatal signal 6 (SIGABRT) at 0x0000698b (code=-6), thread 27019 (s.navigationmap)
+I/DEBUG   ( 2450): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+I/DEBUG   ( 2450): Build fingerprint: 'Huawei/PE-TL10/hwPE:4.4.2/HuaweiPE-TL10/CHNC00B243:user/ota-rel-keys,release-keys'
+I/DEBUG   ( 2450): Revision: '0'
+I/DEBUG   ( 2450): pid: 27019, tid: 27019, name: s.navigationmap  >>> com.ckt.francis.navigationmap <<<
+I/DEBUG   ( 2450): signal 6 (SIGABRT), code -6 (SI_TKILL), fault addr --------
+I/DEBUG   ( 2450):     r0 00000000  r1 0000698b  r2 00000006  r3 00000000
+I/DEBUG   ( 2450):     r4 00000006  r5 0000000b  r6 0000698b  r7 0000010c
+I/DEBUG   ( 2450):     r8 415e5f54  r9 415e6d57  sl 416072c8  fp 415e6da0
+I/DEBUG   ( 2450):     ip 4160d0e0  sp be80fea0  lr 400b6289  pc 400c51c8  cpsr 000f0010
+I/DEBUG   ( 2450):     d0  74726f6261204d56  d1  617453657669746e
+I/DEBUG   ( 2450):     d2  4965746f67795a75  d3  6e69616d2e74696c
+I/DEBUG   ( 2450):     d4  732e656d69746e75  d5  6f72646e6128206f
+I/DEBUG   ( 2450):     d6  72646e413a3a6469  d7  69746e755264696f
+I/DEBUG   ( 2450):     d8  0000000000000000  d9  0000000000000000
+I/DEBUG   ( 2450):     d10 0000000000000000  d11 0000000000000000
+I/DEBUG   ( 2450):     d12 0000000000000000  d13 0000000000000000
+I/DEBUG   ( 2450):     d14 0000000000000000  d15 0000000000000000
+I/DEBUG   ( 2450):     d16 ffffffe500000030  d17 000000000000000e
+I/DEBUG   ( 2450):     d18 fffffffd0000002a  d19 fffffffc0000003b
+I/DEBUG   ( 2450):     d20 fffffffc00000057  d21 fffffffa00000074
+I/DEBUG   ( 2450):     d22 0000001600000075  d23 0000001800000075
+I/DEBUG   ( 2450):     d24 000000007c005441  d25 0000000000000fff
+I/DEBUG   ( 2450):     d26 0000000000000009  d27 0000000000000009
+I/DEBUG   ( 2450):     d28 0000007bffde0000  d29 0000000000000001
+I/DEBUG   ( 2450):     d30 0000000000000001  d31 000000007c0054c0
+I/DEBUG   ( 2450):     scr 60000010
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): backtrace:
+I/DEBUG   ( 2450):     #00  pc 000221c8  /system/lib/libc.so (tgkill+12)
+I/DEBUG   ( 2450):     #01  pc 00013285  /system/lib/libc.so (pthread_kill+48)
+I/DEBUG   ( 2450):     #02  pc 00013499  /system/lib/libc.so (raise+10)
+I/DEBUG   ( 2450):     #03  pc 000121cf  /system/lib/libc.so
+I/DEBUG   ( 2450):     #04  pc 00021a7c  /system/lib/libc.so (abort+4)
+I/DEBUG   ( 2450):     #05  pc 00046df7  /system/lib/libdvm.so (dvmAbort+78)
+I/DEBUG   ( 2450):     #06  pc 00039c11  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #07  pc 0003ac31  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #08  pc 0003d047  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #09  pc 00195d8f  /data/app-lib/com.ckt.francis.navigationmap-2/libapp_BaiduNaviApplib.so (Java_com_baidu_navisdk_jni_nativeif_JNIStatisticsControl_setLogHeaderParam+118)
+I/DEBUG   ( 2450):     #10  pc 0001eb8c  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+I/DEBUG   ( 2450):     #11  pc 0004f273  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+398)
+I/DEBUG   ( 2450):     #12  pc 00050cb9  /system/lib/libdvm.so (dvmResolveNativeMethod(unsigned int const*, JValue*, Method const*, Thread*)+184)
+I/DEBUG   ( 2450):     #13  pc 00027fa0  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #14  pc 0002f130  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+I/DEBUG   ( 2450):     #15  pc 0002c794  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+I/DEBUG   ( 2450):     #16  pc 00061a09  /system/lib/libdvm.so (dvmInvokeMethod(Object*, Method const*, ArrayObject*, ArrayObject*, ClassObject*, bool)+392)
+I/DEBUG   ( 2450):     #17  pc 00069bef  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #18  pc 00027fa0  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #19  pc 0002f130  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+I/DEBUG   ( 2450):     #20  pc 0002c794  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+I/DEBUG   ( 2450):     #21  pc 00061725  /system/lib/libdvm.so (dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)+336)
+I/DEBUG   ( 2450):     #22  pc 0004ae3b  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #23  pc 00050597  /system/lib/libandroid_runtime.so
+I/DEBUG   ( 2450):     #24  pc 00051349  /system/lib/libandroid_runtime.so (android::AndroidRuntime::start(char const*, char const*)+368)
+I/DEBUG   ( 2450):     #25  pc 0000105b  /system/bin/app_process
+I/DEBUG   ( 2450):     #26  pc 0000e607  /system/lib/libc.so (__libc_init+50)
+I/DEBUG   ( 2450):     #27  pc 00000d7c  /system/bin/app_process
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): stack:
+I/DEBUG   ( 2450):          be80fe60  00000000  
+I/DEBUG   ( 2450):          be80fe64  415e6cf1  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fe68  4160d0e0  /dev/ashmem/dalvik-zygote (deleted)
+I/DEBUG   ( 2450):          be80fe6c  415e5f54  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fe70  415e6d57  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fe74  416072c8  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fe78  415e6da0  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fe7c  400c9899  /system/lib/libc.so (snprintf+80)
+I/DEBUG   ( 2450):          be80fe80  35343730  
+I/DEBUG   ( 2450):          be80fe84  32383134  
+I/DEBUG   ( 2450):          be80fe88  be80fefc  [stack]
+I/DEBUG   ( 2450):          be80fe8c  00000000  
+I/DEBUG   ( 2450):          be80fe90  00000000  
+I/DEBUG   ( 2450):          be80fe94  36333138  
+I/DEBUG   ( 2450):          be80fe98  00004000  
+I/DEBUG   ( 2450):          be80fe9c  d48a6738  
+I/DEBUG   ( 2450):     #00  be80fea0  00000006  
+I/DEBUG   ( 2450):          be80fea4  0000000b  
+I/DEBUG   ( 2450):          be80fea8  0000698b  
+I/DEBUG   ( 2450):          be80feac  4160d0e0  /dev/ashmem/dalvik-zygote (deleted)
+I/DEBUG   ( 2450):          be80feb0  4160d0e0  /dev/ashmem/dalvik-zygote (deleted)
+I/DEBUG   ( 2450):          be80feb4  400b6289  /system/lib/libc.so (pthread_kill+52)
+I/DEBUG   ( 2450):     #01  be80feb8  00000006  
+I/DEBUG   ( 2450):          be80febc  00000000  
+I/DEBUG   ( 2450):          be80fec0  415e6cf1  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fec4  400b649d  /system/lib/libc.so (raise+14)
+I/DEBUG   ( 2450):     #02  be80fec8  be80fed4  [stack]
+I/DEBUG   ( 2450):          be80fecc  400b51d3  /system/lib/libc.so
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near r1:
+I/DEBUG   ( 2450):     00006968 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006978 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006988 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006998 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069a8 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069b8 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069c8 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069d8 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069e8 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069f8 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a08 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a18 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a28 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a38 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a48 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a58 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near r6:
+I/DEBUG   ( 2450):     00006968 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006978 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006988 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006998 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069a8 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069b8 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069c8 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069d8 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069e8 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069f8 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a08 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a18 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a28 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a38 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a48 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a58 ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near r8:
+I/DEBUG   ( 2450):     415e5f34 3e646c6c 61640000 6b69766c 2e6d762e  
+I/DEBUG   ( 2450):     415e5f44 6f6c6c61 61725463 72656b63 0078614d  
+I/DEBUG   ( 2450):     415e5f54 766c6164 6d766b69 6e674900 6e69726f  
+I/DEBUG   ( 2450):     415e5f64 73252067 73252720 2d2d2027 6e69202d  
+I/DEBUG   ( 2450):     415e5f74 696c6176 67490064 69726f6e 2520676e  
+I/DEBUG   ( 2450):     415e5f84 25272073 2d202773 6e202d2d 7020746f  
+I/DEBUG   ( 2450):     415e5f94 7265776f 20666f20 006f7774 62616e45  
+I/DEBUG   ( 2450):     415e5fa4 676e696c 6c6c6120 7420636f 6b636172  
+I/DEBUG   ( 2450):     415e5fb4 28207265 65206425 6972746e 202c7365  
+I/DEBUG   ( 2450):     415e5fc4 66206425 656d6172 2d2d2073 6425203e  
+I/DEBUG   ( 2450):     415e5fd4 74796220 00297365 6f6c6c61 72742063  
+I/DEBUG   ( 2450):     415e5fe4 656b6361 6e203a72 6874206f 64616572  
+I/DEBUG   ( 2450):     415e5ff4 69614600 2064656c 6f6c6c61 69746163  
+I/DEBUG   ( 2450):     415e6004 7020676e 746e696f 73207265 00737465  
+I/DEBUG   ( 2450):     415e6014 73616c63 64252073 2c64252f 74656d20  
+I/DEBUG   ( 2450):     415e6024 20646f68 252f6425 66202c64 20656c69  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near r9:
+I/DEBUG   ( 2450):     415e6d34 6e203a47 74616765 20657669 7a69736a  
+I/DEBUG   ( 2450):     415e6d44 25282065 42002973 5a534943 706d6662  
+I/DEBUG   ( 2450):     415e6d54 75007645 6f6e6b6e 63206e77 6b636568  
+I/DEBUG   ( 2450):     415e6d64 726f6620 2074616d 63657073 65696669  
+I/DEBUG   ( 2450):     415e6d74 63252072 28702500 41564e49 2944494c  
+I/DEBUG   ( 2450):     415e6d84 74707600 76004900 004c4500 0070004a  
+I/DEBUG   ( 2450):     415e6d94 004a7045 0045004c 00560062 00707345  
+I/DEBUG   ( 2450):     415e6da4 3a494e4a 69616620 2064656c 72617567  
+I/DEBUG   ( 2450):     415e6db4 20646564 79706f63 65686320 69206b63  
+I/DEBUG   ( 2450):     415e6dc4 6552206e 7361656c 72745365 43676e69  
+I/DEBUG   ( 2450):     415e6dd4 69746972 006c6163 72706145 70614500  
+I/DEBUG   ( 2450):     415e6de4 49734500 45007049 63450070 70634500  
+I/DEBUG   ( 2450):     415e6df4 61450049 00704949 61007a45 49614500  
+I/DEBUG   ( 2450):     415e6e04 6145004c 7a450049 45004c63 73450061  
+I/DEBUG   ( 2450):     415e6e14 4e4a0075 66203a49 656c6961 75672064  
+I/DEBUG   ( 2450):     415e6e24 65647261 6f632064 63207970 6b636568  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near sl:
+I/DEBUG   ( 2450):     416072a8 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     416072b8 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     416072c8 415531a0 41553190 00800000 20000000  
+I/DEBUG   ( 2450):     416072d8 0c000000 00000000 00000000 3fe80000  
+I/DEBUG   ( 2450):     416072e8 00200000 00800000 00004000 00006000  
+I/DEBUG   ( 2450):     416072f8 00000001 00000101 00000002 00000001  
+I/DEBUG   ( 2450):     41607308 00000000 00000000 00000000 00000002  
+I/DEBUG   ( 2450):     41607318 00000000 401bc455 401bc68d 00000000  
+I/DEBUG   ( 2450):     41607328 401bc43d 00000000 00000000 41553578  
+I/DEBUG   ( 2450):     41607338 00000000 00000002 00000003 00000001  
+I/DEBUG   ( 2450):     41607348 00000001 00000100 00000100 00000000  
+I/DEBUG   ( 2450):     41607358 415534c0 00000003 00000000 415534b0  
+I/DEBUG   ( 2450):     41607368 4160bb40 00000000 00000000 41553e90  
+I/DEBUG   ( 2450):     41607378 50000fd2 6e4c6008 00000000 4160b9b8  
+I/DEBUG   ( 2450):     41607388 4160b9d8 4160c1e8 4160c2a8 4160c350  
+I/DEBUG   ( 2450):     41607398 4160c3f8 4160c4a0 4160c548 4160c5f0  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near fp:
+I/DEBUG   ( 2450):     415e6d80 2944494c 74707600 76004900 004c4500  
+I/DEBUG   ( 2450):     415e6d90 0070004a 004a7045 0045004c 00560062  
+I/DEBUG   ( 2450):     415e6da0 00707345 3a494e4a 69616620 2064656c  
+I/DEBUG   ( 2450):     415e6db0 72617567 20646564 79706f63 65686320  
+I/DEBUG   ( 2450):     415e6dc0 69206b63 6552206e 7361656c 72745365  
+I/DEBUG   ( 2450):     415e6dd0 43676e69 69746972 006c6163 72706145  
+I/DEBUG   ( 2450):     415e6de0 70614500 49734500 45007049 63450070  
+I/DEBUG   ( 2450):     415e6df0 70634500 61450049 00704949 61007a45  
+I/DEBUG   ( 2450):     415e6e00 49614500 6145004c 7a450049 45004c63  
+I/DEBUG   ( 2450):     415e6e10 73450061 4e4a0075 66203a49 656c6961  
+I/DEBUG   ( 2450):     415e6e20 75672064 65647261 6f632064 63207970  
+I/DEBUG   ( 2450):     415e6e30 6b636568 206e6920 656c6552 53657361  
+I/DEBUG   ( 2450):     415e6e40 6e697274 46545567 72616843 00750073  
+I/DEBUG   ( 2450):     415e6e50 45007345 00730075 3a494e4a 69616620  
+I/DEBUG   ( 2450):     415e6e60 2064656c 72617567 20646564 79706f63  
+I/DEBUG   ( 2450):     415e6e70 65686320 69206b63 6552206e 7361656c  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near ip:
+I/DEBUG   ( 2450):     4160d0c0 4160d008 6e6f71c5 6e6a4829 0000001a  
+I/DEBUG   ( 2450):     4160d0d0 2636dd85 6109c59a 00000000 0000010b  
+I/DEBUG   ( 2450):     4160d0e0 4160c1e8 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     4160d0f0 00000000 00000000 6e6a8888 00000000  
+I/DEBUG   ( 2450):     4160d100 00030011 50000016 6e7f4000 00000007  
+I/DEBUG   ( 2450):     4160d110 00000000 00000001 00000018 00000000  
+I/DEBUG   ( 2450):     4160d120 00000000 00000000 4160c890 00000000  
+I/DEBUG   ( 2450):     4160d130 00000000 00000000 00000003 6d4c9b30  
+I/DEBUG   ( 2450):     4160d140 0000002a 6d4c9b98 00000036 6d4ca4d0  
+I/DEBUG   ( 2450):     4160d150 0000003e 6d4cb1d0 00000003 6d4cb2d8  
+I/DEBUG   ( 2450):     4160d160 00000005 6d4cb2f8 00000004 00000001  
+I/DEBUG   ( 2450):     4160d170 6d4c9b40 80000000 6e6caf8e 00000004  
+I/DEBUG   ( 2450):     4160d180 4160d0e0 6e69813e 6e6d0063 0000001a  
+I/DEBUG   ( 2450):     4160d190 4161a378 0000001c 4160d0e0 6e69aa36  
+I/DEBUG   ( 2450):     4160d1a0 6e6b003b 00000019 4161a368 0000001c  
+I/DEBUG   ( 2450):     4160d1b0 4160d0e0 6e6c7b9f 6e69a6a4 0000001a  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near sp:
+I/DEBUG   ( 2450):     be80fe80 35343730 32383134 be80fefc 00000000  
+I/DEBUG   ( 2450):     be80fe90 00000000 36333138 00004000 d48a6738  
+I/DEBUG   ( 2450):     be80fea0 00000006 0000000b 0000698b 4160d0e0  
+I/DEBUG   ( 2450):     be80feb0 4160d0e0 400b6289 00000006 00000000  
+I/DEBUG   ( 2450):     be80fec0 415e6cf1 400b649d be80fed4 400b51d3  
+I/DEBUG   ( 2450):     be80fed0 00000000 ffffffdf 400ee2c0 400ee224  
+I/DEBUG   ( 2450):     be80fee0 00000000 400b7d83 416072c8 416072c8  
+I/DEBUG   ( 2450):     be80fef0 00000000 400c4a80 00000000 4159bdfb  
+I/DEBUG   ( 2450):     be80ff00 be80ff88 6c756e28 0000296c 00000000  
+I/DEBUG   ( 2450):     be80ff10 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff20 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff30 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff40 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff50 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff60 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff70 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): code around pc:
+I/DEBUG   ( 2450):     400c51a8 e8bd00f0 e3700a01 912fff1e e2600000  
+I/DEBUG   ( 2450):     400c51b8 ea006f55 e92d50f0 e3a07f43 ef000000  
+I/DEBUG   ( 2450):     400c51c8 e8bd50f0 e3700a01 912fff1e e2600000  
+I/DEBUG   ( 2450):     400c51d8 ea006f4d e92d50f0 e3a070ee ef000000  
+I/DEBUG   ( 2450):     400c51e8 e8bd50f0 e3700a01 912fff1e e2600000  
+I/DEBUG   ( 2450):     400c51f8 ea006f45 e3510000 0a006724 e710f110  
+I/DEBUG   ( 2450):     400c5208 e12fff1e e3510000 0a006720 e1a02000  
+I/DEBUG   ( 2450):     400c5218 e710f110 e0612190 e12fff1e e1520003  
+I/DEBUG   ( 2450):     400c5228 8a00008c f5d1f040 e92d4001 e3520010  
+I/DEBUG   ( 2450):     400c5238 3a000024 e2603000 e213300f 0a00000e  
+I/DEBUG   ( 2450):     400c5248 e0422003 e1b0cf83 44d1e001 44c0e001  
+I/DEBUG   ( 2450):     400c5258 24d1c001 24d1e001 24c0c001 24c0e001  
+I/DEBUG   ( 2450):     400c5268 e1b0ce83 aa000001 f4a1030d f480031d  
+I/DEBUG   ( 2450):     400c5278 3a000001 f421070d f400071d e2522040  
+I/DEBUG   ( 2450):     400c5288 3a000006 f421020d f421420d f5d1f100  
+I/DEBUG   ( 2450):     400c5298 e2522040 f400022d f400422d 2afffff8  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): code around lr:
+I/DEBUG   ( 2450):     400b6268 447b4b13 42b3e010 4812d10e 44786a1e  
+I/DEBUG   ( 2450):     400b6278 ec90f7fb e9d8f00d 46224631 ef9af00e  
+I/DEBUG   ( 2450):     400b6288 d00a3001 e00b2400 2b00681b 480ad1eb  
+I/DEBUG   ( 2450):     400b6298 44782403 ec7ef7fb f001e002 6804fa1b  
+I/DEBUG   ( 2450):     400b62a8 fa18f001 46206005 bf00bd70 0003c142  
+I/DEBUG   ( 2450):     400b62b8 0003c136 0003c12e 0003c10a bf7ef7ff  
+I/DEBUG   ( 2450):     400b62c8 4a3e4b3d 43f0e92d 4606b08b 447b460d  
+I/DEBUG   ( 2450):     400b62d8 6823589c 930946a1 f9fcf001 8000f8d0  
+I/DEBUG   ( 2450):     400b62e8 d0482d00 f00f4628 280fff09 d8444604  
+I/DEBUG   ( 2450):     400b62f8 ffe4f7ff d1064286 4629200f e8a2f00d  
+I/DEBUG   ( 2450):     400b6308 d03c2800 482ee02e f7fb4478 482debc2  
+I/DEBUG   ( 2450):     400b6318 e0154478 d11342b0 482b6a06 f7fb4478  
+I/DEBUG   ( 2450):     400b6328 4a2aec3a 46332120 447aa801 fa88f013  
+I/DEBUG   ( 2450):     400b6338 a8012101 fd16f01a 46061c42 e011d104  
+I/DEBUG   ( 2450):     400b6348 28006800 e02cd1e6 46294630 f0274622  
+I/DEBUG   ( 2450):     400b6358 1c43fa95 d11e4607 f9bcf001 29046801  
+E/baidumapsdk(27074): Authentication Error errorcode: 230 uid: -1 appid -1 msg: APP Scode码校验失败
+I/logserver( 2465): Object Path:/data/system/dropbox/, mask=0x00000080
+I/logserver( 2465): event->len=48, name=data_app_native_crash@1439391612257.txt.gz
+I/logserver( 2465): process_one_event, can not find this event(data_app_native_crash@1439391612257.txt.gz)
+I/logserver( 2465): clean_cur_cache:962, system(rm -r /data/log/logcache/22288160/* > /dev/null 2>&1)
+E/JavaBinder( 2997): !!! FAILED BINDER TRANSACTION !!!
+E/JavaBinder( 2997): !!! FAILED BINDER TRANSACTION !!!
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 4 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 4 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 4 - com.android.deskclock
+I/HwLauncher( 3489): Launcher onStart()
+I/HwLauncher( 3489): Launcher dynamicIconsRegister
+I/HwLauncher( 3489): DynamicUpdater registerReceiver
+I/logserver( 2465): Object Path:/data/system/dropbox/, mask=0x00000080
+I/logserver( 2465): event->len=48, name=SYSTEM_TOMBSTONE@1439391612260.txt.gz
+I/logserver( 2465): find_first_match: find match, plogs(type=1, pfile=/data/system/dropbox/, match=TOMBSTONE)
+I/logserver( 2465): is_only_tombstone, tombstone type force close.
+I/logserver( 2465): move_dir:src_path=/data/log/dbox/appdbg/logcache
+I/logserver( 2465): move_dir:dst_path=/data/log/logcache/22288160/
+I/logserver( 2465): is_all_ready, any file is ready in non-keyfile exception.
+I/logserver( 2465): find_correspond_tombstone, tombs=/data/tombstones/tombstone_03
+I/logserver( 2465): extract_appname, forward search, appname=com.ckt.francis.navigationmap
+I/logserver( 2465): is_only_tombstone, tombstone type force close.
+I/logserver( 2465): archive_and_send, only tombstone.
+I/logserver( 2465): get_fault_appname, appname=com.ckt.francis.navigationmap
+I/logserver( 2465): archive_and_send, pos=0, type=crash, output=20150812230012_tombstone
+I/logserver( 2465): ---copy_match_files enter!!--
+I/logserver( 2465): [copy_match_files,829]: copy [/data/system/dropbox/SYSTEM_TOMBSTONE@1439391612260.txt.gz] to [/data/log/logcache/22288160/SYSTEM_TOMBSTONE@1439391612260.txt.gz]
+I/logserver( 2465): internal_archive, argc=7
+I/HwLauncher( 3489): DynamicUpdater call updateFolder
+I/logserver( 2465): get_fault_appname, appname=com.ckt.francis.navigationmap
+I/logserver( 2465): handle_archive_exception, argc=7
+I/HwLauncher( 3489): DynamicIcon onResume  isvisible = false   mAttachedToWindow:true    mWindowVisible:falsecom.android.calendar
+I/HwLauncher( 3489): DynamicUpdater registerReceiver
+I/logserver( 2465): get alarm time = 13720 (sec.)!
+I/logserver( 2465): log_apr_add_record open file:/data/log/apr/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150729204444_statistics
+I/logserver( 2465): move_input_files, create dir [/data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812230012_tombstone]
+I/logserver( 2465): copy_file_to_dir, /data/log/logcache/22288160/data_app_native_crash@1439391612257.txt.gz -> /data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812230012_tombstone
+I/logserver( 2465): copy_file_to_dir, /data/log/logcache/22288160/SYSTEM_TOMBSTONE@1439391612260.txt.gz -> /data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812230012_tombstone
+I/logserver( 2465): copy_file_to_dir, /data/log/logcache/22288160/finger.txt -> /data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812230012_tombstone
+I/logserver( 2465): init_notify_fifo, before change /data/log/logcontrol owner
+I/logserver( 2465): Process 2645 opening FIFO for O_WRONLY
+I/logserver( 2465): Process 2645 opened fifo(20)
+I/logserver( 2465): notify_logcontrol, 2645 sent /data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812230012_tombstone 
+I/logserver( 2465): thread_logcontrol, select ret = 1
+I/logserver( 2465): check_dir_size, dir[/data/log/coredump/] doesn't exist
+I/logserver( 2465): handle_notify_event, read res = 324, client pid = 2645, data=/data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812230012_tombstone
+I/logserver( 2465): clean_cur_cache:962, system(rm -r /data/log/logcache/22288160/* > /dev/null 2>&1)
+I/HwLauncher( 3489): WeatherDynamicUpdaterpositiveUpdate at WeatherDynamicUpdater
+I/logserver( 2465): build_notify_string,ModuleName = com.ckt.francis.navigationmap
+I/logserver( 2465): build_notify_string,product name = PE-TL10
+I/logserver( 2465): handle_notify_event, send msg [submit:trigger=0,bugtype=12,modulename=com.ckt.francis.navigationmap,level=1,testtype=NORMAL,path=/data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812230012_tombstone;]
+I/logserver( 2465): send_to_client, send to (18) res = 183
+E/SubmitMessage( 3974): Submit string: submit:trigger=0,bugtype=12,modulename=com.ckt.francis.navigationmap,level=1,testtype=NORMAL,path=/data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812230012_tombstone
+I/HwLauncher( 3489): DynamicUpdater call updateFolder
+I/HwLauncher( 3489): DynamicIcon onResume  isvisible = false   mAttachedToWindow:true    mWindowVisible:falsecom.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicUpdater registerReceiver
+I/logserver( 2465): Object Path:/data/log/apr/, mask=0x00000008
+I/logserver( 2465): event->len=80, name=PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150729204444_statistics
+I/logserver( 2465): process_one_event, can not find this event(PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150729204444_statistics)
+I/logserver( 2465): clean_cur_cache:962, system(rm -r /data/log/logcache/22288160/* > /dev/null 2>&1)
+I/HwLauncher( 3489): DynamicUpdater call updateFolder
+I/HwLauncher( 3489): DynamicIcon onResume  isvisible = false   mAttachedToWindow:true    mWindowVisible:falsecom.android.deskclock
+I/HwLauncher( 3489): Launcher onResume()
+I/HwLauncher( 3489): Launcher doResumeWork()
+I/HwLauncher( 3489): Launcher.MotionManager startShakeMotion shakeChangeWallpaper = false
+I/HwLauncher( 3489): Launcher changeNaviBarStatus
+W/HwLauncher( 3489): Launcher  updateMarginLayoutParamsForView:the target view is null.
+I/HwLauncher( 3489): Launcher  onResume mIsToUninstallApp = false
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 0 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 0 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onVisibilityChanged 0 - com.android.deskclock
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 0 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 0 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 0 - com.android.deskclock
+I/PhoneStatusBar( 3152): hw_status_bar_operators = true, setSystemUIVisibily(SHOW_OPERATOR = false)
+I/HwLauncher( 3489): WeatherDynamicUpdaterreceive action = com.huawei.android.action.launcher_weather_icon_change
+I/HwLauncher( 3489): WeatherDynamicUpdaterreceiver data is int[] = [0, 0, 52, 0, 96, 0, 140, 0]
+I/HwLauncher( 3489):  stringArray[] [mostlycloudy, num2, num9, tempc]
+E/JavaBinder( 2997): !!! FAILED BINDER TRANSACTION !!!
+E/JavaBinder( 2997): !!! FAILED BINDER TRANSACTION !!!
+I/LogServiceSetting( 3974): checkMemorydumpByPath: filePath is /storage/emulated/legacy/bugreports/ramdump
+I/LogServiceSetting( 3974): CheckMemorydumpByPath: /storage/emulated/legacy/bugreports/ramdumpis not exist.
+I/LogServiceSetting( 3974): checkMemorydumpByPath: filePath is /storage/sdcard1/bugreports/ramdump
+I/LogServiceSetting( 3974): CheckMemorydumpByPath: /storage/sdcard1/bugreports/ramdumpis not exist.
+I/PackageLogInfoManager( 3974): checkPackageLogState
+E/PackageLogInfoManager( 3974): checkPackageLogState, cr: android.app.ContextImpl$ApplicationContentResolver@43285440, packageNames: null
+I/PhoneStatusBar( 3152): hw_status_bar_operators = true, setSystemUIVisibily(SHOW_OPERATOR = false)
+E/cutils  ( 2446): Failed to mkdirat(/storage/sdcard1/Android): Read-only file system
+W/ContextImpl(27074): Failed to ensure directory: /storage/sdcard1/Android/data/com.ckt.francis.navigationmap/files
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+W/JPush   (27133): [AndroidUtil] You should make main activity extends InstrumentedActivity (JPush), otherwise you will not see user click and user active time start on report in Portal. 
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+E/baidumapsdk(27133): Authentication Error errorcode: 230 uid: -1 appid -1 msg: APP Scode码校验失败
+I/K3V3CpuGovernorPolicy( 3449): set scene Hmp policy : 300 , 150
+I/HwLauncher( 3489): Launcher onPause()
+I/HwLauncher( 3489): Launcher.MotionManager stopShakeMotion shakeChangeWallpaper = false
+I/PhoneStatusBar( 3152): hw_status_bar_operators = true, setSystemUIVisibily(SHOW_OPERATOR = false)
+E/cutils  ( 2446): Failed to mkdirat(/storage/sdcard1/Android): Read-only file system
+W/ContextImpl(27133): Failed to ensure directory: /storage/sdcard1/Android/data/com.ckt.francis.navigationmap/files
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 8 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 8 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 8 - com.android.deskclock
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+E/dalvikvm(27133): dlopen("/storage/emulated/0/BaiduNaviSDK_SO/libgnustl_shared.so") failed: dlopen failed: library "/storage/emulated/0/BaiduNaviSDK_SO/libgnustl_shared.so" not found
+E/Jni_JniEngine(27133): ######## Java_com_baidu_AppTest_AppTest JNI_OnLoad 
+E/Jni_JniEngine(27133): ######## Java_com_baidu_AppTest_AppTest JNI_OnLoad -1 
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+W/System.err(27133): java.io.FileNotFoundException: channel
+W/System.err(27133): 	at android.content.res.AssetManager.openAsset(Native Method)
+W/System.err(27133): 	at android.content.res.AssetManager.open(AssetManager.java:316)
+W/System.err(27133): 	at android.content.res.AssetManager.open(AssetManager.java:290)
+W/System.err(27133): 	at com.baidu.navisdk.util.common.PackageUtil.readAndCopyChannel(PackageUtil.java:388)
+W/System.err(27133): 	at com.baidu.navisdk.util.common.PackageUtil.init(PackageUtil.java:72)
+W/System.err(27133): 	at com.baidu.navisdk.BNaviModuleManager.initListenersForMap(BNaviModuleManager.java:90)
+W/System.err(27133): 	at com.baidu.navisdk.adapter.BaiduNaviManager.init(BaiduNaviManager.java:546)
+W/System.err(27133): 	at com.ckt.francis.navigationmap.activitys.MainActivity.initNavi(MainActivity.java:111)
+W/System.err(27133): 	at com.ckt.francis.navigationmap.activitys.MainActivity.onCreate(MainActivity.java:68)
+W/System.err(27133): 	at android.app.Activity.performCreate(Activity.java:5301)
+W/System.err(27133): 	at android.app.Instrumentation.callActivityOnCreate(Instrumentation.java:1090)
+W/System.err(27133): 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:2259)
+W/System.err(27133): 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:2345)
+W/System.err(27133): 	at android.app.ActivityThread.access$1100(ActivityThread.java:139)
+W/System.err(27133): 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1256)
+W/System.err(27133): 	at android.os.Handler.dispatchMessage(Handler.java:102)
+W/System.err(27133): 	at android.os.Looper.loop(Looper.java:136)
+W/System.err(27133): 	at android.app.ActivityThread.main(ActivityThread.java:5314)
+W/System.err(27133): 	at java.lang.reflect.Method.invokeNative(Native Method)
+W/System.err(27133): 	at java.lang.reflect.Method.invoke(Method.java:515)
+W/System.err(27133): 	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:864)
+W/System.err(27133): 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:680)
+W/System.err(27133): 	at dalvik.system.NativeStart.main(Native Method)
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+E/Jni_JniEngine(27133): ######## Java_com_baidu_AppTest_AppTest_Start 1 
+E/Jni_JniEngine(27133): ######## Java_com_baidu_AppTest_AppTest JNI_OnLoad -2 
+E/Jni_JniEngine(27133): ######## Java_com_baidu_AppTest_AppTest JNI_OnLoad -20 
+E/Jni_JniEngine(27133): ######## Java_com_baidu_AppTest_AppTest JNI_OnLoad 2 
+E/Jni_JniEngine(27133): ######## Java_com_baidu_AppTest_AppTest_Start
+E/Jni_JniEngine(27133): ######## Java_com_baidu_AppTest_AppTest_Start 0 
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+I/ActivityManager( 2997): Displayed com.ckt.francis.navigationmap/.activitys.MainActivity: +627ms
+W/dalvikvm(27133): JNI WARNING: received null jstring (GetStringUTFChars)
+W/dalvikvm(27133):              in Lcom/baidu/navisdk/jni/nativeif/JNIStatisticsControl;.setLogHeaderParam:(Landroid/os/Bundle;)I (GetStringUTFChars)
+I/dalvikvm(27133): "main" prio=5 tid=1 NATIVE
+I/dalvikvm(27133):   | group="main" sCount=0 dsCount=0 obj=0x4161cd68 self=0x415536f0
+I/dalvikvm(27133):   | sysTid=27133 nice=0 sched=0/0 cgrp=apps handle=1074319700
+I/dalvikvm(27133):   | state=R schedstat=( 599068288 36878608 821 ) utm=42 stm=17 core=5
+I/dalvikvm(27133):   #00  pc 000012f6  /system/lib/libcorkscrew.so (unwind_backtrace_thread+29)
+I/dalvikvm(27133):   #01  pc 000617f6  /system/lib/libdvm.so (dvmDumpNativeStack(DebugOutputTarget const*, int)+33)
+I/dalvikvm(27133):   #02  pc 000557f8  /system/lib/libdvm.so (dvmDumpThreadEx(DebugOutputTarget const*, Thread*, bool)+395)
+I/dalvikvm(27133):   #03  pc 00055866  /system/lib/libdvm.so (dvmDumpThread(Thread*, bool)+25)
+I/dalvikvm(27133):   #04  pc 00039928  /system/lib/libdvm.so
+I/dalvikvm(27133):   #05  pc 00039c10  /system/lib/libdvm.so
+I/dalvikvm(27133):   #06  pc 0003ac30  /system/lib/libdvm.so
+I/dalvikvm(27133):   #07  pc 0003d046  /system/lib/libdvm.so
+I/dalvikvm(27133):   #08  pc 00195d8c  /data/app-lib/com.ckt.francis.navigationmap-2/libapp_BaiduNaviApplib.so (Java_com_baidu_navisdk_jni_nativeif_JNIStatisticsControl_setLogHeaderParam+115)
+I/dalvikvm(27133):   #09  pc 0001eb8c  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+I/dalvikvm(27133):   #10  pc 0004f272  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+397)
+I/dalvikvm(27133):   #11  pc 00050cb6  /system/lib/libdvm.so (dvmResolveNativeMethod(unsigned int const*, JValue*, Method const*, Thread*)+181)
+I/dalvikvm(27133):   #12  pc 00027fa0  /system/lib/libdvm.so
+I/dalvikvm(27133):   #13  pc 0002f130  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+I/dalvikvm(27133):   #14  pc 0002c794  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+I/dalvikvm(27133):   #15  pc 00061a08  /system/lib/libdvm.so (dvmInvokeMethod(Object*, Method const*, ArrayObject*, ArrayObject*, ClassObject*, bool)+391)
+I/dalvikvm(27133):   #16  pc 00069bee  /system/lib/libdvm.so
+I/dalvikvm(27133):   #17  pc 00027fa0  /system/lib/libdvm.so
+I/dalvikvm(27133):   #18  pc 0002f130  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+I/dalvikvm(27133):   #19  pc 0002c794  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+I/dalvikvm(27133):   #20  pc 00061724  /system/lib/libdvm.so (dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)+335)
+I/dalvikvm(27133):   #21  pc 0004ae3a  /system/lib/libdvm.so
+I/dalvikvm(27133):   #22  pc 00050594  /system/lib/libandroid_runtime.so
+I/dalvikvm(27133):   #23  pc 00051348  /system/lib/libandroid_runtime.so (android::AndroidRuntime::start(char const*, char const*)+367)
+I/dalvikvm(27133):   #24  pc 0000105a  /system/bin/app_process
+I/dalvikvm(27133):   #25  pc 0000e604  /system/lib/libc.so (__libc_init+47)
+I/dalvikvm(27133):   at com.baidu.navisdk.jni.nativeif.JNIStatisticsControl.setLogHeaderParam(Native Method)
+I/dalvikvm(27133):   at com.baidu.navisdk.jni.nativeif.JNIStatisticsControl.setLogHeaderParam(JNIStatisticsControl.java:46)
+I/dalvikvm(27133):   at com.baidu.navisdk.jni.nativeif.JNIStatisticsControl.init(JNIStatisticsControl.java:34)
+I/dalvikvm(27133):   at com.baidu.navisdk.comapi.statistics.BNStatisticsManager.<init>(BNStatisticsManager.java:52)
+I/dalvikvm(27133):   at com.baidu.navisdk.comapi.statistics.BNStatisticsManager.getInstance(BNStatisticsManager.java:42)
+I/dalvikvm(27133):   at com.baidu.navisdk.util.statistic.RespTimeStatItem.onEvent(RespTimeStatItem.java:56)
+I/dalvikvm(27133):   at com.baidu.navisdk.adapter.BaiduNaviManager$4.handleMessage(BaiduNaviManager.java:567)
+I/dalvikvm(27133):   at android.os.Handler.dispatchMessage(Handler.java:102)
+I/dalvikvm(27133):   at android.os.Looper.loop(Looper.java:136)
+I/dalvikvm(27133):   at android.app.ActivityThread.main(ActivityThread.java:5314)
+I/dalvikvm(27133):   at java.lang.reflect.Method.invokeNative(Native Method)
+I/dalvikvm(27133):   at java.lang.reflect.Method.invoke(Method.java:515)
+I/dalvikvm(27133):   at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:864)
+I/dalvikvm(27133):   at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:680)
+I/dalvikvm(27133):   at dalvik.system.NativeStart.main(Native Method)
+I/dalvikvm(27133): 
+E/dalvikvm(27133): VM aborting
+F/libc    (27133): Fatal signal 6 (SIGABRT) at 0x000069fd (code=-6), thread 27133 (s.navigationmap)
+E/Thermal-daemon( 2463): [pa_0] temp_new :37  temp_old :36
+E/Thermal-daemon( 2463): Report temperature: [pa_0] temp :37  report_threshold:1
+I/DEBUG   ( 2450): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+I/DEBUG   ( 2450): Build fingerprint: 'Huawei/PE-TL10/hwPE:4.4.2/HuaweiPE-TL10/CHNC00B243:user/ota-rel-keys,release-keys'
+I/DEBUG   ( 2450): Revision: '0'
+I/DEBUG   ( 2450): pid: 27133, tid: 27133, name: s.navigationmap  >>> com.ckt.francis.navigationmap <<<
+I/DEBUG   ( 2450): signal 6 (SIGABRT), code -6 (SI_TKILL), fault addr --------
+I/K3V3CpuGovernorPolicy( 3449): close previously scene Hmp policy : 300 , 150
+I/DEBUG   ( 2450):     r0 00000000  r1 000069fd  r2 00000006  r3 00000000
+I/DEBUG   ( 2450):     r4 00000006  r5 0000000b  r6 000069fd  r7 0000010c
+I/DEBUG   ( 2450):     r8 415e5f54  r9 415e6d57  sl 416072c8  fp 415e6da0
+I/DEBUG   ( 2450):     ip 4160d0e0  sp be80fea0  lr 400b6289  pc 400c51c8  cpsr 000f0010
+I/DEBUG   ( 2450):     d0  74726f6261204d56  d1  617453657669746e
+I/DEBUG   ( 2450):     d2  4965746f67795a75  d3  6e69616d2e74696c
+I/DEBUG   ( 2450):     d4  732e656d69746e75  d5  6f72646e6128206f
+I/DEBUG   ( 2450):     d6  72646e413a3a6469  d7  69746e755264696f
+I/DEBUG   ( 2450):     d8  0000000000000000  d9  0000000000000000
+I/DEBUG   ( 2450):     d10 0000000000000000  d11 0000000000000000
+I/DEBUG   ( 2450):     d12 0000000000000000  d13 0000000000000000
+I/DEBUG   ( 2450):     d14 0000000000000000  d15 0000000000000000
+I/DEBUG   ( 2450):     d16 ffffffe500000030  d17 000000000000000e
+I/DEBUG   ( 2450):     d18 fffffffd0000002a  d19 fffffffc0000003b
+I/DEBUG   ( 2450):     d20 fffffffc00000057  d21 fffffffa00000074
+I/DEBUG   ( 2450):     d22 0000001600000075  d23 0000001800000075
+I/DEBUG   ( 2450):     d24 000000007ba0e441  d25 0000000000000fff
+I/DEBUG   ( 2450):     d26 0000000000000009  d27 0000000000000009
+I/DEBUG   ( 2450):     d28 0000007ba06e0000  d29 0000000000000001
+I/DEBUG   ( 2450):     d30 0000000000000001  d31 000000007ba0e4c0
+I/DEBUG   ( 2450):     scr 60000010
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): backtrace:
+I/DEBUG   ( 2450):     #00  pc 000221c8  /system/lib/libc.so (tgkill+12)
+I/DEBUG   ( 2450):     #01  pc 00013285  /system/lib/libc.so (pthread_kill+48)
+I/DEBUG   ( 2450):     #02  pc 00013499  /system/lib/libc.so (raise+10)
+I/DEBUG   ( 2450):     #03  pc 000121cf  /system/lib/libc.so
+I/DEBUG   ( 2450):     #04  pc 00021a7c  /system/lib/libc.so (abort+4)
+I/DEBUG   ( 2450):     #05  pc 00046df7  /system/lib/libdvm.so (dvmAbort+78)
+I/DEBUG   ( 2450):     #06  pc 00039c11  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #07  pc 0003ac31  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #08  pc 0003d047  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #09  pc 00195d8f  /data/app-lib/com.ckt.francis.navigationmap-2/libapp_BaiduNaviApplib.so (Java_com_baidu_navisdk_jni_nativeif_JNIStatisticsControl_setLogHeaderParam+118)
+I/DEBUG   ( 2450):     #10  pc 0001eb8c  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+I/DEBUG   ( 2450):     #11  pc 0004f273  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+398)
+I/DEBUG   ( 2450):     #12  pc 00050cb9  /system/lib/libdvm.so (dvmResolveNativeMethod(unsigned int const*, JValue*, Method const*, Thread*)+184)
+I/DEBUG   ( 2450):     #13  pc 00027fa0  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #14  pc 0002f130  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+I/DEBUG   ( 2450):     #15  pc 0002c794  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+I/DEBUG   ( 2450):     #16  pc 00061a09  /system/lib/libdvm.so (dvmInvokeMethod(Object*, Method const*, ArrayObject*, ArrayObject*, ClassObject*, bool)+392)
+I/DEBUG   ( 2450):     #17  pc 00069bef  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #18  pc 00027fa0  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #19  pc 0002f130  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+I/DEBUG   ( 2450):     #20  pc 0002c794  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+I/DEBUG   ( 2450):     #21  pc 00061725  /system/lib/libdvm.so (dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)+336)
+I/DEBUG   ( 2450):     #22  pc 0004ae3b  /system/lib/libdvm.so
+I/DEBUG   ( 2450):     #23  pc 00050597  /system/lib/libandroid_runtime.so
+I/DEBUG   ( 2450):     #24  pc 00051349  /system/lib/libandroid_runtime.so (android::AndroidRuntime::start(char const*, char const*)+368)
+I/DEBUG   ( 2450):     #25  pc 0000105b  /system/bin/app_process
+I/DEBUG   ( 2450):     #26  pc 0000e607  /system/lib/libc.so (__libc_init+50)
+I/DEBUG   ( 2450):     #27  pc 00000d7c  /system/bin/app_process
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): stack:
+I/DEBUG   ( 2450):          be80fe60  00000000  
+I/DEBUG   ( 2450):          be80fe64  415e6cf1  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fe68  4160d0e0  /dev/ashmem/dalvik-zygote (deleted)
+I/DEBUG   ( 2450):          be80fe6c  415e5f54  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fe70  415e6d57  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fe74  416072c8  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fe78  415e6da0  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fe7c  400c9899  /system/lib/libc.so (snprintf+80)
+I/DEBUG   ( 2450):          be80fe80  35343730  
+I/DEBUG   ( 2450):          be80fe84  32383134  
+I/DEBUG   ( 2450):          be80fe88  be80fefc  [stack]
+I/DEBUG   ( 2450):          be80fe8c  00000000  
+I/DEBUG   ( 2450):          be80fe90  00000000  
+I/DEBUG   ( 2450):          be80fe94  36333138  
+I/DEBUG   ( 2450):          be80fe98  00004000  
+I/DEBUG   ( 2450):          be80fe9c  d48a6738  
+I/DEBUG   ( 2450):     #00  be80fea0  00000006  
+I/DEBUG   ( 2450):          be80fea4  0000000b  
+I/DEBUG   ( 2450):          be80fea8  000069fd  
+I/DEBUG   ( 2450):          be80feac  4160d0e0  /dev/ashmem/dalvik-zygote (deleted)
+I/DEBUG   ( 2450):          be80feb0  4160d0e0  /dev/ashmem/dalvik-zygote (deleted)
+I/DEBUG   ( 2450):          be80feb4  400b6289  /system/lib/libc.so (pthread_kill+52)
+I/DEBUG   ( 2450):     #01  be80feb8  00000006  
+I/DEBUG   ( 2450):          be80febc  00000000  
+I/DEBUG   ( 2450):          be80fec0  415e6cf1  /system/lib/libdvm.so
+I/DEBUG   ( 2450):          be80fec4  400b649d  /system/lib/libc.so (raise+14)
+I/DEBUG   ( 2450):     #02  be80fec8  be80fed4  [stack]
+I/DEBUG   ( 2450):          be80fecc  400b51d3  /system/lib/libc.so
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near r1:
+I/DEBUG   ( 2450):     000069dc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069ec ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069fc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a0c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a1c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a2c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a3c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a4c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a5c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a6c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a7c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a8c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a9c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006aac ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006abc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006acc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near r6:
+I/DEBUG   ( 2450):     000069dc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069ec ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     000069fc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a0c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a1c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a2c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a3c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a4c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a5c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a6c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a7c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a8c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006a9c ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006aac ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006abc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450):     00006acc ffffffff ffffffff ffffffff ffffffff  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near r8:
+I/DEBUG   ( 2450):     415e5f34 3e646c6c 61640000 6b69766c 2e6d762e  
+I/DEBUG   ( 2450):     415e5f44 6f6c6c61 61725463 72656b63 0078614d  
+I/DEBUG   ( 2450):     415e5f54 766c6164 6d766b69 6e674900 6e69726f  
+I/DEBUG   ( 2450):     415e5f64 73252067 73252720 2d2d2027 6e69202d  
+I/DEBUG   ( 2450):     415e5f74 696c6176 67490064 69726f6e 2520676e  
+I/DEBUG   ( 2450):     415e5f84 25272073 2d202773 6e202d2d 7020746f  
+I/DEBUG   ( 2450):     415e5f94 7265776f 20666f20 006f7774 62616e45  
+I/DEBUG   ( 2450):     415e5fa4 676e696c 6c6c6120 7420636f 6b636172  
+I/DEBUG   ( 2450):     415e5fb4 28207265 65206425 6972746e 202c7365  
+I/DEBUG   ( 2450):     415e5fc4 66206425 656d6172 2d2d2073 6425203e  
+I/DEBUG   ( 2450):     415e5fd4 74796220 00297365 6f6c6c61 72742063  
+I/DEBUG   ( 2450):     415e5fe4 656b6361 6e203a72 6874206f 64616572  
+I/DEBUG   ( 2450):     415e5ff4 69614600 2064656c 6f6c6c61 69746163  
+I/DEBUG   ( 2450):     415e6004 7020676e 746e696f 73207265 00737465  
+I/DEBUG   ( 2450):     415e6014 73616c63 64252073 2c64252f 74656d20  
+I/DEBUG   ( 2450):     415e6024 20646f68 252f6425 66202c64 20656c69  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near r9:
+I/DEBUG   ( 2450):     415e6d34 6e203a47 74616765 20657669 7a69736a  
+I/DEBUG   ( 2450):     415e6d44 25282065 42002973 5a534943 706d6662  
+I/DEBUG   ( 2450):     415e6d54 75007645 6f6e6b6e 63206e77 6b636568  
+I/DEBUG   ( 2450):     415e6d64 726f6620 2074616d 63657073 65696669  
+I/DEBUG   ( 2450):     415e6d74 63252072 28702500 41564e49 2944494c  
+I/DEBUG   ( 2450):     415e6d84 74707600 76004900 004c4500 0070004a  
+I/DEBUG   ( 2450):     415e6d94 004a7045 0045004c 00560062 00707345  
+I/DEBUG   ( 2450):     415e6da4 3a494e4a 69616620 2064656c 72617567  
+I/DEBUG   ( 2450):     415e6db4 20646564 79706f63 65686320 69206b63  
+I/DEBUG   ( 2450):     415e6dc4 6552206e 7361656c 72745365 43676e69  
+I/DEBUG   ( 2450):     415e6dd4 69746972 006c6163 72706145 70614500  
+I/DEBUG   ( 2450):     415e6de4 49734500 45007049 63450070 70634500  
+I/DEBUG   ( 2450):     415e6df4 61450049 00704949 61007a45 49614500  
+I/DEBUG   ( 2450):     415e6e04 6145004c 7a450049 45004c63 73450061  
+I/DEBUG   ( 2450):     415e6e14 4e4a0075 66203a49 656c6961 75672064  
+I/DEBUG   ( 2450):     415e6e24 65647261 6f632064 63207970 6b636568  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near sl:
+I/DEBUG   ( 2450):     416072a8 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     416072b8 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     416072c8 415531a0 41553190 00800000 20000000  
+I/DEBUG   ( 2450):     416072d8 0c000000 00000000 00000000 3fe80000  
+I/DEBUG   ( 2450):     416072e8 00200000 00800000 00004000 00006000  
+I/DEBUG   ( 2450):     416072f8 00000001 00000101 00000002 00000001  
+I/DEBUG   ( 2450):     41607308 00000000 00000000 00000000 00000002  
+I/DEBUG   ( 2450):     41607318 00000000 401bc455 401bc68d 00000000  
+I/DEBUG   ( 2450):     41607328 401bc43d 00000000 00000000 41553578  
+I/DEBUG   ( 2450):     41607338 00000000 00000002 00000003 00000001  
+I/DEBUG   ( 2450):     41607348 00000001 00000100 00000100 00000000  
+I/DEBUG   ( 2450):     41607358 415534c0 00000003 00000000 415534b0  
+I/DEBUG   ( 2450):     41607368 4160bb40 00000000 00000000 41553e90  
+I/DEBUG   ( 2450):     41607378 50000fd2 6e4c6008 00000000 4160b9b8  
+I/DEBUG   ( 2450):     41607388 4160b9d8 4160c1e8 4160c2a8 4160c350  
+I/DEBUG   ( 2450):     41607398 4160c3f8 4160c4a0 4160c548 4160c5f0  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near fp:
+I/DEBUG   ( 2450):     415e6d80 2944494c 74707600 76004900 004c4500  
+I/DEBUG   ( 2450):     415e6d90 0070004a 004a7045 0045004c 00560062  
+I/DEBUG   ( 2450):     415e6da0 00707345 3a494e4a 69616620 2064656c  
+I/DEBUG   ( 2450):     415e6db0 72617567 20646564 79706f63 65686320  
+I/DEBUG   ( 2450):     415e6dc0 69206b63 6552206e 7361656c 72745365  
+I/DEBUG   ( 2450):     415e6dd0 43676e69 69746972 006c6163 72706145  
+I/DEBUG   ( 2450):     415e6de0 70614500 49734500 45007049 63450070  
+I/DEBUG   ( 2450):     415e6df0 70634500 61450049 00704949 61007a45  
+I/DEBUG   ( 2450):     415e6e00 49614500 6145004c 7a450049 45004c63  
+I/DEBUG   ( 2450):     415e6e10 73450061 4e4a0075 66203a49 656c6961  
+I/DEBUG   ( 2450):     415e6e20 75672064 65647261 6f632064 63207970  
+I/DEBUG   ( 2450):     415e6e30 6b636568 206e6920 656c6552 53657361  
+I/DEBUG   ( 2450):     415e6e40 6e697274 46545567 72616843 00750073  
+I/DEBUG   ( 2450):     415e6e50 45007345 00730075 3a494e4a 69616620  
+I/DEBUG   ( 2450):     415e6e60 2064656c 72617567 20646564 79706f63  
+I/DEBUG   ( 2450):     415e6e70 65686320 69206b63 6552206e 7361656c  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near ip:
+I/DEBUG   ( 2450):     4160d0c0 4160d008 6e6f71c5 6e6a4829 0000001a  
+I/DEBUG   ( 2450):     4160d0d0 2636dd85 6109c59a 00000000 0000010b  
+I/DEBUG   ( 2450):     4160d0e0 4160c1e8 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     4160d0f0 00000000 00000000 6e6a8888 00000000  
+I/DEBUG   ( 2450):     4160d100 00030011 50000016 6e7f4000 00000007  
+I/DEBUG   ( 2450):     4160d110 00000000 00000001 00000018 00000000  
+I/DEBUG   ( 2450):     4160d120 00000000 00000000 4160c890 00000000  
+I/DEBUG   ( 2450):     4160d130 00000000 00000000 00000003 6d4c9b30  
+I/DEBUG   ( 2450):     4160d140 0000002a 6d4c9b98 00000036 6d4ca4d0  
+I/DEBUG   ( 2450):     4160d150 0000003e 6d4cb1d0 00000003 6d4cb2d8  
+I/DEBUG   ( 2450):     4160d160 00000005 6d4cb2f8 00000004 00000001  
+I/DEBUG   ( 2450):     4160d170 6d4c9b40 80000000 6e6caf8e 00000004  
+I/DEBUG   ( 2450):     4160d180 4160d0e0 6e69813e 6e6d0063 0000001a  
+I/DEBUG   ( 2450):     4160d190 4161a378 0000001c 4160d0e0 6e69aa36  
+I/DEBUG   ( 2450):     4160d1a0 6e6b003b 00000019 4161a368 0000001c  
+I/DEBUG   ( 2450):     4160d1b0 4160d0e0 6e6c7b9f 6e69a6a4 0000001a  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): memory near sp:
+I/DEBUG   ( 2450):     be80fe80 35343730 32383134 be80fefc 00000000  
+I/DEBUG   ( 2450):     be80fe90 00000000 36333138 00004000 d48a6738  
+I/DEBUG   ( 2450):     be80fea0 00000006 0000000b 000069fd 4160d0e0  
+I/DEBUG   ( 2450):     be80feb0 4160d0e0 400b6289 00000006 00000000  
+I/DEBUG   ( 2450):     be80fec0 415e6cf1 400b649d be80fed4 400b51d3  
+I/DEBUG   ( 2450):     be80fed0 00000000 ffffffdf 400ee2c0 400ee224  
+I/DEBUG   ( 2450):     be80fee0 00000000 400b7d83 416072c8 416072c8  
+I/DEBUG   ( 2450):     be80fef0 00000000 400c4a80 00000000 4159bdfb  
+I/DEBUG   ( 2450):     be80ff00 be80ff88 6c756e28 0000296c 00000000  
+I/DEBUG   ( 2450):     be80ff10 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff20 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff30 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff40 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff50 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff60 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450):     be80ff70 00000000 00000000 00000000 00000000  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): code around pc:
+I/DEBUG   ( 2450):     400c51a8 e8bd00f0 e3700a01 912fff1e e2600000  
+I/DEBUG   ( 2450):     400c51b8 ea006f55 e92d50f0 e3a07f43 ef000000  
+I/DEBUG   ( 2450):     400c51c8 e8bd50f0 e3700a01 912fff1e e2600000  
+I/DEBUG   ( 2450):     400c51d8 ea006f4d e92d50f0 e3a070ee ef000000  
+I/DEBUG   ( 2450):     400c51e8 e8bd50f0 e3700a01 912fff1e e2600000  
+I/DEBUG   ( 2450):     400c51f8 ea006f45 e3510000 0a006724 e710f110  
+I/DEBUG   ( 2450):     400c5208 e12fff1e e3510000 0a006720 e1a02000  
+I/DEBUG   ( 2450):     400c5218 e710f110 e0612190 e12fff1e e1520003  
+I/DEBUG   ( 2450):     400c5228 8a00008c f5d1f040 e92d4001 e3520010  
+I/DEBUG   ( 2450):     400c5238 3a000024 e2603000 e213300f 0a00000e  
+I/DEBUG   ( 2450):     400c5248 e0422003 e1b0cf83 44d1e001 44c0e001  
+I/DEBUG   ( 2450):     400c5258 24d1c001 24d1e001 24c0c001 24c0e001  
+I/DEBUG   ( 2450):     400c5268 e1b0ce83 aa000001 f4a1030d f480031d  
+I/DEBUG   ( 2450):     400c5278 3a000001 f421070d f400071d e2522040  
+I/DEBUG   ( 2450):     400c5288 3a000006 f421020d f421420d f5d1f100  
+I/DEBUG   ( 2450):     400c5298 e2522040 f400022d f400422d 2afffff8  
+I/DEBUG   ( 2450): 
+I/DEBUG   ( 2450): code around lr:
+I/DEBUG   ( 2450):     400b6268 447b4b13 42b3e010 4812d10e 44786a1e  
+I/DEBUG   ( 2450):     400b6278 ec90f7fb e9d8f00d 46224631 ef9af00e  
+I/DEBUG   ( 2450):     400b6288 d00a3001 e00b2400 2b00681b 480ad1eb  
+I/DEBUG   ( 2450):     400b6298 44782403 ec7ef7fb f001e002 6804fa1b  
+I/DEBUG   ( 2450):     400b62a8 fa18f001 46206005 bf00bd70 0003c142  
+I/DEBUG   ( 2450):     400b62b8 0003c136 0003c12e 0003c10a bf7ef7ff  
+I/DEBUG   ( 2450):     400b62c8 4a3e4b3d 43f0e92d 4606b08b 447b460d  
+I/DEBUG   ( 2450):     400b62d8 6823589c 930946a1 f9fcf001 8000f8d0  
+I/DEBUG   ( 2450):     400b62e8 d0482d00 f00f4628 280fff09 d8444604  
+I/DEBUG   ( 2450):     400b62f8 ffe4f7ff d1064286 4629200f e8a2f00d  
+I/DEBUG   ( 2450):     400b6308 d03c2800 482ee02e f7fb4478 482debc2  
+I/DEBUG   ( 2450):     400b6318 e0154478 d11342b0 482b6a06 f7fb4478  
+I/DEBUG   ( 2450):     400b6328 4a2aec3a 46332120 447aa801 fa88f013  
+I/DEBUG   ( 2450):     400b6338 a8012101 fd16f01a 46061c42 e011d104  
+I/DEBUG   ( 2450):     400b6348 28006800 e02cd1e6 46294630 f0274622  
+I/DEBUG   ( 2450):     400b6358 1c43fa95 d11e4607 f9bcf001 29046801  
+W/InputDispatcher( 2997): channel '43f09a48 com.ckt.francis.navigationmap/com.ckt.francis.navigationmap.activitys.MainActivity (server)' ~ Consumer closed input channel or an error occurred.  events=0x9
+E/InputDispatcher( 2997): channel '43f09a48 com.ckt.francis.navigationmap/com.ckt.francis.navigationmap.activitys.MainActivity (server)' ~ Channel is unrecoverably broken and will be disposed!
+W/InputDispatcher( 2997): channel '44381098 Toast (server)' ~ Consumer closed input channel or an error occurred.  events=0x9
+E/InputDispatcher( 2997): channel '44381098 Toast (server)' ~ Channel is unrecoverably broken and will be disposed!
+W/InputDispatcher( 2997): Attempted to unregister already unregistered input channel '43f09a48 com.ckt.francis.navigationmap/com.ckt.francis.navigationmap.activitys.MainActivity (server)'
+W/InputDispatcher( 2997): Attempted to unregister already unregistered input channel '44381098 Toast (server)'
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 0 - com.android.calendar
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 0 - com.huawei.android.totemweather
+I/HwLauncher( 3489): DynamicIcon onWindowVisibilityChanged 0 - com.android.deskclock
+I/logserver( 2465): Object Path:/data/system/dropbox/, mask=0x00000080
+I/logserver( 2465): event->len=48, name=SYSTEM_TOMBSTONE@1439391617715.txt.gz
+I/logserver( 2465): find_first_match: find match, plogs(type=1, pfile=/data/system/dropbox/, match=TOMBSTONE)
+I/logserver( 2465): is_only_tombstone, tombstone type force close.
+I/logserver( 2465): move_dir:src_path=/data/log/dbox/appdbg/logcache
+I/logserver( 2465): move_dir:dst_path=/data/log/logcache/22288160/
+I/logserver( 2465): is_all_ready, any file is ready in non-keyfile exception.
+I/logserver( 2465): find_correspond_tombstone, tombs=/data/tombstones/tombstone_04
+I/logserver( 2465): extract_appname, forward search, appname=com.ckt.francis.navigationmap
+I/logserver( 2465): is_only_tombstone, tombstone type force close.
+I/logserver( 2465): archive_and_send, only tombstone.
+I/logserver( 2465): get_fault_appname, appname=com.ckt.francis.navigationmap
+I/logserver( 2465): archive_and_send, pos=0, type=crash, output=20150812230017_tombstone
+I/logserver( 2465): ---copy_match_files enter!!--
+I/logserver( 2465): [copy_match_files,829]: copy [/data/system/dropbox/SYSTEM_TOMBSTONE@1439391617715.txt.gz] to [/data/log/logcache/22288160/SYSTEM_TOMBSTONE@1439391617715.txt.gz]
+I/logserver( 2465): internal_archive, argc=7
+I/logserver( 2465): get_fault_appname, appname=com.ckt.francis.navigationmap
+I/logserver( 2465): handle_archive_exception, argc=7
+I/logserver( 2465): get alarm time = 13725 (sec.)!
+I/logserver( 2465): log_apr_add_record open file:/data/log/apr/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150729204444_statistics
+I/logserver( 2465): move_input_files, create dir [/data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812230017_tombstone]
+I/logserver( 2465): copy_file_to_dir, /data/log/logcache/22288160/SYSTEM_TOMBSTONE@1439391617715.txt.gz -> /data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812230017_tombstone
+I/logserver( 2465): copy_file_to_dir, /data/log/logcache/22288160/finger.txt -> /data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812230017_tombstone
+I/logserver( 2465): init_notify_fifo, before change /data/log/logcontrol owner
+I/logserver( 2465): Process 2645 opening FIFO for O_WRONLY
+I/logserver( 2465): Process 2645 opened fifo(20)
+I/logserver( 2465): notify_logcontrol, 2645 sent /data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812230017_tombstone 
+I/logserver( 2465): check_dir_size, dir[/data/log/coredump/] doesn't exist
+I/logserver( 2465): clean_cur_cache:962, system(rm -r /data/log/logcache/22288160/* > /dev/null 2>&1)
+I/logserver( 2465): thread_logcontrol, select ret = 1
+I/logserver( 2465): handle_notify_event, read res = 324, client pid = 2645, data=/data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812230017_tombstone
+I/logserver( 2465): build_notify_string,ModuleName = com.ckt.francis.navigationmap
+I/logserver( 2465): build_notify_string,product name = PE-TL10
+I/logserver( 2465): handle_notify_event, send msg [submit:trigger=0,bugtype=12,modulename=com.ckt.francis.navigationmap,level=1,testtype=NORMAL,path=/data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812230017_tombstone;]
+I/logserver( 2465): send_to_client, send to (18) res = 183
+E/SubmitMessage( 3974): Submit string: submit:trigger=0,bugtype=12,modulename=com.ckt.francis.navigationmap,level=1,testtype=NORMAL,path=/data/log/unzip/PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150812230017_tombstone
+I/logserver( 2465): Object Path:/data/log/apr/, mask=0x00000008
+I/logserver( 2465): event->len=80, name=PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150729204444_statistics
+I/logserver( 2465): process_one_event, can not find this event(PE-TL10_V100R001CHNC00B243_T8DDU15210033275_20150729204444_statistics)
+I/logserver( 2465): clean_cur_cache:962, system(rm -r /data/log/logcache/22288160/* > /dev/null 2>&1)
+I/logserver( 2465): Object Path:/data/system/dropbox/, mask=0x00000080
+I/logserver( 2465): event->len=48, name=data_app_native_crash@1439391617778.txt.gz
+I/logserver( 2465): process_one_event, can not find this event(data_app_native_crash@1439391617778.txt.gz)
+I/logserver( 2465): clean_cur_cache:962, system(rm -r /data/log/logcache/22288160/* > /dev/null 2>&1)
+I/HwLauncher( 3489): Launcher onResume()
+I/HwLauncher( 3489): Launcher doResumeWork()
+I/HwLauncher( 3489): Launcher.MotionManager startShakeMotion shakeChangeWallpaper = false
+I/HwLauncher( 3489): Launcher changeNaviBarStatus
+W/HwLauncher( 3489): Launcher  updateMarginLayoutParamsForView:the target view is null.
+I/HwLauncher( 3489): Launcher  onResume mIsToUninstallApp = false
+W/Binder  ( 3326): Caught a RuntimeException from the binder stub implementation.
+W/Binder  ( 3326): java.lang.NullPointerException
+W/Binder  ( 3326): 	at android.inputmethodservice.IInputMethodWrapper.setSessionEnabled(IInputMethodWrapper.java:280)
+W/Binder  ( 3326): 	at com.android.internal.view.IInputMethod$Stub.onTransact(IInputMethod.java:129)
+W/Binder  ( 3326): 	at android.os.Binder.execTransact(Binder.java:404)
+W/Binder  ( 3326): 	at dalvik.system.NativeStart.run(Native Method)
+W/System.err( 3326): java.lang.NullPointerException
+W/System.err( 3326): 	at android.inputmethodservice.IInputMethodWrapper.setSessionEnabled(IInputMethodWrapper.java:280)
+W/System.err( 3326): 	at com.android.internal.view.IInputMethod$Stub.onTransact(IInputMethod.java:129)
+W/System.err( 3326): 	at android.os.Binder.execTransact(Binder.java:404)
+W/System.err( 3326): 	at dalvik.system.NativeStart.run(Native Method)
+I/LogServiceSetting( 3974): checkMemorydumpByPath: filePath is /storage/emulated/legacy/bugreports/ramdump
+I/LogServiceSetting( 3974): CheckMemorydumpByPath: /storage/emulated/legacy/bugreports/ramdumpis not exist.
+I/LogServiceSetting( 3974): checkMemorydumpByPath: filePath is /storage/sdcard1/bugreports/ramdump
+I/LogServiceSetting( 3974): CheckMemorydumpByPath: /storage/sdcard1/bugreports/ramdumpis not exist.
+I/PackageLogInfoManager( 3974): checkPackageLogState
+E/PackageLogInfoManager( 3974): checkPackageLogState, cr: android.app.ContextImpl$ApplicationContentResolver@43285440, packageNames: null
+I/PhoneStatusBar( 3152): hw_status_bar_operators = true, setSystemUIVisibily(SHOW_OPERATOR = false)
+I/wpa_supplicant( 9894): wlan0: HEART-BEAT-ACK: 257
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+W/JPush   (27250): [AndroidUtil] You should make main activity extends InstrumentedActivity (JPush), otherwise you will not see user click and user active time start on report in Portal. 
+I/HwSystemManager( 3593): HoldService:preHoldShow start!
+I/HwSystemManager( 3593): HoldService:The prePermissionType is: 1
+E/baidumapsdk(27250): Authentication Error errorcode: 230 uid: -1 appid -1 msg: APP Scode码校验失败
