@@ -60,13 +60,13 @@ public class BNDemoGuideActivity extends Activity {
 		BNRouteGuideManager.getInstance().onResume();
 		super.onResume();
 		
-		hd.sendEmptyMessageDelayed(MSG_SHOW, 5000);
+	//	hd.sendEmptyMessageDelayed(MSG_SHOW, 5000);
 	}
 	
 	protected void onPause() {
 		super.onPause();
 		BNRouteGuideManager.getInstance().onPause();
-	};
+	}
 	
 	@Override
 	protected void onDestroy() {

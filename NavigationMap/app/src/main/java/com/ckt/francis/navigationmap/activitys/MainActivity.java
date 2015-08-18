@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
     public static final String ROUTE_PLAN_NODE = "routePlanNode";
     private String authinfo = null;
     private String mSDCardPath = null;
-
+    private BNRoutePlanNode sNode = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -160,35 +160,29 @@ public class MainActivity extends Activity {
                 }
             }
         });
-   //     if ( BaiduNaviManager.isNaviInited() ) {
-
-  //          routeplanToNavi(BNRoutePlanNode.CoordinateType.WGS84);
+//            routeplanToNavi(BNRoutePlanNode.CoordinateType.WGS84);
 //            routeplanToNavi(BNRoutePlanNode.CoordinateType.GCJ02);
 //            routeplanToNavi(BNRoutePlanNode.CoordinateType.BD09_MC);
-  //     }
     }
 
     private void routeplanToNavi(BNRoutePlanNode.CoordinateType coType) {
-        BNRoutePlanNode sNode = null;
         BNRoutePlanNode eNode = null;
         switch(coType) {
             case GCJ02: {
-                sNode = new BNRoutePlanNode(116.30142, 40.05087,
-                        "百度大厦", null, coType);
+
                 eNode = new BNRoutePlanNode(116.39750, 39.90882,
                         "北京天安门", null, coType);
                 break;
             }
             case WGS84: {
-                sNode = new BNRoutePlanNode(116.300821,40.050969,
-                        "百度大厦", null, coType);
+
                 eNode = new BNRoutePlanNode(116.397491,39.908749,
                         "北京天安门", null, coType);
                 break;
             }
             case BD09_MC: {
-                sNode = new BNRoutePlanNode(12947471,4846474,
-                        "百度大厦", null, coType);
+                //sNode = new BNRoutePlanNode(12947471,4846474,
+                 //       "百度大厦", null, coType);
                 eNode = new BNRoutePlanNode(12958160,4825947,
                         "北京天安门", null, coType);
                 break;
@@ -200,6 +194,7 @@ public class MainActivity extends Activity {
             list.add(sNode);
             list.add(eNode);
             BaiduNaviManager.getInstance().launchNavigator(this, list, 1, true, new DemoRoutePlanListener(sNode));
+
         }
     }
 
@@ -238,6 +233,7 @@ public class MainActivity extends Activity {
                     .direction(100).latitude(location.getLatitude())
                     .longitude(location.getLongitude()).build();
             mBaiduMap.setMyLocationData(locData);
+            sNode = new BNRoutePlanNode(location.getLongitude(),location.getLatitude(),"",null,BNRoutePlanNode.CoordinateType.GCJ02);
             if (isFirstLoc) {
                 isFirstLoc = false;
                 LatLng ll = new LatLng(location.getLatitude(),
@@ -245,9 +241,6 @@ public class MainActivity extends Activity {
                 MapStatusUpdate u = MapStatusUpdateFactory.newLatLng(ll);
                 mBaiduMap.animateMapStatus(u);
             }
-        }
-
-        public void onReceivePoi(BDLocation poiLocation) {
         }
     }
 
