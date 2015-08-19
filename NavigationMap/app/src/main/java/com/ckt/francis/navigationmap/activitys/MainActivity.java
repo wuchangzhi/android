@@ -20,6 +20,12 @@ import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.MyLocationConfiguration;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.model.LatLng;
+import com.baidu.mapapi.search.core.PoiInfo;
+import com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener;
+import com.baidu.mapapi.search.poi.PoiCitySearchOption;
+import com.baidu.mapapi.search.poi.PoiDetailResult;
+import com.baidu.mapapi.search.poi.PoiResult;
+import com.baidu.mapapi.search.poi.PoiSearch;
 import com.baidu.navisdk.adapter.BNRoutePlanNode;
 import com.baidu.navisdk.adapter.BaiduNaviManager;
 import com.ckt.francis.navigationmap.R;
@@ -43,6 +49,10 @@ public class MainActivity extends Activity {
     private String authinfo = null;
     private String mSDCardPath = null;
     private BNRoutePlanNode sNode = null;
+    private BNRoutePlanNode eNode = null;
+    private PoiSearch mPoiSearch;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,16 +68,20 @@ public class MainActivity extends Activity {
         mLocClient.registerLocationListener(myListener);
         LocationClientOption option = new LocationClientOption();
         option.setOpenGps(true);// 打开gps
-        option.setCoorType("bd09ll"); // 设置坐标类型
+        option.setCoorType("gcj02"); // 设置坐标类型
         option.setScanSpan(1000);
         mLocClient.setLocOption(option);
         mLocClient.start();
 
 
+        mPoiSearch = PoiSearch.newInstance();
+        mPoiSearch.setOnGetPoiSearchResultListener(poiListener);
+
         if ( initDirs() ) {
            initNavi();
         }
         initListener();
+
     }
 
     @Override
@@ -75,6 +89,12 @@ public class MainActivity extends Activity {
         super.onResume();
         JPushInterface.onResume(this);
         mMapView.onResume();
+        Toast.makeText(this,mPoiSearch + "" ,Toast.LENGTH_LONG).show();
+        if(mPoiSearch!=null) {
+            mPoiSearch.searchInCity((new PoiCitySearchOption())
+                    .city("深圳市")
+                    .keyword("A8音乐大厦"));
+        }
     }
     @Override
     protected void onPause() {
@@ -86,6 +106,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mPoiSearch.destroy();
         mMapView.onDestroy();
     }
 
@@ -150,14 +171,20 @@ public class MainActivity extends Activity {
     }
 
     private void initListener() {
-        LogUtil.d("------------1");
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-                if ( BaiduNaviManager.isNaviInited() ) {
+                if (BaiduNaviManager.isNaviInited()) {
                     routeplanToNavi(BNRoutePlanNode.CoordinateType.WGS84);
                 }
+            }
+        });
+        findViewById(R.id.buttons).setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
             }
         });
 //            routeplanToNavi(BNRoutePlanNode.CoordinateType.WGS84);
@@ -166,29 +193,7 @@ public class MainActivity extends Activity {
     }
 
     private void routeplanToNavi(BNRoutePlanNode.CoordinateType coType) {
-        BNRoutePlanNode eNode = null;
-        switch(coType) {
-            case GCJ02: {
 
-                eNode = new BNRoutePlanNode(116.39750, 39.90882,
-                        "北京天安门", null, coType);
-                break;
-            }
-            case WGS84: {
-
-                eNode = new BNRoutePlanNode(116.397491,39.908749,
-                        "北京天安门", null, coType);
-                break;
-            }
-            case BD09_MC: {
-                //sNode = new BNRoutePlanNode(12947471,4846474,
-                 //       "百度大厦", null, coType);
-                eNode = new BNRoutePlanNode(12958160,4825947,
-                        "北京天安门", null, coType);
-                break;
-            }
-            default : break;
-        }
         if (sNode != null && eNode != null) {
             List<BNRoutePlanNode> list = new ArrayList<BNRoutePlanNode>();
             list.add(sNode);
@@ -265,4 +270,24 @@ public class MainActivity extends Activity {
 
         }
     }
+
+
+    OnGetPoiSearchResultListener poiListener = new OnGetPoiSearchResultListener(){
+        public void onGetPoiResult(PoiResult result){
+            //获取POI检索结果
+            if(result != null) {
+                List<PoiInfo> poiInfos = result.getAllPoi();
+                eNode = new BNRoutePlanNode(poiInfos.get(0).location.longitude, poiInfos.get(0).location.latitude,
+                        poiInfos.get(0).name, null, BNRoutePlanNode.CoordinateType.GCJ02);
+            }else {
+                Toast.makeText(MainActivity.this,"ERROR",Toast.LENGTH_LONG).show();
+            }
+
+        }
+        public void onGetPoiDetailResult(PoiDetailResult result){
+            //获取Place详情页检索结果
+            LogUtil.d(result + "---------------1");
+            Toast.makeText(MainActivity.this,result+"1",Toast.LENGTH_LONG).show();
+        }
+    };
 }
