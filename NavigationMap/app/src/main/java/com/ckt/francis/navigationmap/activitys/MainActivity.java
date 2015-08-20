@@ -26,11 +26,10 @@ import com.baidu.mapapi.search.poi.PoiCitySearchOption;
 import com.baidu.mapapi.search.poi.PoiDetailResult;
 import com.baidu.mapapi.search.poi.PoiResult;
 import com.baidu.mapapi.search.poi.PoiSearch;
-import com.baidu.mapapi.utils.CoordinateConverter;
 import com.baidu.navisdk.adapter.BNRoutePlanNode;
 import com.baidu.navisdk.adapter.BaiduNaviManager;
 import com.ckt.francis.navigationmap.R;
-import com.ckt.francis.navigationmap.util.ToolUtils;
+import com.ckt.francis.navigationmap.util.Utils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -40,12 +39,15 @@ import cn.jpush.android.api.JPushInterface;
 
 
 public class MainActivity extends Activity {
+    private static final String MESSAGE = "_message" ;
+
     private MapView mMapView;
     private BaiduMap mBaiduMap;
     // 定位的核心类:LocationClient
     private LocationClient mLocClient;
     private boolean isFirstLoc = true;
     private MyLocationListenner myListener = null ;
+    private String mMessage = null;
 
     private static final String APP_FOLDER_NAME = "BNSDKDemo";
     public static final String ROUTE_PLAN_NODE = "routePlanNode";
@@ -59,11 +61,14 @@ public class MainActivity extends Activity {
             //获取POI检索结果
             if(result != null) {
                 List<PoiInfo> poiInfos = result.getAllPoi();
-                LatLng eLatLng = ToolUtils.bd09_To_Gcj02(new LatLng(poiInfos.get(0).location.latitude, poiInfos.get(0).location.longitude));
+                LatLng eLatLng = Utils.bd09_To_Gcj02(new LatLng(poiInfos.get(0).location.latitude, poiInfos.get(0).location.longitude));
                 eNode = new BNRoutePlanNode(eLatLng.longitude,eLatLng.latitude ,
                         poiInfos.get(0).name, null);
             }else {
                 Toast.makeText(MainActivity.this,"ERROR",Toast.LENGTH_LONG).show();
+            }
+            if (BaiduNaviManager.isNaviInited()) {
+                routeplanToNavi();
             }
         }
         public void onGetPoiDetailResult(PoiDetailResult result){
@@ -77,6 +82,20 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent _intent = getIntent();
+        if(_intent != null){
+            mMessage = _intent.getStringExtra(MESSAGE);
+        }
+        init();
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        if(intent !=null){
+            mMessage = intent.getStringExtra(MESSAGE);
+        }
         init();
     }
 
@@ -127,14 +146,19 @@ public class MainActivity extends Activity {
     protected void onPause() {
         super.onPause();
         JPushInterface.onPause(this);
-       mMapView.onPause();
+        mMapView.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mLocClient.stop();
+        mPoiSearch.destroy();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mLocClient.stop();
-        mPoiSearch.destroy();
         mMapView.onDestroy();
     }
 
@@ -169,15 +193,15 @@ public class MainActivity extends Activity {
                         } else {
                             authinfo = "key校验失败, " + msg;
                         }
-                        Toast.makeText(MainActivity.this,authinfo,Toast.LENGTH_LONG).show();
+                        //Toast.makeText(MainActivity.this,authinfo,Toast.LENGTH_LONG).show();
                     }
 
                     public void initSuccess() {
-                        Toast.makeText(MainActivity.this, "百度导航引擎初始化成功", Toast.LENGTH_SHORT).show();
-                        if(mPoiSearch != null) {
+                       // Toast.makeText(MainActivity.this, "百度导航引擎初始化成功", Toast.LENGTH_SHORT).show();
+                        if(mPoiSearch != null && mMessage != null) {
                             mPoiSearch.searchInCity((new PoiCitySearchOption())
                                     .city("深圳市")
-                                    .keyword("西乡地铁站"));
+                                    .keyword(mMessage));
                         }
                     }
 
@@ -261,7 +285,8 @@ public class MainActivity extends Activity {
                     .longitude(location.getLongitude())// 获取精度坐标
                     .build();
             mBaiduMap.setMyLocationData(locData);
-            LatLng sLatLng = ToolUtils.bd09_To_Gcj02(new LatLng(location.getLatitude(),location.getLongitude()));
+            //坐标转换
+            LatLng sLatLng = Utils.bd09_To_Gcj02(new LatLng(location.getLatitude(), location.getLongitude()));
             sNode = new BNRoutePlanNode(sLatLng.longitude,sLatLng.latitude,"",null);
             //sNode = new BNRoutePlanNode(sLatLng.longitude,sLatLng.longitude,"",null);
             if (isFirstLoc) {

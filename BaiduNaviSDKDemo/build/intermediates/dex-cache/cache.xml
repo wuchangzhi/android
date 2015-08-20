@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/wuchangzhi/AndroidStudioProjects/BaiduNaviSDKDemo/app/libs/httpmime-4.1.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ed8b5ee0167cb27dea55851259eb34b609f31df0">
+        <dex dex="/home/wuchangzhi/AndroidStudioProjects/BaiduNaviSDKDemo/app/build/intermediates/pre-dexed/debug/httpmime-4.1.2-0a0a38401323a444144b00580c150f796b59b2af.jar" />
+    </item>
+    <item
+        jar="/home/wuchangzhi/AndroidStudioProjects/BaiduNaviSDKDemo/app/libs/BaiduNaviSDK_2.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d468a65d0d88945b6c7527d146e9493b3e77c5fd">
+        <dex dex="/home/wuchangzhi/AndroidStudioProjects/BaiduNaviSDKDemo/app/build/intermediates/pre-dexed/debug/BaiduNaviSDK_2.0-5a2d56dfe1b61d2a5b25fad62beda6a13f21fcd2.jar" />
+    </item>
+
+</items>
