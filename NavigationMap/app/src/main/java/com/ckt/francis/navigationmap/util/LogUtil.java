@@ -1,4 +1,4 @@
-package com.ckt.francis.navigationmap.activitys;
+package com.ckt.francis.navigationmap.util;
 
 import android.util.Log;
 

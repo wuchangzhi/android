@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.ckt.francis.navigationmap.activitys.LogUtil;
+import com.ckt.francis.navigationmap.util.LogUtil;
 import com.ckt.francis.navigationmap.activitys.MainActivity;
 
 import cn.jpush.android.api.JPushInterface;
