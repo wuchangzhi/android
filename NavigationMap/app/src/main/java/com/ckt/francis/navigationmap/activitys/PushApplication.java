@@ -4,6 +4,8 @@ import android.app.Application;
 import android.util.Log;
 
 import com.baidu.mapapi.SDKInitializer;
+import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechUtility;
 
 import cn.jpush.android.api.JPushInterface;
 
@@ -18,5 +20,6 @@ public class PushApplication extends Application {
          JPushInterface.init(this);     		// 初始化 JPush
 
         SDKInitializer.initialize(getApplicationContext());
+        SpeechUtility.createUtility(getApplicationContext(), SpeechConstant.APPID + "=55d9caa5");
     }
 }

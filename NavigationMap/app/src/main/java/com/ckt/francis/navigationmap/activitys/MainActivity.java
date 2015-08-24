@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,24 +30,41 @@ import com.baidu.mapapi.search.poi.PoiSearch;
 import com.baidu.navisdk.adapter.BNRoutePlanNode;
 import com.baidu.navisdk.adapter.BaiduNaviManager;
 import com.ckt.francis.navigationmap.R;
+import com.ckt.francis.navigationmap.util.JsonParser;
 import com.ckt.francis.navigationmap.util.Utils;
+import com.iflytek.cloud.RecognizerListener;
+import com.iflytek.cloud.RecognizerResult;
+import com.iflytek.cloud.SpeechConstant;
+import com.iflytek.cloud.SpeechError;
+import com.iflytek.cloud.SpeechRecognizer;
+import com.iflytek.cloud.ui.RecognizerDialog;
+import com.iflytek.cloud.ui.RecognizerDialogListener;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import cn.jpush.android.api.JPushInterface;
 
 
 public class MainActivity extends Activity {
-    private static final String MESSAGE = "_message" ;
-
+    private static final String MESSAGE = "_message";
+    // 语音识别对象
+    private SpeechRecognizer mAsr;
+    // 用HashMap存储听写结果
+    private HashMap<String, String> mIatResults = new LinkedHashMap<String, String>();
+    private RecognizerDialog mDialog = null;
     private MapView mMapView;
     private BaiduMap mBaiduMap;
     // 定位的核心类:LocationClient
     private LocationClient mLocClient;
     private boolean isFirstLoc = true;
-    private MyLocationListenner myListener = null ;
+    private MyLocationListenner myListener = null;
     private String mMessage = null;
 
     private static final String APP_FOLDER_NAME = "BNSDKDemo";
@@ -56,27 +74,99 @@ public class MainActivity extends Activity {
     private BNRoutePlanNode sNode = null;
     private BNRoutePlanNode eNode = null;
     private PoiSearch mPoiSearch;
-    private OnGetPoiSearchResultListener poiListener = new OnGetPoiSearchResultListener(){
-        public void onGetPoiResult(PoiResult result){
+    private OnGetPoiSearchResultListener poiListener = new OnGetPoiSearchResultListener() {
+        public void onGetPoiResult(PoiResult result) {
             //获取POI检索结果
-            if(result != null) {
+            if (result != null) {
                 List<PoiInfo> poiInfos = result.getAllPoi();
                 LatLng eLatLng = Utils.bd09_To_Gcj02(new LatLng(poiInfos.get(0).location.latitude, poiInfos.get(0).location.longitude));
-                eNode = new BNRoutePlanNode(eLatLng.longitude,eLatLng.latitude ,
+                eNode = new BNRoutePlanNode(eLatLng.longitude, eLatLng.latitude,
                         poiInfos.get(0).name, null);
-            }else {
-                Toast.makeText(MainActivity.this,"ERROR",Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(MainActivity.this, "ERROR", Toast.LENGTH_LONG).show();
             }
             if (BaiduNaviManager.isNaviInited()) {
                 routeplanToNavi();
             }
         }
-        public void onGetPoiDetailResult(PoiDetailResult result){
+
+        public void onGetPoiDetailResult(PoiDetailResult result) {
             //获取Place详情页检索结果
-            Toast.makeText(MainActivity.this,result+"1",Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, result + "1", Toast.LENGTH_LONG).show();
         }
     };
 
+    /**
+     * 识别监听器。
+     */
+    private RecognizerListener mRecognizerListener = new RecognizerListener() {
+
+        @Override
+        public void onVolumeChanged(int volume, byte[] data) {
+            showTip("当前正在说话，音量大小：" + volume);
+            Log.d("test", "返回音频数据：" + data.length);
+        }
+
+        @Override
+        public void onResult(final RecognizerResult result, boolean isLast) {
+            if (null != result) {
+                Log.d("test", "recognizer result：" + result.getResultString());
+//                String text ;
+//                if("cloud".equalsIgnoreCase(mEngineType)){
+//                    //text = JsonParser.parseGrammarResult(result.getResultString());
+//                }else {
+//                   // text = JsonParser.parseLocalGrammarResult(result.getResultString());
+//                }
+            } else {
+                Log.d("test", "recognizer result : null");
+            }
+        }
+
+        @Override
+        public void onEndOfSpeech() {
+            // 此回调表示：检测到了语音的尾端点，已经进入识别过程，不再接受语音输入
+            showTip("结束说话");
+        }
+
+        @Override
+        public void onBeginOfSpeech() {
+            // 此回调表示：sdk内部录音机已经准备好了，用户可以开始语音输入
+            showTip("开始说话");
+        }
+
+        @Override
+        public void onError(SpeechError error) {
+            showTip("onError Code："	+ error.getErrorCode());
+        }
+
+        @Override
+        public void onEvent(int eventType, int arg1, int arg2, Bundle obj) {
+            // 以下代码用于获取与云端的会话id，当业务出错时将会话id提供给技术支持人员，可用于查询会话日志，定位出错原因
+            // 若使用本地能力，会话id为null
+            //	if (SpeechEvent.EVENT_SESSION_ID == eventType) {
+            //		String sid = obj.getString(SpeechEvent.KEY_EVENT_SESSION_ID);
+            //		Log.d(TAG, "session id =" + sid);
+            //	}
+        }
+
+    };
+
+    /**
+     * 听写UI监听器
+     */
+    private RecognizerDialogListener mRecognizerDialogListener = new RecognizerDialogListener() {
+        public void onResult(RecognizerResult results, boolean isLast) {
+            printResult(results);
+        }
+
+        /**
+         * 识别回调错误.
+         */
+        public void onError(SpeechError error) {
+            showTip(error.getPlainDescription(true));
+        }
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +174,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         Intent _intent = getIntent();
-        if(_intent != null){
+        if (_intent != null) {
             mMessage = _intent.getStringExtra(MESSAGE);
         }
         init();
@@ -93,7 +183,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        if(intent !=null){
+        if (intent != null) {
             mMessage = intent.getStringExtra(MESSAGE);
         }
         init();
@@ -131,7 +221,35 @@ public class MainActivity extends Activity {
             initNavi();
         }
         initListener();
+
+        //1.创建SpeechRecognizer对象，第二个参数：本地听写时传InitListener
+        mAsr = SpeechRecognizer.createRecognizer(this, null);
+        //2.设置听写参数，详见《科大讯飞MSC API手册(Android)》SpeechConstant类
+        mAsr.setParameter(SpeechConstant.ENGINE_TYPE, SpeechConstant.TYPE_CLOUD);
+        mAsr.setParameter(SpeechConstant.DOMAIN, "iat");
+        mAsr.setParameter(SpeechConstant.LANGUAGE, "zh_cn");
+        mAsr.setParameter(SpeechConstant.ACCENT, "mandarin ");
+        //听写结果回调接口(返回Json格式结果，用户可参见附录12.1)；
+        //一般情况下会通过onResults接口多次返回结果，完整的识别内容是多次结果的累加；
+        //关于解析Json的代码可参见MscDemo中JsonParser类；
+        //isLast等于true时会话结束。
+        mAsr.startListening(mRecognizerListener);
+
+        //1.创建RecognizerDialog对象
+        mDialog = new RecognizerDialog(this, null);
+        //2.设置accent、language等参数
+        mDialog.setParameter(SpeechConstant.LANGUAGE, "zh_cn");
+        mDialog.setParameter(SpeechConstant.ACCENT, "mandarin");
+        //若要将UI控件用于语义理解,必须添加以下参数设置,设置之后onResult回调返回将是语义理解
+        //结果
+        // mDialog.setParameter("asr_sch", "1");
+        // mDialog.setParameter("nlp_version", "2.0");
+        //3.设置回调接口
+        mDialog.setListener(mRecognizerDialogListener);
+        //4.显示dialog,接收语音输入
+
     }
+
 
     @Override
     protected void onResume() {
@@ -167,11 +285,11 @@ public class MainActivity extends Activity {
                 Environment.MEDIA_MOUNTED)) {
             mSDCardPath = Environment.getExternalStorageDirectory().toString();
         }
-        if ( mSDCardPath == null ) {
+        if (mSDCardPath == null) {
             return false;
         }
         File f = new File(mSDCardPath, APP_FOLDER_NAME);
-        if ( !f.exists() ) {
+        if (!f.exists()) {
             try {
                 f.mkdir();
             } catch (Exception e) {
@@ -197,8 +315,8 @@ public class MainActivity extends Activity {
                     }
 
                     public void initSuccess() {
-                       // Toast.makeText(MainActivity.this, "百度导航引擎初始化成功", Toast.LENGTH_SHORT).show();
-                        if(mPoiSearch != null && mMessage != null) {
+                        // Toast.makeText(MainActivity.this, "百度导航引擎初始化成功", Toast.LENGTH_SHORT).show();
+                        if (mPoiSearch != null && mMessage != null) {
                             mPoiSearch.searchInCity((new PoiCitySearchOption())
                                     .city("深圳市")
                                     .keyword(mMessage));
@@ -218,8 +336,12 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View arg0) {
-                if (BaiduNaviManager.isNaviInited()) {
+/*                if (BaiduNaviManager.isNaviInited()) {
                     routeplanToNavi();
+                }*/
+
+                if(mDialog != null){
+                    mDialog.show();
                 }
             }
         });
@@ -228,7 +350,6 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View arg0) {
                 isFirstLoc = true;
-                //mLocClient.start();
                 mLocClient.requestLocation();
             }
         });
@@ -287,14 +408,14 @@ public class MainActivity extends Activity {
             mBaiduMap.setMyLocationData(locData);
             //坐标转换
             LatLng sLatLng = Utils.bd09_To_Gcj02(new LatLng(location.getLatitude(), location.getLongitude()));
-            sNode = new BNRoutePlanNode(sLatLng.longitude,sLatLng.latitude,"",null);
+            sNode = new BNRoutePlanNode(sLatLng.longitude, sLatLng.latitude, "", null);
             //sNode = new BNRoutePlanNode(sLatLng.longitude,sLatLng.longitude,"",null);
             if (isFirstLoc) {
                 isFirstLoc = false;
                 LatLng ll = new LatLng(location.getLatitude(),
                         location.getLongitude());
                 MapStatusUpdate u = MapStatusUpdateFactory.newLatLng(ll);
-                mBaiduMap.animateMapStatus(u,1000);
+                mBaiduMap.animateMapStatus(u, 1000);
             }
         }
     }
@@ -317,5 +438,37 @@ public class MainActivity extends Activity {
         public void onRoutePlanFailed() {
 
         }
+    }
+
+    private void showTip(String plainDescription) {
+    }
+
+    private void printResult(RecognizerResult results) {
+        String text = JsonParser.parseIatResult(results.getResultString());
+
+        String sn = null;
+        // 读取json结果中的sn字段
+        try {
+            JSONObject resultJson = new JSONObject(results.getResultString());
+            sn = resultJson.optString("sn");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        mIatResults.put(sn, text);
+
+        StringBuffer resultBuffer = new StringBuffer();
+        for (String key : mIatResults.keySet()) {
+            resultBuffer.append(mIatResults.get(key));
+        }
+        if (BaiduNaviManager.isNaviInited()) {
+            routeplanToNavi();
+        }
+        if (mPoiSearch != null && resultBuffer.toString() != null) {
+            mPoiSearch.searchInCity((new PoiCitySearchOption())
+                    .city("深圳市")
+                    .keyword(resultBuffer.toString()));
+        }
+        Toast.makeText(this,"" + resultBuffer.toString(),Toast.LENGTH_LONG).show();
     }
 }
